@@ -2,6 +2,8 @@
 
 Remotion 4.0.530 + React Three Fiber (`@remotion/three`, `@remotion/gsap`), 1080×1920 @ 30 fps.
 
+**Shared component library:** `/Volumes/disk 2/reel-components-kit`. Brand-themed motion graphics, cards, captions, SVG and 3D elements, a JSON scene manifest (`ReelSceneRenderer`), and brand fonts. Index in MOGRAPH.md.
+
 **One project per brand; every film for that brand lives in it.** Studio `<Folder>`s:
 - Current: the films that count;
 - Archive: replaced cuts, nothing deleted;
@@ -46,8 +48,7 @@ Clone with anchored excludes: `rsync -a --exclude '/out' --exclude '/src/scenes'
 ## Gotchas
 
 - Internal drive is nearly full and RAM is 8 GB: caches, temp, models and renders go on `/Volumes/disk 2`; render with `--concurrency=2 --timeout=60000`; one Studio at a time while rendering.
-- iPhone clips are often HDR (HEVC 10-bit, `arib-std-b67` HLG). Convert to SDR with Apple's pipeline: `avconvert -s in.MP4 -p Preset1920x1080 -o out.mp4`, then re-encode video-only at 30 fps (avconvert puts audio first, which the Studio preview mishandles). ffmpeg zscale/tonemap (mobius, hable) left the 54-D take washed out and pink; don't stack a heavy grade to compensate.
-- Phone/DJI clips carry rotation flags — check `displaymatrix` before cropping; many are already vertical.
+- Footage prep (HDR, rotation, stabilised proxies, grading): FOOTAGE.md.
 - zsh: write `${var}` before a `:` in ffmpeg filters (`$trf:s…` is a zsh modifier); vid.stab paths can't contain spaces.
 - SVG filters on near-vertical lines need `filterUnits="userSpaceOnUse"` (zero-width bounding box hides them).
 - A transformed parent isolates `mix-blend-mode`; give blended layers their own transform.

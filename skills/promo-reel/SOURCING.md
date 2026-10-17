@@ -54,6 +54,8 @@ The user's ChatGPT desktop app is Codex (`com.openai.codex`). It generates image
 
 ## Footage
 
+Prep and editing of real footage: FOOTAGE.md. Sourcing notes:
+
 - **Grade** with ffmpeg `hqdn3d, unsharp, curves, colorbalance, eq` into a `footage-bright/` set. Use bright, graded 4K segments only; dull or ungraded clips read untidy on a phone.
 - **Leave out:** construction footage in Dhunna films; tight fisheye or close-up shots of the hero building (see TASTE.md).
 - **Before choosing shots,** contact-sheet the clips (frame at 1 s, 320 px wide, tiled) to judge wide vs tight.

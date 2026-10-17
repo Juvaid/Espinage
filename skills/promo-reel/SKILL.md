@@ -1,18 +1,13 @@
 ---
 name: promo-reel
-description: Art-direct and build a 9:16 promo reel (real-estate / brand Instagram reel or ad) in Remotion. Use for a new reel or ad, writing ad scripts and hooks, re-cutting or polishing a Dhunna Infra or Crown Crest film, a new brand's visual direction, storyboards, scoring scenes, 3D type / map / depth-photo shots, or briefing ChatGPT/Codex for images. Includes the taste rules (TASTE.md) and a mandatory render-look-critique-fix loop.
+description: Art-direct and build 9:16 promo reels and ads (real estate / brand) in Remotion, in any style: footage, presenter, 3D card, motion-graphics explainer, map, single take, brand film. Use for a new reel or ad, writing ad scripts and hooks, motion graphics (toggle pills, counters, shape morphs), transitions, editing real footage, re-cutting or polishing a Dhunna Infra or Crown Crest film, a new brand's visual direction, storyboards, scoring scenes, 3D type / map / depth-photo shots, or briefing ChatGPT/Codex for images. Includes the taste rules (TASTE.md) and a mandatory render-look-critique-fix loop.
 ---
 
 # Promo reel
 
-A reel here is a 20–50 s vertical film. It has:
-- a Hinglish voiceover;
-- headings and captions that land on the spoken word;
-- the client's real footage plus ChatGPT concept stills;
-- 3D shots in Three.js;
-- mastered sound.
+A reel here is a 10–50 s vertical film with a Hinglish voiceover (or music only), type that lands on the spoken word, and mastered sound. It can be one of several styles (STYLES.md): footage promo, presenter reel, 3D card ad, motion-graphics explainer, map reel, single take, brand film, or story/poster in motion. Every film is built in Remotion, one project per brand.
 
-Every film is built in Remotion, one project per brand, re-skinned per brand.
+**Shared craft, brand looks.** Everything in this skill's shared files (STYLES, EDIT, TASTE, TECHNIQUES, FOOTAGE, TRANSITIONS, MOGRAPH, MOTION, SOURCING) applies to every brand. A brand's look (tokens, faces, metal, signature move, approved looks, facts) lives only in its brand file and its theme in `reel-components-kit/src/presets/themes.ts`. A technique learned on one brand is written into the shared files; a correction about one brand's look goes into its brand file.
 
 Read the brand file before touching design:
 - Dhunna Infra → [`brands/dhunna-infra.md`](brands/dhunna-infra.md)
@@ -22,6 +17,10 @@ Read the brand file before touching design:
 **Read [`TASTE.md`](TASTE.md) before designing anything.** It holds the user's own corrections, what reads as slop, and the render → look → critique → fix loop. No visual is done until you have looked at it rendered.
 
 Reach for these when a branch needs them:
+- [`STYLES.md`](STYLES.md): the reel styles, when to use each, how to choose one base style plus at most two guest elements, and what each must get right.
+- [`FOOTAGE.md`](FOOTAGE.md): real footage and presenters: prep (rotation, HDR, stabilised proxies, grading), cutting on the word and the beat, tracked tags, road highlights on drone shots, photo and checklist cards over footage.
+- [`TRANSITIONS.md`](TRANSITIONS.md): the transition catalogue (cut, J/L, whip, push, slide, match cut, hand-off, morph, object wipe, mask reveal, light leak), with lengths and when each fits.
+- [`MOGRAPH.md`](MOGRAPH.md): motion-graphics elements from the shared `reel-components-kit` (toggle pills, checklist, counter, dimension bar, shape morph, route and pin, deck, triptych, floor highlight, coins, logo reveal), themed per brand.
 - [`EDIT.md`](EDIT.md): the edit as an ad: brief and fact sheet, script word budget and beat structure, hook patterns, pacing, safe zones, sound levels, deliverables, and how to handle notes and renders.
 - [`ENGINE.md`](ENGINE.md): projects, components, scripts, render and delivery gotchas.
 - [`TECHNIQUES.md`](TECHNIQUES.md): recipes for 3D type and chrome, depth-photo camera moves, text behind objects, map → 3D match cuts, procedural 3D props, card layouts.
@@ -32,21 +31,22 @@ Reach for these when a branch needs them:
 ## Steps
 
 0. **Start of session:** read the project's `docs/FILMS.md` and the brand file, check whether the Studio preview is running, and list what is current. **Brief:** for a new film, write the brief and fact sheet (EDIT.md §1) and confirm audience, message and ask.
-1. **Inventory.** List every asset: VO, footage (duration, rotation, HDR), stills (ChatGPT sets included), renders/PDFs, logo, references. Contact-sheet every clip. Done when each asset has a one-line "shows / usable for" note and a "wide or tight" call.
-2. **Script + timing.** Write or check the script against the word budget and beat structure (EDIT.md §2), with two hook variants. Align every word of the voice to the audio (`scripts/align_vo.py`). Done when every word has a measured start and the user has confirmed the wording.
-3. **Storyboard before building.** One beat per VO line, each with what is on screen, the camera move, the text and the layout (vary it, TASTE.md §3).
+1. **Choose the style** (STYLES.md): one base style plus at most two guest elements, written into the brief.
+2. **Inventory.** List every asset: VO, footage (duration, rotation, HDR), stills (ChatGPT sets included), renders/PDFs, logo, references. Contact-sheet every clip. Done when each asset has a one-line "shows / usable for" note and a "wide or tight" call.
+3. **Script + timing.** Write or check the script against the word budget and beat structure (EDIT.md §2), with two hook variants. Align every word of the voice to the audio (`scripts/align_vo.py`). Done when every word has a measured start and the user has confirmed the wording.
+4. **Storyboard before building.** One beat per VO line, each with what is on screen, the camera move, the text and the layout (vary it, TASTE.md §3).
    - Render the board as a sheet with real frames (`scripts/storyboard.py`) and show it.
    - For missing angles or assets, brief ChatGPT (SOURCING.md) with only the project and its references.
    - Done when every beat has a real asset and the user has seen the board.
-4. **Build** on the brand project. Before each scene write its design read (TASTE.md §1).
+5. **Build** on the brand project. Reuse kit and project components before writing new ones; a new reusable element goes into the kit (MOGRAPH.md). Before each scene write its design read (TASTE.md §1).
    - Keep the Studio preview running (`.claude/launch.json` in `/Volumes/disk 2`) so the user can steer live.
    - They often send notes with screenshots while you work. Scope each note (this frame, this film, every film) and fix it everywhere it applies, in the shared component where one exists (EDIT.md §6).
    - Record each correction in TASTE.md, the brand file or TECHNIQUES.md in the same turn.
-5. **Check every scene as you go** (TASTE.md §4): stills at its beats, then a contact sheet.
+6. **Check every scene as you go** (TASTE.md §4): stills at its beats, then a contact sheet.
    - Score finished cuts per scene with `score_video.py`: 8/10 per scene passes, 10 is the goal.
    - The scorer is only a guide. It penalises tidy consistency ("repeat") and bright paper ("expo"), and the user's eye wins.
    - Done when every item passes on rendered pixels and the stills are shown.
-6. **Deliver.**
+7. **Deliver.**
    - Render masters only now, or when the user asks: batch every fix into one render pass (EDIT.md §6).
    - Full render (retry loop, concurrency 2), loudness to −14 LUFS, copy into the brand's `out/current`. Add the share copy and any cutdowns the placement needs (EDIT.md §5).
    - Name every master `<brand>-<project>_<film>_<audience>_<ratio>_<voice>_v<NN>_<YYYY-MM-DD>.mp4`, all lower case with hyphens inside a field and underscores between fields. Example: `dhunna-54d_o3-offices_companies_9x16_puck_v04_2026-10-17.mp4`. Use the same name locally (`out/current`) and on Drive.

@@ -2,7 +2,14 @@
 
 Real-estate developer, Sarabha Nagar, Ludhiana (Project 59-D commercial, Gurmeet Tower). Positioning: credible, premium, investor-facing ("smart investors ki pehli choice").
 
-## Design system
+## Two looks (pick by project)
+
+- **59-D / Gurmeet Tower (footage promos):** warm gold metal on warm near-black, gold 3D clay icons, black-and-white drone with the road painted gold. Kit theme `dhunna`.
+- **54D (3D card ads, single takes, explainers):** navy ground, ice-blue accent, steel metal, chrome Didot 54D mark. Kit theme `dhunna_54d`.
+
+Shared elements (toggle pills, counters, morphs, cards) take the look from the theme; never mix the two looks in one film.
+
+## Design system (59-D gold look)
 
 - **Metal:** warm gold. Tokens: `gold oklch(0.8 0.125 80)`, `goldDeep oklch(0.64 0.12 68)`, glow `gold / 0.4`. Bevel face `#dfb25a`, extrusion `#8f6726 → #4a3312`.
 - **Ground:** warm near-black `oklch(0.135 0.008 70)` with radial lift, gold dust, grain 0.08, vignette.
