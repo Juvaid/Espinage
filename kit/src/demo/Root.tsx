@@ -4,6 +4,7 @@ import {DemoComposition} from './DemoComposition';
 import {ShapeMorphDemo, TogglePillsDemo} from './MographDemo';
 import {ProShowcase, SEG} from './ProShowcase';
 import {IconSheet} from './IconSheet';
+import {SHADER_SEG, ShaderGrid, ShaderTour} from './ShaderDemo';
 import {
   CompAliAbdaal,
   CompAppleKeynote,
@@ -32,6 +33,11 @@ export const Root: React.FC = () => {
     <>
       <Composition id="Icons-Sheet" component={IconSheet} durationInFrames={1} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d', weight: 'duotone' as const}} />
       {/* production components, per brand theme: the audit and preview reel */}
+      <Composition id="Shaders-Dhunna54D" component={ShaderTour} durationInFrames={SHADER_SEG * 6} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
+      <Composition id="Shaders-DhunnaGold" component={ShaderTour} durationInFrames={SHADER_SEG * 6} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna'}} />
+      <Composition id="Shaders-CrownCrest" component={ShaderTour} durationInFrames={SHADER_SEG * 6} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />
+      <Composition id="Shaders-Grid-Dhunna54D" component={ShaderGrid} durationInFrames={240} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
+      <Composition id="Shaders-Grid-CrownCrest" component={ShaderGrid} durationInFrames={240} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />
       <Composition id="Pro-Showcase-Dhunna54D" component={ProShowcase} durationInFrames={SEG * 15} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
       <Composition id="Pro-Showcase-DhunnaGold" component={ProShowcase} durationInFrames={SEG * 15} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna'}} />
       <Composition id="Pro-Showcase-CrownCrest" component={ProShowcase} durationInFrames={SEG * 15} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />

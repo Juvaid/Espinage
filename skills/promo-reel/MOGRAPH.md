@@ -22,6 +22,7 @@ For stills, run `node scripts/stills.mjs out/check <Comp>:<frame> …` (3–4 fr
 | **Orbit** | "Everything around it": amenities or places around the site | `Orbit` with `KitIcon` chips | Ring opens, 3–6 chips circle with depth scale |
 | **Lens** | A detail worth seeing in a photo | `Lens` | Loupe glides once, magnified inside |
 | **Card accents** | The card or button that matters this beat | `BorderBeam`, `ShineSweep`, `Spotlight` | One lap, one sweep, once |
+| **Shader backdrop** | The ground of a scene, instead of a flat backdrop | `ShaderBackdrop` (`mesh`, `silk`, `metal`, `aurora`, `rays`, `contour`) | Slow, frame-driven, brand palette. One kind per section, a new `seed` per scene, `energy` 0.3–0.6 under content. Pick by meaning: contour for land and location, rays for reveals, metal behind 3D type |
 | **Background line art** | Behind "vision" or "location" lines | `WireEye`, `WirePin`, `ArchGrid` | Low opacity, behind the hero, never on it |
 | **3D coins** | Money, investing, returns | `CoinRain` | Only when money is spoken |
 | **Logo reveal** | The end mark | `LogoReveal` (`mask` metal or `image` as is) | Metal fills, one sheen |

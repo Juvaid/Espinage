@@ -74,6 +74,25 @@ Status: **prod** = shipped in a film; **new** = built for the kit and checked fr
 | `Spotlight` | Soft cone sweeps once across a card or word | `at, dur` | 14 | new |
 | `Post` / `StudioEnv` | R3F post (bokeh depth of field + gentle bloom) and studio reflections | `focus, aperture, maxblur, bloom` | — | prod (OneTake) |
 
+## Shader backdrops
+
+`ShaderBackdrop` is a full-frame WebGL2 fragment shader, frame-driven and coloured from the theme's 3D palette. It replaces `Backdrop` for a scene. Its props are `kind, energy (0..1, default 0.5), speed, seed, res, opacity, colors`.
+
+Demos:
+- `Shaders-Dhunna54D`, `-DhunnaGold`, `-CrownCrest`: each kind for 90 frames behind a heading and a card.
+- `Shaders-Grid-*`: all six side by side.
+
+| kind | Look | Use behind | Status |
+|---|---|---|---|
+| `mesh` | Four soft pools of light drifting | Cards and headings; the default | new |
+| `silk` | Broad satin folds with a soft sheen | Interiors, "luxury" lines | new |
+| `metal` | Liquid chrome in the brand metal ramp; the top third is kept calm for headings | 3D type, logo, hooks (the loudest one; energy ≤ 0.5) | new |
+| `aurora` | Broken curtains of light | Openers and hooks | new |
+| `rays` | Shafts of light falling from above | Reveals, the brand name | new |
+| `contour` | Drifting topographic lines (full resolution) | Location, map and land beats | new |
+
+Use one kind per film section, with a different `seed` per scene so the pattern doesn't repeat. Keep `energy` at 0.3–0.6 under content. No grain: the only noise is a ±0.5/255 dither against banding. Renders need the ANGLE GL renderer, which `remotion.config.ts` sets.
+
 ## Rules agents must keep
 
 - One effect per beat, on the element that matters. Icons only where they mean something, never spammed.

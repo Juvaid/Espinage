@@ -17,3 +17,4 @@ export * from '../icons/KitIcon';
 export * from './Effects';
 export * from '../components/graphics/TogglePills';
 export * from '../components/svg/ShapeMorph';
+export * from './Shaders';

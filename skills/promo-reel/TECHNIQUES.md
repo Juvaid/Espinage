@@ -123,3 +123,13 @@ All from `54D src/investor/GCards.tsx`, on one shared `Card` face:
 - After any async load (textures, GLTF), call `advance(performance.now())` before `continueRender`, or frames render empty. Release the frame only after the textured object has drawn.
 - `ExtrudeGeometry` UVs on caps are raw shape units; scale texture `repeat` to match.
 - Negative scale (mirrors) is handled by three; keep materials front-sided.
+
+## Shader backdrops (GLSL in Remotion)
+
+- **Frame-driven:** time is `frame / fps`, so every render matches. Draw in `useLayoutEffect` on a WebGL2 canvas with `preserveDrawingBuffer: true`. Headless renders need ANGLE (`Config.setChromiumOpenGlRenderer('angle')`).
+- **Linear light:** mix colours in linear space (`pow(c, 2.2)`) and convert back at the end. Brightness multipliers act in linear light, where ×0.45 shows as about 70% on screen. To quiet a loud look, scale it by 0.05–0.25 there. Don't blend it towards the background colour, because that washes chrome out to grey.
+- **Smooth looks need low frequency:** satin and chrome come from sine bands warped by 1–3 octaves of noise. Five-octave fBm with a tiny finite-difference step reads as grain. Use an epsilon of about 0.01 in a box roughly 1 unit wide.
+- **Line looks (contour):** render at full resolution and size the line with `fwidth`. The distance to the nearest line is `min(fract(k), 1 - fract(k))`; getting this test backwards lights the whole field and darkens the lines.
+- **Under content:** keep the top third calmer where headings sit, keep energy at 0.3–0.6, and add a ±0.5/255 dither against banding after h264 (that's not grain).
+- **GLSL gotchas:** `patch`, `sample` and `input` are reserved words. Compile errors surface in the render log as `ShaderBackdrop(kind): ERROR …`.
+- **Check behind real content,** in a full frame with a heading and a card, not only in a grid of swatches. A look that's beautiful on its own can drown the card.
