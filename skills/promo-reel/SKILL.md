@@ -1,0 +1,73 @@
+---
+name: promo-reel
+description: Art-direct and build a 9:16 promo reel (real-estate / brand Instagram reel or ad) in Remotion. Use for a new reel or ad, re-cutting or polishing a Dhunna Infra or Crown Crest film, a new brand's visual direction, storyboards, scoring scenes, 3D type / map / depth-photo shots, or briefing ChatGPT/Codex for images. Includes the taste rules (TASTE.md) and a mandatory render-look-critique-fix loop.
+---
+
+# Promo reel
+
+A reel here is a 20–50 s vertical film. It has:
+- a Hinglish voiceover;
+- headings and captions that land on the spoken word;
+- the client's real footage plus ChatGPT concept stills;
+- 3D shots in Three.js;
+- mastered sound.
+
+Every film is built in Remotion, one project per brand, re-skinned per brand.
+
+Read the brand file before touching design:
+- Dhunna Infra → [`brands/dhunna-infra.md`](brands/dhunna-infra.md)
+- Crown Crest → [`brands/crown-crest.md`](brands/crown-crest.md)
+- Any other brand → [`NEW-BRAND.md`](NEW-BRAND.md) first, then write its `brands/<brand>.md`.
+
+**Read [`TASTE.md`](TASTE.md) before designing anything.** It holds the user's own corrections, what reads as slop, and the render → look → critique → fix loop. No visual is done until you have looked at it rendered.
+
+Reach for these when a branch needs them:
+- [`ENGINE.md`](ENGINE.md): projects, components, scripts, render and delivery gotchas.
+- [`TECHNIQUES.md`](TECHNIQUES.md): recipes for 3D type and chrome, depth-photo camera moves, text behind objects, map → 3D match cuts, procedural 3D props, card layouts.
+- [`SOURCING.md`](SOURCING.md): briefing ChatGPT/Codex for stills and angles, voiceover (the user records it), footage grading, OpenStreetMap data.
+- [`MOTION.md`](MOTION.md): making motion feel premium: 60 fps and motion blur, easing and springs, overlap and follow-through, depth of field and focus pulls, bloom, GSAP.
+- [`QUALITY.md`](QUALITY.md): the per-frame checklist.
+
+## Steps
+
+1. **Inventory.** List every asset: VO, footage (duration, rotation, HDR), stills (ChatGPT sets included), renders/PDFs, logo, references. Contact-sheet every clip. Done when each asset has a one-line "shows / usable for" note and a "wide or tight" call.
+2. **Script + timing.** Align every word of the VO to the audio (`scripts/align.py`). Done when every word has a measured start and the script is listed for the user to confirm.
+3. **Storyboard before building.** One beat per VO line, each with what is on screen, the camera move, the text and the layout (vary it, TASTE.md §3).
+   - Render the board as a sheet with real frames (`scripts/storyboard.py`) and show it.
+   - For missing angles or assets, brief ChatGPT (SOURCING.md) with only the project and its references.
+   - Done when every beat has a real asset and the user has seen the board.
+4. **Build** on the brand project. Before each scene write its design read (TASTE.md §1).
+   - Keep the Studio preview running (`.claude/launch.json` in `/Volumes/disk 2`) so the user can steer live.
+   - They often send notes with screenshots while you work; fold each one in before moving on.
+5. **Check every scene as you go** (TASTE.md §4): stills at its beats, then a contact sheet.
+   - Score finished cuts per scene with `score_video.py`: 8/10 per scene passes, 10 is the goal.
+   - The scorer is only a guide. It penalises tidy consistency ("repeat") and bright paper ("expo"), and the user's eye wins.
+   - Done when every item passes on rendered pixels and the stills are shown.
+6. **Deliver.**
+   - Full render (retry loop, concurrency 2), loudness to −14 LUFS, copy into the brand's `out/current`.
+   - Name every master `<brand>-<project>_<film>_<audience>_<ratio>_<voice>_v<NN>_<YYYY-MM-DD>.mp4`, all lower case with hyphens inside a field and underscores between fields. Example: `dhunna-54d_o3-offices_companies_9x16_puck_v04_2026-10-17.mp4`. Use the same name locally (`out/current`) and on Drive.
+   - Upload to the brand's Drive folder, with replaced cuts moved to `_replaced/` under their scheme name.
+   - Add the files to the Drive index sheet ("00 Index · every creative" in Dhunna Ad Creatives) so they can be found by film, audience, type, status or date.
+   - Update the film index (`docs/FILMS.md`) and send the Drive folder link.
+   - Done when the user has the link and the index shows the real count of current films.
+
+## Design rules (all brands)
+
+- **One text at a time.** A heading, a 3D label or a type beat carries the line. A caption panel shows only where nothing else says it, so two texts never say the same words.
+- **Headings** sit in one fixed slot, in sentence case. Each pairs a light 300 word with a display 640 accent word in the brand metal (bevel, one sheen pass, deep soft glow in the brand's hue).
+- **Cards, not full-bleed**, for stills and clips. They share one card face (hairline edge, top-edge highlight, concept label), and the layout changes per beat.
+- **Wide shots.** Show the whole building with sky and road around it. If the only shot of the hero building is tight, fisheye or cropped, get a ChatGPT angle or a reshoot instead.
+- **Type-only beats live in 3D space**: extruded lettering, depth, floating elements.
+- **Text behind the subject wherever the scene allows.** When a shot has a clear foreground subject (statue, tower, person, car, tree) against open background, set the heading's hero word behind it using a depth cut-out (TECHNIQUES.md). Use it at least once per film where such a shot exists.
+- **Reveal on the word.** A brand, place or product appears on its spoken name.
+- **Stage take** (TECHNIQUES.md) when the user asks for a single take or no cuts: locked camera, elements build on and off, hand off and match-transform inside the frame. Its terms (stage, anchor, build on/off, hand-off, match transform, object wipe, diorama, beat stack) are the shared vocabulary for storyboards.
+- **Motion:**
+  - One steady camera move per shot (depth push, slide, orbit), and clean slides between cards.
+  - Match cuts and short dissolves between worlds (map → 3D).
+  - Expo-out or in-out easing; a landing overshoot only on 3D objects.
+- **Sound:** VO on top, music ducked with its lift on the reveal. One sound per kind of event: pin = blip, card = swish, heading = tick, reveal = low boom, button = snap.
+- **Truth:**
+  - Use only facts the client or the assets confirm: numbers, phone numbers, buildings, landmarks.
+  - Label concepts ("Concept visualisation").
+  - Draw maps from real OSM data, with only real neighbours.
+  - Flag guesses for confirmation.
