@@ -1,0 +1,33 @@
+{
+  "name": "reel-components-kit",
+  "version": "2.0.0",
+  "description": "Production Remotion components for brand reels (Dhunna Infra, Crown Crest): themed, frame-driven, agent-ready. See CATALOG.md.",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "studio": "remotion studio src/demo/Root.tsx",
+    "typecheck": "tsc --noEmit",
+    "stills": "node scripts/stills.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "remotion": "^4.0.0",
+    "@remotion/three": "^4.0.0",
+    "three": ">=0.170.0",
+    "@react-three/fiber": "^9.0.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.530",
+    "@types/react": "^19.3.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "remotion": "^4.0.530",
+    "typescript": "^5.0.0",
+    "@remotion/three": "4.0.530",
+    "three": "0.186.1",
+    "@react-three/fiber": "9.8.1",
+    "@types/three": "0.186.0"
+  }
+}

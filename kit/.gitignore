@@ -1,0 +1,11 @@
+node_modules
+out/
+# local symlinks into client projects (not redistributed)
+public/footage
+public/illustrations
+public/library
+public/maps
+public/models
+public/stills
+.DS_Store
+public/audio

@@ -12,6 +12,13 @@ Private skills for Claude Code.
   - sourcing (ChatGPT/Codex stills, Gemini voices);
   - delivery and naming.
 
+## Kit
+
+`kit/` is the reel components kit (Remotion), the component library the promo-reel skill builds with. Start with `kit/CATALOG.md`.
+- `kit/AUDIT.md` covers what was refined and what's legacy.
+- `kit/ICONS-AND-EFFECTS.md` lists icon sets and effects to port.
+- Music beds, voiceovers and footage aren't committed: their licences are unknown and they're client material. They live in the local projects on disk 2.
+
 ## Install
 
 Copy or symlink a skill into `~/.claude/skills/`:

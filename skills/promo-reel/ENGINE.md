@@ -2,7 +2,7 @@
 
 Remotion 4.0.530 + React Three Fiber (`@remotion/three`, `@remotion/gsap`), 1080×1920 @ 30 fps.
 
-**Shared component library:** `/Volumes/disk 2/reel-components-kit`. Brand-themed motion graphics, cards, captions, SVG and 3D elements, a JSON scene manifest (`ReelSceneRenderer`), and brand fonts. Index in MOGRAPH.md.
+**Shared component library:** `/Volumes/disk 2/reel-components-kit` (v2; also `Espinage/kit`). The front door is `src/pro`, which holds the production components lifted from delivered films and themed with `KitThemeProvider`. Its CATALOG.md is the index; AUDIT.md marks the legacy first pass (`legacy.*`) as not for client films. `node_modules` is a symlink to `dhunnainfra-reel3`; `public/brand`, `sfx` and `audio` are real files; footage, stills and maps are symlinks into client projects, so write through them carefully. Summary in MOGRAPH.md.
 
 **One project per brand; every film for that brand lives in it.** Studio `<Folder>`s:
 - Current: the films that count;

@@ -20,7 +20,7 @@ Reach for these when a branch needs them:
 - [`STYLES.md`](STYLES.md): the reel styles, when to use each, how to choose one base style plus at most two guest elements, and what each must get right.
 - [`FOOTAGE.md`](FOOTAGE.md): real footage and presenters: prep (rotation, HDR, stabilised proxies, grading), cutting on the word and the beat, tracked tags, road highlights on drone shots, photo and checklist cards over footage.
 - [`TRANSITIONS.md`](TRANSITIONS.md): the transition catalogue (cut, J/L, whip, push, slide, match cut, hand-off, morph, object wipe, mask reveal, light leak), with lengths and when each fits.
-- [`MOGRAPH.md`](MOGRAPH.md): motion-graphics elements from the shared `reel-components-kit` (toggle pills, checklist, counter, dimension bar, shape morph, route and pin, deck, triptych, floor highlight, coins, logo reveal), themed per brand.
+- [`MOGRAPH.md`](MOGRAPH.md): motion-graphics elements from the shared `reel-components-kit` (toggle pills, checklist, number ticker, shape morph, pins, deck/carousel/floors, orbit, lens, card accents, wireframe background art, coins, logo reveal, Phosphor icons), themed per brand. The kit's CATALOG.md is the component index.
 - [`EDIT.md`](EDIT.md): the edit as an ad: brief and fact sheet, script word budget and beat structure, hook patterns, pacing, safe zones, sound levels, deliverables, and how to handle notes and renders.
 - [`ENGINE.md`](ENGINE.md): projects, components, scripts, render and delivery gotchas.
 - [`TECHNIQUES.md`](TECHNIQUES.md): recipes for 3D type and chrome, depth-photo camera moves, text behind objects, map → 3D match cuts, procedural 3D props, card layouts.
