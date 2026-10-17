@@ -43,4 +43,5 @@ Real-estate developer, Sarabha Nagar, Ludhiana (Project 59-D commercial, Gurmeet
 - 59-D asset library (renders, materials, plans, `catalog.json`): `/Volumes/disk 2/dhunnainfra-assets/project-59D/` → `scripts/sync-library.sh`
 - Drone masters: `/Volumes/disk 2/Downloads/DJI_*` (most are vertical with a rotation flag).
 - Reference style: Makaan Solutions reels (kinetic type + 3D clay icons + B&W drone with coloured road).
+- **Open question:** 54D's Punjab RERA registration number (Indian property ads for registered projects must show it). Ask the client; never invent it.
 - Spelling: "Dhunna", "Sarabha", "mein", "facade" (no cedilla on screen).

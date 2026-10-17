@@ -1,6 +1,6 @@
 ---
 name: promo-reel
-description: Art-direct and build a 9:16 promo reel (real-estate / brand Instagram reel or ad) in Remotion. Use for a new reel or ad, re-cutting or polishing a Dhunna Infra or Crown Crest film, a new brand's visual direction, storyboards, scoring scenes, 3D type / map / depth-photo shots, or briefing ChatGPT/Codex for images. Includes the taste rules (TASTE.md) and a mandatory render-look-critique-fix loop.
+description: Art-direct and build a 9:16 promo reel (real-estate / brand Instagram reel or ad) in Remotion. Use for a new reel or ad, writing ad scripts and hooks, re-cutting or polishing a Dhunna Infra or Crown Crest film, a new brand's visual direction, storyboards, scoring scenes, 3D type / map / depth-photo shots, or briefing ChatGPT/Codex for images. Includes the taste rules (TASTE.md) and a mandatory render-look-critique-fix loop.
 ---
 
 # Promo reel
@@ -22,6 +22,7 @@ Read the brand file before touching design:
 **Read [`TASTE.md`](TASTE.md) before designing anything.** It holds the user's own corrections, what reads as slop, and the render → look → critique → fix loop. No visual is done until you have looked at it rendered.
 
 Reach for these when a branch needs them:
+- [`EDIT.md`](EDIT.md): the edit as an ad: brief and fact sheet, script word budget and beat structure, hook patterns, pacing, safe zones, sound levels, deliverables, and how to handle notes and renders.
 - [`ENGINE.md`](ENGINE.md): projects, components, scripts, render and delivery gotchas.
 - [`TECHNIQUES.md`](TECHNIQUES.md): recipes for 3D type and chrome, depth-photo camera moves, text behind objects, map → 3D match cuts, procedural 3D props, card layouts.
 - [`SOURCING.md`](SOURCING.md): briefing ChatGPT/Codex for stills and angles, voiceover (the user records it), footage grading, OpenStreetMap data.
@@ -30,21 +31,24 @@ Reach for these when a branch needs them:
 
 ## Steps
 
+0. **Start of session:** read the project's `docs/FILMS.md` and the brand file, check whether the Studio preview is running, and list what is current. **Brief:** for a new film, write the brief and fact sheet (EDIT.md §1) and confirm audience, message and ask.
 1. **Inventory.** List every asset: VO, footage (duration, rotation, HDR), stills (ChatGPT sets included), renders/PDFs, logo, references. Contact-sheet every clip. Done when each asset has a one-line "shows / usable for" note and a "wide or tight" call.
-2. **Script + timing.** Align every word of the VO to the audio (`scripts/align.py`). Done when every word has a measured start and the script is listed for the user to confirm.
+2. **Script + timing.** Write or check the script against the word budget and beat structure (EDIT.md §2), with two hook variants. Align every word of the voice to the audio (`scripts/align_vo.py`). Done when every word has a measured start and the user has confirmed the wording.
 3. **Storyboard before building.** One beat per VO line, each with what is on screen, the camera move, the text and the layout (vary it, TASTE.md §3).
    - Render the board as a sheet with real frames (`scripts/storyboard.py`) and show it.
    - For missing angles or assets, brief ChatGPT (SOURCING.md) with only the project and its references.
    - Done when every beat has a real asset and the user has seen the board.
 4. **Build** on the brand project. Before each scene write its design read (TASTE.md §1).
    - Keep the Studio preview running (`.claude/launch.json` in `/Volumes/disk 2`) so the user can steer live.
-   - They often send notes with screenshots while you work; fold each one in before moving on.
+   - They often send notes with screenshots while you work. Scope each note (this frame, this film, every film) and fix it everywhere it applies, in the shared component where one exists (EDIT.md §6).
+   - Record each correction in TASTE.md, the brand file or TECHNIQUES.md in the same turn.
 5. **Check every scene as you go** (TASTE.md §4): stills at its beats, then a contact sheet.
    - Score finished cuts per scene with `score_video.py`: 8/10 per scene passes, 10 is the goal.
    - The scorer is only a guide. It penalises tidy consistency ("repeat") and bright paper ("expo"), and the user's eye wins.
    - Done when every item passes on rendered pixels and the stills are shown.
 6. **Deliver.**
-   - Full render (retry loop, concurrency 2), loudness to −14 LUFS, copy into the brand's `out/current`.
+   - Render masters only now, or when the user asks: batch every fix into one render pass (EDIT.md §6).
+   - Full render (retry loop, concurrency 2), loudness to −14 LUFS, copy into the brand's `out/current`. Add the share copy and any cutdowns the placement needs (EDIT.md §5).
    - Name every master `<brand>-<project>_<film>_<audience>_<ratio>_<voice>_v<NN>_<YYYY-MM-DD>.mp4`, all lower case with hyphens inside a field and underscores between fields. Example: `dhunna-54d_o3-offices_companies_9x16_puck_v04_2026-10-17.mp4`. Use the same name locally (`out/current`) and on Drive.
    - Upload to the brand's Drive folder, with replaced cuts moved to `_replaced/` under their scheme name.
    - Add the files to the Drive index sheet ("00 Index · every creative" in Dhunna Ad Creatives) so they can be found by film, audience, type, status or date.
