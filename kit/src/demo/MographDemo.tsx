@@ -28,7 +28,7 @@ export const ShapeMorphDemo: React.FC<{theme?: string}> = ({theme = 'dhunna_54d'
   const t = getReelTheme(theme);
   return (
     <AbsoluteFill style={{background: t.ground, alignItems: 'center', justifyContent: 'center'}}>
-      <ShapeMorph theme={t} shapes={[MORPH_SHAPES.pin, MORPH_SHAPES.building, MORPH_SHAPES.key, MORPH_SHAPES.house]} at={[0, 40, 80, 120]} size={520} />
+      <ShapeMorph theme={t} shapes={[MORPH_SHAPES.pin, MORPH_SHAPES.building, MORPH_SHAPES.key, MORPH_SHAPES.house]} labels={['Location', 'Building', 'Keys', 'Home']} at={[0, 40, 80, 120]} size={480} />
     </AbsoluteFill>
   );
 };

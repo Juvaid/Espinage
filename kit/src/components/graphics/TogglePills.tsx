@@ -50,19 +50,21 @@ export const TogglePills: React.FC<{
         const stretch = 1 + 0.16 * Math.sin(Math.PI * on);
         const knobX = 8 + (W - K - 16) * on;
         const pulse = ramp(f, it.at + 10, 18, 0, 1, ease.out);
+        const iconInk = `color-mix(in oklch, ${t.accent} ${100 - 100 * on}%, color-mix(in oklch, ${t.ground} 80%, ${t.accent}))`;
         return (
           <div key={i} style={{position: 'absolute', left: 0, top: i * rowGap, display: 'flex', alignItems: 'center', gap: 44, opacity: inn, transform: `translateX(${(1 - inn) * -70}px)`}}>
-            {/* track: dark, filling with the metal behind the knob as it travels */}
-            <div style={{position: 'relative', width: W, height: H, borderRadius: H / 2, background: `linear-gradient(180deg, color-mix(in oklch, ${t.ground} 70%, white 14%), color-mix(in oklch, ${t.ground} 85%, white 4%))`, boxShadow: `inset 0 2px 6px oklch(0 0 0 / 0.55), 0 0 0 2px ${t.hairline}`, overflow: 'hidden'}}>
-              <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: knobX + K / 2 + 8, borderRadius: H / 2, background: `linear-gradient(100deg, ${t.accent} 0%, color-mix(in oklch, ${t.accent} 55%, white) 45%, color-mix(in oklch, ${t.accent} 70%, black) 100%)`, opacity: 0.25 + 0.75 * on}} />
-              <div style={{position: 'absolute', left: knobX, top: (H - K) / 2, width: K, height: K, borderRadius: K / 2, transform: `scaleX(${stretch})`, transformOrigin: on < 0.5 ? '0% 50%' : '100% 50%', background: `radial-gradient(circle at 35% 30%, color-mix(in oklch, ${t.ground} 60%, white 22%), ${t.ground} 75%)`, border: `1.5px solid ${t.hairline}`, boxShadow: `0 6px 16px oklch(0 0 0 / 0.55), 0 0 ${24 * pulse * (1 - pulse) * 4}px ${t.accentGlow}`, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            {/* track: dark when off; on its word the metal fills it from the left, following the knob, until the whole
+                track is lit. The knob turns from a dark ringed button into a light one, and the icon inverts with it. */}
+            <div style={{position: 'relative', width: W, height: H, borderRadius: H / 2, background: `linear-gradient(180deg, color-mix(in oklch, ${t.ground} 72%, white 12%), color-mix(in oklch, ${t.ground} 88%, white 3%))`, boxShadow: `inset 0 2px 6px oklch(0 0 0 / 0.55), 0 0 0 2px ${t.hairline}`, overflow: 'hidden'}}>
+              <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: knobX + K + 8, borderRadius: H / 2, background: `linear-gradient(180deg, color-mix(in oklch, ${t.accent} 55%, white) 0%, ${t.accent} 48%, color-mix(in oklch, ${t.accent} 72%, black) 100%)`, boxShadow: `inset 0 2px 0 oklch(1 0 0 / 0.35), inset 0 -3px 8px oklch(0 0 0 / 0.25)`, opacity: interpolate(on, [0, 0.25], [0, 1], {extrapolateRight: 'clamp'})}} />
+              <div style={{position: 'absolute', left: knobX, top: (H - K) / 2, width: K, height: K, borderRadius: K / 2, transform: `scaleX(${stretch})`, transformOrigin: on < 0.5 ? '0% 50%' : '100% 50%', background: `radial-gradient(circle at 35% 28%, color-mix(in oklch, ${t.ground} ${60 - 60 * on}%, white ${22 + 78 * on}%), color-mix(in oklch, ${t.ground} ${100 - 88 * on}%, ${t.ivory}) 78%)`, border: `1.5px solid color-mix(in oklch, ${t.hairline} ${100 - 100 * on}%, transparent)`, boxShadow: `0 6px 16px oklch(0 0 0 / ${0.55 - 0.15 * on}), 0 0 ${24 * pulse * (1 - pulse) * 4}px ${t.accentGlow}`, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 {it.icon in ICON ? (
                   <svg width={58} height={58} viewBox="0 0 24 24" style={{transform: `rotate(${on * 360}deg) scaleX(${1 / stretch})`}}>
-                    <path d={ICON[it.icon]} fill={t.accent} fillRule="evenodd" />
+                    <path d={ICON[it.icon]} fill={iconInk} fillRule="evenodd" />
                   </svg>
                 ) : (
                   <svg width={58} height={58} viewBox="0 0 256 256" style={{transform: `rotate(${on * 360}deg) scaleX(${1 / stretch})`}}>
-                    {((ICONSET as unknown as Record<string, {fill?: [string, number][]}>)[it.icon]?.fill ?? []).map(([d], k) => <path key={k} d={d} fill={t.accent} />)}
+                    {((ICONSET as unknown as Record<string, {fill?: [string, number][]}>)[it.icon]?.fill ?? []).map(([d], k) => <path key={k} d={d} fill={iconInk} />)}
                   </svg>
                 )}
               </div>

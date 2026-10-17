@@ -59,7 +59,7 @@ const Inner: React.FC = () => {
       </>)}
       {seg(9, <>
         <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
-          <ShapeMorph shapes={[MORPH_SHAPES.pin, MORPH_SHAPES.building, MORPH_SHAPES.house]} at={[0, 40, 80]} size={520} />
+          <ShapeMorph shapes={[MORPH_SHAPES.pin, MORPH_SHAPES.building, MORPH_SHAPES.house]} labels={['Location', 'Building', 'Home']} at={[0, 40, 80]} size={480} />
         </AbsoluteFill>
         <Heading from={0} to={SEG} lines={[[{t: 'Shape', at: 4, role: 'light'}, {t: 'morph', at: 8, role: 'accent'}]]} />
       </>)}

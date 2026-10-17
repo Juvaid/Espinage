@@ -4,7 +4,7 @@ UI-like elements that carry information and lift engagement: a list becomes swit
 
 The library is `/Volumes/disk 2/reel-components-kit` (also in Espinage under `kit/`). **Read its `CATALOG.md` first**: every production component, with its job, props, showcase segment and status. `AUDIT.md` lists the legacy components not to use. `ICONS-AND-EFFECTS.md` covers icon sets and effects to port next. Import from the kit root (`src/pro`), wrap the film in `<KitThemeProvider theme="…">`, and pass the theme as props into R3F canvases.
 
-Preview with `npx remotion studio src/demo/Root.tsx`:
+Preview with `npx remotion studio src/demo/index.ts`:
 - `Pro-Showcase-Dhunna54D`, `-DhunnaGold`, `-CrownCrest`: 15 segments × 90 frames;
 - `Mograph-TogglePills`, `Mograph-ShapeMorph`, `Icons-Sheet`.
 
