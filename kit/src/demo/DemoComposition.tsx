@@ -22,7 +22,7 @@ import {TimedWord} from '../types/captions';
 export const DemoComposition: React.FC = () => {
   // Scene 1: Luxury Metal + 3D Coin + CAD Grid
   const scene1Words: TimedWord[] = [
-    {word: '54-D', startFrame: 10, endFrame: 26, isHero: true},
+    {word: '54D', startFrame: 10, endFrame: 26, isHero: true},
     {word: 'IS', startFrame: 26, endFrame: 35},
     {word: 'SARABHA', startFrame: 35, endFrame: 48},
     {word: 'NAGAR’S', startFrame: 48, endFrame: 62},

@@ -189,7 +189,7 @@ export const CompCadGrid: React.FC = () => (
     <CadDraftingGrid startFrame={5} opacity={0.5} />
     <TagMarker
       config={{
-        text: 'ARCHITECTURAL SCHEMATIC // 54-D',
+        text: 'ARCHITECTURAL SCHEMATIC // 54D',
         startFrame: 10,
         position: {x: 96, y: 220},
       }}

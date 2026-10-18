@@ -24,6 +24,7 @@ Captions are part of the design, not a subtitle layer. The kit has the engine (`
 
 ## Craft
 
+- **Numbers and codes are written as numerals:** 54D, 80 ft, 10 min. The voice says them as words; `writtenForm` (on by default in every word adapter) converts them on screen. Hindi number words convert only before a unit (assi foot → 80 ft).
 - **Hinglish lines start with the Hindi word** (voice rule), and the hero is the noun the voice lands on, not the longest word. Mark heroes (`heroWords`, or `*word*` in `spread`); `autoHero` is only a fallback.
 - **One effect family per film:** don't mix karaoke on one page and a box highlight on the next.
 - **Captions never duplicate on-screen headings** (TASTE.md); when a heading carries the line, drop the caption for that beat.

@@ -108,7 +108,7 @@ const ElementsInner: React.FC = () => {
       </>)}
       {seg(6, <>
         <ShaderBackdrop kind="contour" seed={6} energy={0.4} />
-        <RouteDraw d="M180 1560 C 300 1380, 260 1210, 470 1150 S 760 990, 760 820" at={8} dur={46} end={{text: '54-D, Sarabha Nagar', icon: 'buildings'}} />
+        <RouteDraw d="M180 1560 C 300 1380, 260 1210, 470 1150 S 760 990, 760 820" at={8} dur={46} end={{text: '54D, Sarabha Nagar', icon: 'buildings'}} />
         <Heading from={0} to={SEG} lines={[[{t: 'Route', at: 4, role: 'light'}, {t: 'draw', at: 10, role: 'accent'}]]} />
       </>)}
       {seg(7, <>

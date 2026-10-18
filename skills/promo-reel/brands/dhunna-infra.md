@@ -28,6 +28,7 @@ Shared elements (toggle pills, counters, morphs, cards) take the look from the t
 
 ## 54D films (Oct 2026): the navy direction
 
+- **Spelling:** always **54D** on screen: a numeral, no hyphen, no space. Never "Fifty-Four D" or "54-D". Voice scripts may spell it "Fifty-Four D" so the voice says it right; captions convert it (the kit's `writtenForm`, on by default). Numbers on screen are numerals: 80 ft, 82 ft.
 - **54D** = Sarabha Nagar commercial (showrooms on two floors, corporate offices above, parking below; 80 ft road, 82 ft front).
   - It has no café or terrace.
   - Leave construction footage out.
