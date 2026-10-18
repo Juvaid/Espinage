@@ -1,11 +1,14 @@
 // Fast review stills: one bundle, many frames.  node scripts/stills.mjs <outDir> Comp:frame Comp:frame …
 import {bundle} from '@remotion/bundler';
 import {openBrowser, renderStill, selectComposition} from '@remotion/renderer';
-import {mkdirSync} from 'node:fs';
+import {existsSync, mkdirSync} from 'node:fs';
 const [, , out, ...specs] = process.argv;
 mkdirSync(out, {recursive: true});
 const serveUrl = await bundle({entryPoint: 'src/demo/index.ts'});
-const browser = await openBrowser('chrome', {chromiumOptions: {gl: 'angle'}});
+// Mac: use the Chrome 149 copy (see remotion.config.ts); elsewhere Remotion's default
+const MAC_CHROME = '/Volumes/disk 2/.reel-tools/chrome-headless-shell-149/chrome-headless-shell';
+const browserExecutable = process.platform === 'darwin' && existsSync(MAC_CHROME) ? MAC_CHROME : null;
+const browser = await openBrowser('chrome', {browserExecutable, chromiumOptions: {gl: 'angle'}});
 const comps = {};
 for (const spec of specs) {
   const i = spec.lastIndexOf(':');

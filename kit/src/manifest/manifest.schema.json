@@ -1,0 +1,2019 @@
+{
+ "$id": "wordlord-reel-manifest-v1",
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "properties": {
+  "version": {
+   "default": 1,
+   "type": "number",
+   "const": 1
+  },
+  "title": {
+   "default": "Untitled film",
+   "label": "Title",
+   "group": "Project",
+   "type": "string"
+  },
+  "theme": {
+   "default": "dhunna_54d",
+   "label": "Brand look",
+   "group": "Project",
+   "type": "string",
+   "enum": [
+    "dhunna_54d",
+    "dhunna",
+    "crown_crest"
+   ]
+  },
+  "fps": {
+   "default": 30,
+   "label": "Frame rate",
+   "control": "number",
+   "unit": "fps",
+   "group": "Project",
+   "help": "30 for reels; 60 for smooth motion",
+   "type": "integer",
+   "minimum": 24,
+   "maximum": 60
+  },
+  "width": {
+   "default": 1080,
+   "type": "integer",
+   "minimum": -9007199254740991,
+   "maximum": 9007199254740991
+  },
+  "height": {
+   "default": 1920,
+   "type": "integer",
+   "minimum": -9007199254740991,
+   "maximum": 9007199254740991
+  },
+  "durationInFrames": {
+   "label": "Length (empty = until the last item ends)",
+   "control": "frames",
+   "group": "Project",
+   "type": "integer",
+   "minimum": 1,
+   "maximum": 9007199254740991
+  },
+  "voice": {
+   "label": "Voiceover",
+   "group": "Sound",
+   "type": "object",
+   "properties": {
+    "src": {
+     "type": "string",
+     "label": "Voiceover",
+     "control": "media",
+     "accept": "audio"
+    },
+    "volume": {
+     "default": 1,
+     "label": "Volume",
+     "control": "slider",
+     "step": 0.01,
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "offset": {
+     "default": 6,
+     "label": "Starts at",
+     "control": "frames",
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 9007199254740991
+    },
+    "words": {
+     "default": [],
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "text": {
+        "type": "string"
+       },
+       "start": {
+        "type": "number"
+       },
+       "end": {
+        "type": "number"
+       },
+       "hero": {
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "text",
+       "start",
+       "end"
+      ]
+     }
+    },
+    "script": {
+     "label": "Script",
+     "control": "textarea",
+     "type": "string"
+    }
+   },
+   "required": [
+    "src"
+   ]
+  },
+  "music": {
+   "label": "Music",
+   "group": "Sound",
+   "type": "object",
+   "properties": {
+    "src": {
+     "type": "string",
+     "label": "Music",
+     "control": "media",
+     "accept": "audio"
+    },
+    "volume": {
+     "default": 0.12,
+     "label": "Volume",
+     "control": "slider",
+     "step": 0.01,
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "startAt": {
+     "default": 0,
+     "label": "Start inside the track",
+     "control": "number",
+     "step": 0.1,
+     "unit": "s",
+     "type": "number",
+     "minimum": 0
+    }
+   },
+   "required": [
+    "src"
+   ]
+  },
+  "tracks": {
+   "default": [],
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "name": {
+      "default": "Track",
+      "label": "Track name",
+      "type": "string"
+     },
+     "hidden": {
+      "default": false,
+      "label": "Hidden",
+      "type": "boolean"
+     },
+     "muted": {
+      "default": false,
+      "label": "Muted",
+      "type": "boolean"
+     },
+     "items": {
+      "default": [],
+      "type": "array",
+      "items": {
+       "oneOf": [
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "background"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "mode": {
+             "default": "shader",
+             "label": "Type",
+             "group": "Style",
+             "type": "string",
+             "enum": [
+              "shader",
+              "solid"
+             ]
+            },
+            "shader": {
+             "default": "mesh",
+             "label": "Look",
+             "group": "Style",
+             "help": "mesh · silk · metal · aurora · rays · contour",
+             "type": "string",
+             "enum": [
+              "mesh",
+              "silk",
+              "metal",
+              "aurora",
+              "rays",
+              "contour"
+             ]
+            },
+            "energy": {
+             "default": 0.5,
+             "label": "Energy",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Style",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1
+            },
+            "speed": {
+             "default": 1,
+             "label": "Speed",
+             "control": "slider",
+             "step": 0.1,
+             "group": "Style",
+             "type": "number",
+             "minimum": 0.2,
+             "maximum": 3
+            },
+            "seed": {
+             "default": 0,
+             "label": "Variation",
+             "control": "slider",
+             "step": 1,
+             "group": "Style",
+             "type": "integer",
+             "minimum": 0,
+             "maximum": 99
+            },
+            "color": {
+             "default": "ground",
+             "label": "Colour (solid)",
+             "control": "color",
+             "group": "Style",
+             "type": "string"
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "image"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "src": {
+             "default": "samples/r-golden.jpg",
+             "label": "Image",
+             "control": "media",
+             "accept": "image",
+             "group": "Content",
+             "type": "string"
+            },
+            "fit": {
+             "default": "cover",
+             "label": "Fit",
+             "group": "Layout",
+             "type": "string",
+             "enum": [
+              "cover",
+              "contain"
+             ]
+            },
+            "zoomFrom": {
+             "default": 1.04,
+             "label": "Zoom start",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Motion",
+             "type": "number",
+             "minimum": 1,
+             "maximum": 1.6
+            },
+            "zoomTo": {
+             "default": 1.12,
+             "label": "Zoom end",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Motion",
+             "type": "number",
+             "minimum": 1,
+             "maximum": 1.6
+            },
+            "driftX": {
+             "default": 0,
+             "label": "Drift sideways",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Motion",
+             "type": "number",
+             "minimum": -0.15,
+             "maximum": 0.15
+            },
+            "focusX": {
+             "default": 50,
+             "label": "Focus point X",
+             "control": "slider",
+             "step": 1,
+             "unit": "%",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 100
+            },
+            "focusY": {
+             "default": 50,
+             "label": "Focus point Y",
+             "control": "slider",
+             "step": 1,
+             "unit": "%",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 100
+            },
+            "grade": {
+             "default": true,
+             "label": "Brand grade",
+             "group": "Look",
+             "type": "boolean"
+            },
+            "gradeTone": {
+             "default": 0.3,
+             "label": "Grade tone",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Look",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1
+            },
+            "vignette": {
+             "default": 0.35,
+             "label": "Vignette",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Look",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "card"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "src": {
+             "default": "samples/s-double-height.jpg",
+             "label": "Image",
+             "control": "media",
+             "accept": "image",
+             "group": "Content",
+             "type": "string"
+            },
+            "label": {
+             "default": "Concept visualisation",
+             "label": "Label",
+             "group": "Content",
+             "type": "string"
+            },
+            "width": {
+             "default": 760,
+             "label": "Width",
+             "control": "slider",
+             "step": 10,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 300,
+             "maximum": 1040
+            },
+            "height": {
+             "default": 900,
+             "label": "Height",
+             "control": "slider",
+             "step": 10,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 300,
+             "maximum": 1600
+            },
+            "x": {
+             "default": 540,
+             "label": "Centre X",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1080
+            },
+            "y": {
+             "default": 520,
+             "label": "Top",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            },
+            "enterFrom": {
+             "default": "bottom",
+             "label": "Enters from",
+             "group": "Motion",
+             "type": "string",
+             "enum": [
+              "bottom",
+              "right",
+              "left"
+             ]
+            },
+            "tilt": {
+             "default": -2,
+             "label": "Tilt",
+             "control": "slider",
+             "step": 0.5,
+             "unit": "°",
+             "group": "Layout",
+             "type": "number",
+             "minimum": -8,
+             "maximum": 8
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "video"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "src": {
+             "default": "",
+             "label": "Video",
+             "control": "media",
+             "accept": "video",
+             "group": "Content",
+             "type": "string"
+            },
+            "fit": {
+             "default": "cover",
+             "label": "Fit",
+             "group": "Layout",
+             "type": "string",
+             "enum": [
+              "cover",
+              "contain"
+             ]
+            },
+            "startAt": {
+             "default": 0,
+             "label": "Start inside the clip",
+             "control": "number",
+             "step": 0.1,
+             "unit": "s",
+             "group": "Timing",
+             "type": "number",
+             "minimum": 0
+            },
+            "volume": {
+             "default": 0,
+             "label": "Volume",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Sound",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1
+            },
+            "grade": {
+             "default": true,
+             "label": "Brand grade",
+             "group": "Look",
+             "type": "boolean"
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "title"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "text": {
+             "default": "Your next address",
+             "label": "Text",
+             "control": "textarea",
+             "group": "Content",
+             "type": "string"
+            },
+            "effect": {
+             "default": "slit",
+             "label": "Effect",
+             "group": "Style",
+             "help": "rotate: words separated by | take turns in one slot",
+             "type": "string",
+             "enum": [
+              "plain",
+              "shimmer",
+              "slit",
+              "blurIn",
+              "rotate"
+             ]
+            },
+            "size": {
+             "default": 110,
+             "label": "Size",
+             "control": "slider",
+             "step": 2,
+             "unit": "px",
+             "group": "Style",
+             "type": "number",
+             "minimum": 24,
+             "maximum": 240
+            },
+            "weight": {
+             "default": 640,
+             "label": "Weight",
+             "control": "slider",
+             "step": 20,
+             "group": "Style",
+             "type": "number",
+             "minimum": 200,
+             "maximum": 900
+            },
+            "color": {
+             "default": "ivory",
+             "label": "Colour",
+             "control": "color",
+             "group": "Style",
+             "type": "string"
+            },
+            "y": {
+             "default": 520,
+             "label": "Vertical position",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            },
+            "align": {
+             "default": "center",
+             "label": "Align",
+             "group": "Layout",
+             "type": "string",
+             "enum": [
+              "center",
+              "left"
+             ]
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "captions"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "source": {
+             "default": "voice",
+             "label": "Words from",
+             "group": "Content",
+             "help": "voice: the project voiceover’s word timings (falls back to the text until there is a voice) · text: spread the text below evenly",
+             "type": "string",
+             "enum": [
+              "voice",
+              "text"
+             ]
+            },
+            "text": {
+             "default": "Toh suniye, *54D* Sarabha Nagar.",
+             "label": "Text (when “Words from” is text)",
+             "control": "textarea",
+             "group": "Content",
+             "help": "*word* marks a hero word",
+             "type": "string"
+            },
+            "wordSeconds": {
+             "default": 0.36,
+             "label": "Seconds per word (text)",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Timing",
+             "type": "number",
+             "minimum": 0.15,
+             "maximum": 1.2
+            },
+            "preset": {
+             "default": "dhunna-steel",
+             "label": "Preset",
+             "group": "Style",
+             "type": "string",
+             "enum": [
+              "dhunna-steel",
+              "dhunna-gold",
+              "crown-crest",
+              "editorial-italic",
+              "magazine",
+              "didone-luxe",
+              "garamond-soft",
+              "bold-pop",
+              "karaoke-fill",
+              "box-highlight",
+              "word-punch",
+              "poster-stack",
+              "clean-subtitle",
+              "pill-lines",
+              "quiet-lowercase",
+              "hand-note",
+              "wide-tech",
+              "grotesk-glow",
+              "hindi-clean",
+              "punjabi-bold"
+             ]
+            },
+            "overrides": {
+             "default": {},
+             "label": "Adjust preset",
+             "group": "Style",
+             "advanced": true,
+             "type": "object",
+             "properties": {
+              "pair": {
+               "type": "string",
+               "enum": [
+                "geist-steel",
+                "archivo-expanded",
+                "crown-italic",
+                "editorial-italic",
+                "magazine-fraunces",
+                "didone-luxe",
+                "garamond-soft",
+                "bold-pop",
+                "insta-geometric",
+                "condensed-impact",
+                "poster-bebas",
+                "grotesk-modern",
+                "wide-tech",
+                "hand-note",
+                "quiet-inter",
+                "hindi-native",
+                "punjabi-native"
+               ],
+               "description": "font pair (src/type/pairs.ts)"
+              },
+              "layout": {
+               "type": "string",
+               "enum": [
+                "line",
+                "stack",
+                "word"
+               ],
+               "description": "line: words flow on 1–2 lines · stack: lead / big hero / tail · word: one word at a time"
+              },
+              "maxWords": {
+               "type": "integer",
+               "minimum": 1,
+               "maximum": 12,
+               "description": "words per page"
+              },
+              "pauseBreak": {
+               "type": "number",
+               "minimum": 0.1,
+               "maximum": 2,
+               "description": "a gap longer than this (s) starts a new page"
+              },
+              "leadCase": {
+               "type": "string",
+               "enum": [
+                "none",
+                "upper",
+                "lower"
+               ]
+              },
+              "heroCase": {
+               "type": "string",
+               "enum": [
+                "none",
+                "upper",
+                "lower"
+               ]
+              },
+              "size": {
+               "type": "number",
+               "minimum": 24,
+               "maximum": 200,
+               "description": "lead size, px at 1080 wide"
+              },
+              "heroScale": {
+               "type": "number",
+               "minimum": 1,
+               "maximum": 3.5
+              },
+              "leadWeight": {
+               "type": "number",
+               "minimum": 100,
+               "maximum": 900
+              },
+              "heroWeight": {
+               "type": "number",
+               "minimum": 100,
+               "maximum": 900
+              },
+              "y": {
+               "type": "number",
+               "minimum": 0.1,
+               "maximum": 0.92,
+               "description": "vertical centre of the caption, 0 = top"
+              },
+              "width": {
+               "type": "number",
+               "minimum": 400,
+               "maximum": 1020
+              },
+              "align": {
+               "type": "string",
+               "enum": [
+                "center",
+                "left"
+               ]
+              },
+              "color": {
+               "type": "string"
+              },
+              "upcoming": {
+               "type": "string",
+               "enum": [
+                "hidden",
+                "dim",
+                "shown"
+               ],
+               "description": "words not yet spoken"
+              },
+              "upcomingColor": {
+               "type": "string"
+              },
+              "enter": {
+               "type": "string",
+               "enum": [
+                "none",
+                "pop",
+                "rise",
+                "blur",
+                "slit",
+                "drop"
+               ],
+               "description": "how each word arrives"
+              },
+              "active": {
+               "type": "string",
+               "enum": [
+                "none",
+                "color",
+                "pill",
+                "box",
+                "underline",
+                "scale",
+                "glow",
+                "karaoke"
+               ],
+               "description": "the word being spoken"
+              },
+              "activeColor": {
+               "type": "string"
+              },
+              "hero": {
+               "type": "string",
+               "enum": [
+                "none",
+                "color",
+                "metal",
+                "shimmer",
+                "box",
+                "scale"
+               ],
+               "description": "the hero word"
+              },
+              "heroColor": {
+               "type": "string"
+              },
+              "autoHero": {
+               "type": "boolean",
+               "description": "no hero marked? use the longest word of each page"
+              },
+              "stroke": {
+               "type": "number",
+               "minimum": 0,
+               "maximum": 14
+              },
+              "strokeColor": {
+               "type": "string"
+              },
+              "shadow": {
+               "type": "string",
+               "enum": [
+                "none",
+                "soft",
+                "hard",
+                "glow"
+               ]
+              },
+              "panel": {
+               "type": "string",
+               "enum": [
+                "none",
+                "box",
+                "line-pill"
+               ]
+              },
+              "panelColor": {
+               "type": "string"
+              },
+              "panelOpacity": {
+               "type": "number",
+               "minimum": 0,
+               "maximum": 1
+              },
+              "exit": {
+               "type": "string",
+               "enum": [
+                "cut",
+                "fade",
+                "rise"
+               ]
+              }
+             }
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "stats"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "items": {
+             "default": [
+              {
+               "value": "82",
+               "unit": "ft",
+               "label": "Front"
+              },
+              {
+               "value": "80",
+               "unit": "ft",
+               "label": "Road"
+              }
+             ],
+             "label": "Figures (from the brief only)",
+             "group": "Content",
+             "minItems": 1,
+             "maxItems": 4,
+             "type": "array",
+             "items": {
+              "type": "object",
+              "properties": {
+               "value": {
+                "type": "string"
+               },
+               "unit": {
+                "type": "string"
+               },
+               "label": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "value",
+               "label"
+              ]
+             }
+            },
+            "stagger": {
+             "default": 18,
+             "label": "Gap between figures",
+             "control": "frames",
+             "group": "Timing",
+             "type": "integer",
+             "minimum": 0,
+             "maximum": 60
+            },
+            "x": {
+             "default": 90,
+             "label": "Left",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1080
+            },
+            "y": {
+             "default": 760,
+             "label": "Top",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "callout"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "text": {
+             "default": "Double-height showroom",
+             "label": "Label",
+             "group": "Content",
+             "type": "string"
+            },
+            "icon": {
+             "default": "storefront",
+             "label": "Icon",
+             "control": "icon",
+             "group": "Content",
+             "type": "string",
+             "enum": [
+              "buildings",
+              "building-office",
+              "building-apartment",
+              "storefront",
+              "house-line",
+              "house",
+              "door-open",
+              "stairs",
+              "elevator",
+              "garage",
+              "warehouse",
+              "office-chair",
+              "desk",
+              "armchair",
+              "bed",
+              "bathtub",
+              "swimming-pool",
+              "plant",
+              "tree",
+              "park",
+              "map-pin",
+              "map-pin-line",
+              "map-trifold",
+              "navigation-arrow",
+              "compass",
+              "globe-hemisphere-east",
+              "road-horizon",
+              "signpost",
+              "car",
+              "car-profile",
+              "train",
+              "airplane-takeoff",
+              "path",
+              "currency-inr",
+              "coins",
+              "hand-coins",
+              "piggy-bank",
+              "chart-line-up",
+              "trend-up",
+              "chart-bar",
+              "percent",
+              "tag",
+              "receipt",
+              "wallet",
+              "bank",
+              "vault",
+              "shield-check",
+              "lock-key",
+              "key",
+              "security-camera",
+              "seal-check",
+              "certificate",
+              "handshake",
+              "medal",
+              "trophy",
+              "crown",
+              "diamond",
+              "sparkle",
+              "star",
+              "check-circle",
+              "ruler",
+              "frame-corners",
+              "arrows-out",
+              "arrows-out-line-horizontal",
+              "square-half",
+              "blueprint",
+              "compass-tool",
+              "lightning",
+              "drop",
+              "wind",
+              "sun",
+              "wifi-high",
+              "barbell",
+              "coffee",
+              "fork-knife",
+              "shopping-bag",
+              "users-three",
+              "briefcase",
+              "calendar-check",
+              "clock",
+              "phone-call",
+              "whatsapp-logo",
+              "chat-circle-dots",
+              "envelope-simple",
+              "play-circle"
+             ]
+            },
+            "x": {
+             "default": 420,
+             "label": "Point X",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1080
+            },
+            "y": {
+             "default": 1030,
+             "label": "Point Y",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            },
+            "side": {
+             "default": "right",
+             "label": "Label side",
+             "group": "Layout",
+             "type": "string",
+             "enum": [
+              "right",
+              "left"
+             ]
+            },
+            "rise": {
+             "default": -160,
+             "label": "Line rise",
+             "control": "slider",
+             "step": 5,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": -400,
+             "maximum": 400
+            },
+            "length": {
+             "default": 80,
+             "label": "Line length",
+             "control": "slider",
+             "step": 5,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 20,
+             "maximum": 400
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "rings"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "x": {
+             "default": 540,
+             "label": "Centre X",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1080
+            },
+            "y": {
+             "default": 1060,
+             "label": "Centre Y",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            },
+            "rings": {
+             "default": [
+              {
+               "r": 170,
+               "label": "Sarabha Nagar"
+              },
+              {
+               "r": 330,
+               "label": "Ludhiana"
+              }
+             ],
+             "label": "Rings (labels from the brief only)",
+             "group": "Content",
+             "minItems": 1,
+             "maxItems": 4,
+             "type": "array",
+             "items": {
+              "type": "object",
+              "properties": {
+               "r": {
+                "type": "number",
+                "minimum": 40,
+                "maximum": 520
+               },
+               "label": {
+                "type": "string"
+               }
+              },
+              "required": [
+               "r",
+               "label"
+              ]
+             }
+            },
+            "angle": {
+             "default": -35,
+             "label": "Label angle",
+             "control": "slider",
+             "step": 5,
+             "unit": "°",
+             "group": "Layout",
+             "type": "number",
+             "minimum": -180,
+             "maximum": 180
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "route"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "d": {
+             "default": "M180 1560 C 300 1380, 260 1210, 470 1150 S 760 990, 760 820",
+             "label": "Route",
+             "control": "path",
+             "group": "Content",
+             "type": "string"
+            },
+            "endText": {
+             "default": "54D, Sarabha Nagar",
+             "label": "Destination label",
+             "group": "Content",
+             "type": "string"
+            },
+            "icon": {
+             "default": "buildings",
+             "label": "Icon",
+             "control": "icon",
+             "group": "Content",
+             "type": "string",
+             "enum": [
+              "buildings",
+              "building-office",
+              "building-apartment",
+              "storefront",
+              "house-line",
+              "house",
+              "door-open",
+              "stairs",
+              "elevator",
+              "garage",
+              "warehouse",
+              "office-chair",
+              "desk",
+              "armchair",
+              "bed",
+              "bathtub",
+              "swimming-pool",
+              "plant",
+              "tree",
+              "park",
+              "map-pin",
+              "map-pin-line",
+              "map-trifold",
+              "navigation-arrow",
+              "compass",
+              "globe-hemisphere-east",
+              "road-horizon",
+              "signpost",
+              "car",
+              "car-profile",
+              "train",
+              "airplane-takeoff",
+              "path",
+              "currency-inr",
+              "coins",
+              "hand-coins",
+              "piggy-bank",
+              "chart-line-up",
+              "trend-up",
+              "chart-bar",
+              "percent",
+              "tag",
+              "receipt",
+              "wallet",
+              "bank",
+              "vault",
+              "shield-check",
+              "lock-key",
+              "key",
+              "security-camera",
+              "seal-check",
+              "certificate",
+              "handshake",
+              "medal",
+              "trophy",
+              "crown",
+              "diamond",
+              "sparkle",
+              "star",
+              "check-circle",
+              "ruler",
+              "frame-corners",
+              "arrows-out",
+              "arrows-out-line-horizontal",
+              "square-half",
+              "blueprint",
+              "compass-tool",
+              "lightning",
+              "drop",
+              "wind",
+              "sun",
+              "wifi-high",
+              "barbell",
+              "coffee",
+              "fork-knife",
+              "shopping-bag",
+              "users-three",
+              "briefcase",
+              "calendar-check",
+              "clock",
+              "phone-call",
+              "whatsapp-logo",
+              "chat-circle-dots",
+              "envelope-simple",
+              "play-circle"
+             ]
+            },
+            "drawFrames": {
+             "default": 46,
+             "label": "Draw time",
+             "control": "frames",
+             "group": "Timing",
+             "type": "integer",
+             "minimum": 10,
+             "maximum": 150
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "depthReveal"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "src": {
+             "default": "samples/r-golden.jpg",
+             "label": "Image",
+             "control": "media",
+             "accept": "image",
+             "group": "Content",
+             "type": "string"
+            },
+            "depth": {
+             "default": "samples/r-golden-depth.png",
+             "label": "Depth map",
+             "control": "media",
+             "accept": "image",
+             "group": "Content",
+             "type": "string"
+            },
+            "revealFrames": {
+             "default": 44,
+             "label": "Reveal time",
+             "control": "frames",
+             "group": "Timing",
+             "type": "integer",
+             "minimum": 10,
+             "maximum": 150
+            },
+            "width": {
+             "default": 900,
+             "label": "Width",
+             "control": "slider",
+             "step": 10,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 300,
+             "maximum": 1080
+            },
+            "height": {
+             "default": 1180,
+             "label": "Height",
+             "control": "slider",
+             "step": 10,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 300,
+             "maximum": 1920
+            },
+            "left": {
+             "default": 90,
+             "label": "Left",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1080
+            },
+            "top": {
+             "default": 420,
+             "label": "Top",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            },
+            "radius": {
+             "default": 28,
+             "label": "Corner radius",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Style",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 80
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "lightLeak"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "from": {
+             "default": "left",
+             "label": "From",
+             "group": "Style",
+             "type": "string",
+             "enum": [
+              "left",
+              "right"
+             ]
+            },
+            "strength": {
+             "default": 0.55,
+             "label": "Strength",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Style",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "vignette"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "amount": {
+             "default": 0.4,
+             "label": "Amount",
+             "control": "slider",
+             "step": 0.01,
+             "group": "Style",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string",
+           "minLength": 1
+          },
+          "from": {
+           "type": "integer",
+           "minimum": 0,
+           "maximum": 9007199254740991,
+           "label": "Starts at",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "durationInFrames": {
+           "type": "integer",
+           "minimum": 1,
+           "maximum": 9007199254740991,
+           "label": "Length",
+           "control": "frames",
+           "group": "Timing"
+          },
+          "label": {
+           "label": "Name in timeline",
+           "group": "Timing",
+           "type": "string"
+          },
+          "type": {
+           "type": "string",
+           "const": "logo"
+          },
+          "props": {
+           "type": "object",
+           "properties": {
+            "logo": {
+             "default": "",
+             "label": "Logo (empty = brand logo)",
+             "control": "media",
+             "accept": "image",
+             "group": "Content",
+             "type": "string"
+            },
+            "width": {
+             "default": 640,
+             "label": "Width",
+             "control": "slider",
+             "step": 10,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 200,
+             "maximum": 1000
+            },
+            "y": {
+             "default": 860,
+             "label": "Vertical position",
+             "control": "slider",
+             "step": 1,
+             "unit": "px",
+             "group": "Layout",
+             "type": "number",
+             "minimum": 0,
+             "maximum": 1920
+            },
+            "mode": {
+             "default": "brand",
+             "label": "Finish",
+             "group": "Style",
+             "help": "brand: the theme decides · mask: repaint in metal · image: as is",
+             "type": "string",
+             "enum": [
+              "brand",
+              "mask",
+              "image"
+             ]
+            }
+           }
+          }
+         },
+         "required": [
+          "id",
+          "from",
+          "durationInFrames",
+          "type",
+          "props"
+         ]
+        }
+       ]
+      }
+     }
+    },
+    "required": [
+     "id"
+    ]
+   }
+  }
+ }
+}

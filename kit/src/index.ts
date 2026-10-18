@@ -2,6 +2,7 @@
 // See CATALOG.md. The older generic components live under `legacy` (see AUDIT.md for why, and what replaces each).
 export * from './pro';
 export * from './captions';
+export * from './manifest';
 export * from './type';
 export * as legacy from './components';
 export * as legacyPresets from './presets';

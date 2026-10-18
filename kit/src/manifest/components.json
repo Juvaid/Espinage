@@ -1,0 +1,1488 @@
+{
+ "version": 1,
+ "components": [
+  {
+   "type": "background",
+   "label": "Background",
+   "category": "Background",
+   "description": "Animated brand background (shader) or a solid colour",
+   "defaultDuration": 150,
+   "defaults": {
+    "mode": "shader",
+    "shader": "mesh",
+    "energy": 0.5,
+    "speed": 1,
+    "seed": 0,
+    "color": "ground"
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "mode": {
+      "default": "shader",
+      "label": "Type",
+      "group": "Style",
+      "type": "string",
+      "enum": [
+       "shader",
+       "solid"
+      ]
+     },
+     "shader": {
+      "default": "mesh",
+      "label": "Look",
+      "group": "Style",
+      "help": "mesh · silk · metal · aurora · rays · contour",
+      "type": "string",
+      "enum": [
+       "mesh",
+       "silk",
+       "metal",
+       "aurora",
+       "rays",
+       "contour"
+      ]
+     },
+     "energy": {
+      "default": 0.5,
+      "label": "Energy",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "speed": {
+      "default": 1,
+      "label": "Speed",
+      "control": "slider",
+      "step": 0.1,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 3
+     },
+     "seed": {
+      "default": 0,
+      "label": "Variation",
+      "control": "slider",
+      "step": 1,
+      "group": "Style",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 99
+     },
+     "color": {
+      "default": "ground",
+      "label": "Colour (solid)",
+      "control": "color",
+      "group": "Style",
+      "type": "string"
+     }
+    }
+   }
+  },
+  {
+   "type": "image",
+   "label": "Full-frame picture",
+   "category": "Picture",
+   "description": "A photo filling the frame, with zoom, drift, grade and vignette",
+   "defaultDuration": 120,
+   "defaults": {
+    "src": "samples/r-golden.jpg",
+    "fit": "cover",
+    "zoomFrom": 1.04,
+    "zoomTo": 1.12,
+    "driftX": 0,
+    "focusX": 50,
+    "focusY": 50,
+    "grade": true,
+    "gradeTone": 0.3,
+    "vignette": 0.35
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "src": {
+      "default": "samples/r-golden.jpg",
+      "label": "Image",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "fit": {
+      "default": "cover",
+      "label": "Fit",
+      "group": "Layout",
+      "type": "string",
+      "enum": [
+       "cover",
+       "contain"
+      ]
+     },
+     "zoomFrom": {
+      "default": 1.04,
+      "label": "Zoom start",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 1.6
+     },
+     "zoomTo": {
+      "default": 1.12,
+      "label": "Zoom end",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 1.6
+     },
+     "driftX": {
+      "default": 0,
+      "label": "Drift sideways",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": -0.15,
+      "maximum": 0.15
+     },
+     "focusX": {
+      "default": 50,
+      "label": "Focus point X",
+      "control": "slider",
+      "step": 1,
+      "unit": "%",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+     },
+     "focusY": {
+      "default": 50,
+      "label": "Focus point Y",
+      "control": "slider",
+      "step": 1,
+      "unit": "%",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+     },
+     "grade": {
+      "default": true,
+      "label": "Brand grade",
+      "group": "Look",
+      "type": "boolean"
+     },
+     "gradeTone": {
+      "default": 0.3,
+      "label": "Grade tone",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Look",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "vignette": {
+      "default": 0.35,
+      "label": "Vignette",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Look",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "card",
+   "label": "Picture card",
+   "category": "Picture",
+   "description": "A photo on a printed card that lands in the frame",
+   "defaultDuration": 90,
+   "defaults": {
+    "src": "samples/s-double-height.jpg",
+    "label": "Concept visualisation",
+    "width": 760,
+    "height": 900,
+    "x": 540,
+    "y": 520,
+    "enterFrom": "bottom",
+    "tilt": -2
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "src": {
+      "default": "samples/s-double-height.jpg",
+      "label": "Image",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "label": {
+      "default": "Concept visualisation",
+      "label": "Label",
+      "group": "Content",
+      "type": "string"
+     },
+     "width": {
+      "default": 760,
+      "label": "Width",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1040
+     },
+     "height": {
+      "default": 900,
+      "label": "Height",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1600
+     },
+     "x": {
+      "default": 540,
+      "label": "Centre X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 520,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "enterFrom": {
+      "default": "bottom",
+      "label": "Enters from",
+      "group": "Motion",
+      "type": "string",
+      "enum": [
+       "bottom",
+       "right",
+       "left"
+      ]
+     },
+     "tilt": {
+      "default": -2,
+      "label": "Tilt",
+      "control": "slider",
+      "step": 0.5,
+      "unit": "°",
+      "group": "Layout",
+      "type": "number",
+      "minimum": -8,
+      "maximum": 8
+     }
+    }
+   }
+  },
+  {
+   "type": "video",
+   "label": "Video clip",
+   "category": "Picture",
+   "description": "A video clip filling the frame, optionally graded",
+   "defaultDuration": 120,
+   "defaults": {
+    "src": "",
+    "fit": "cover",
+    "startAt": 0,
+    "volume": 0,
+    "grade": true
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "src": {
+      "default": "",
+      "label": "Video",
+      "control": "media",
+      "accept": "video",
+      "group": "Content",
+      "type": "string"
+     },
+     "fit": {
+      "default": "cover",
+      "label": "Fit",
+      "group": "Layout",
+      "type": "string",
+      "enum": [
+       "cover",
+       "contain"
+      ]
+     },
+     "startAt": {
+      "default": 0,
+      "label": "Start inside the clip",
+      "control": "number",
+      "step": 0.1,
+      "unit": "s",
+      "group": "Timing",
+      "type": "number",
+      "minimum": 0
+     },
+     "volume": {
+      "default": 0,
+      "label": "Volume",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Sound",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "grade": {
+      "default": true,
+      "label": "Brand grade",
+      "group": "Look",
+      "type": "boolean"
+     }
+    }
+   }
+  },
+  {
+   "type": "title",
+   "label": "Title",
+   "category": "Text",
+   "description": "A heading with an entrance effect",
+   "defaultDuration": 75,
+   "defaults": {
+    "text": "Your next address",
+    "effect": "slit",
+    "size": 110,
+    "weight": 640,
+    "color": "ivory",
+    "y": 520,
+    "align": "center"
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "text": {
+      "default": "Your next address",
+      "label": "Text",
+      "control": "textarea",
+      "group": "Content",
+      "type": "string"
+     },
+     "effect": {
+      "default": "slit",
+      "label": "Effect",
+      "group": "Style",
+      "help": "rotate: words separated by | take turns in one slot",
+      "type": "string",
+      "enum": [
+       "plain",
+       "shimmer",
+       "slit",
+       "blurIn",
+       "rotate"
+      ]
+     },
+     "size": {
+      "default": 110,
+      "label": "Size",
+      "control": "slider",
+      "step": 2,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 24,
+      "maximum": 240
+     },
+     "weight": {
+      "default": 640,
+      "label": "Weight",
+      "control": "slider",
+      "step": 20,
+      "group": "Style",
+      "type": "number",
+      "minimum": 200,
+      "maximum": 900
+     },
+     "color": {
+      "default": "ivory",
+      "label": "Colour",
+      "control": "color",
+      "group": "Style",
+      "type": "string"
+     },
+     "y": {
+      "default": 520,
+      "label": "Vertical position",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "align": {
+      "default": "center",
+      "label": "Align",
+      "group": "Layout",
+      "type": "string",
+      "enum": [
+       "center",
+       "left"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "type": "captions",
+   "label": "Captions",
+   "category": "Captions",
+   "description": "Word-timed captions from the voiceover or from text, in any caption preset",
+   "defaultDuration": 300,
+   "defaults": {
+    "source": "voice",
+    "text": "Toh suniye, *54D* Sarabha Nagar.",
+    "wordSeconds": 0.36,
+    "preset": "dhunna-steel",
+    "overrides": {}
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "source": {
+      "default": "voice",
+      "label": "Words from",
+      "group": "Content",
+      "help": "voice: the project voiceover’s word timings (falls back to the text until there is a voice) · text: spread the text below evenly",
+      "type": "string",
+      "enum": [
+       "voice",
+       "text"
+      ]
+     },
+     "text": {
+      "default": "Toh suniye, *54D* Sarabha Nagar.",
+      "label": "Text (when “Words from” is text)",
+      "control": "textarea",
+      "group": "Content",
+      "help": "*word* marks a hero word",
+      "type": "string"
+     },
+     "wordSeconds": {
+      "default": 0.36,
+      "label": "Seconds per word (text)",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Timing",
+      "type": "number",
+      "minimum": 0.15,
+      "maximum": 1.2
+     },
+     "preset": {
+      "default": "dhunna-steel",
+      "label": "Preset",
+      "group": "Style",
+      "type": "string",
+      "enum": [
+       "dhunna-steel",
+       "dhunna-gold",
+       "crown-crest",
+       "editorial-italic",
+       "magazine",
+       "didone-luxe",
+       "garamond-soft",
+       "bold-pop",
+       "karaoke-fill",
+       "box-highlight",
+       "word-punch",
+       "poster-stack",
+       "clean-subtitle",
+       "pill-lines",
+       "quiet-lowercase",
+       "hand-note",
+       "wide-tech",
+       "grotesk-glow",
+       "hindi-clean",
+       "punjabi-bold"
+      ]
+     },
+     "overrides": {
+      "default": {},
+      "label": "Adjust preset",
+      "group": "Style",
+      "advanced": true,
+      "type": "object",
+      "properties": {
+       "pair": {
+        "type": "string",
+        "enum": [
+         "geist-steel",
+         "archivo-expanded",
+         "crown-italic",
+         "editorial-italic",
+         "magazine-fraunces",
+         "didone-luxe",
+         "garamond-soft",
+         "bold-pop",
+         "insta-geometric",
+         "condensed-impact",
+         "poster-bebas",
+         "grotesk-modern",
+         "wide-tech",
+         "hand-note",
+         "quiet-inter",
+         "hindi-native",
+         "punjabi-native"
+        ],
+        "description": "font pair (src/type/pairs.ts)"
+       },
+       "layout": {
+        "type": "string",
+        "enum": [
+         "line",
+         "stack",
+         "word"
+        ],
+        "description": "line: words flow on 1–2 lines · stack: lead / big hero / tail · word: one word at a time"
+       },
+       "maxWords": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 12,
+        "description": "words per page"
+       },
+       "pauseBreak": {
+        "type": "number",
+        "minimum": 0.1,
+        "maximum": 2,
+        "description": "a gap longer than this (s) starts a new page"
+       },
+       "leadCase": {
+        "type": "string",
+        "enum": [
+         "none",
+         "upper",
+         "lower"
+        ]
+       },
+       "heroCase": {
+        "type": "string",
+        "enum": [
+         "none",
+         "upper",
+         "lower"
+        ]
+       },
+       "size": {
+        "type": "number",
+        "minimum": 24,
+        "maximum": 200,
+        "description": "lead size, px at 1080 wide"
+       },
+       "heroScale": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 3.5
+       },
+       "leadWeight": {
+        "type": "number",
+        "minimum": 100,
+        "maximum": 900
+       },
+       "heroWeight": {
+        "type": "number",
+        "minimum": 100,
+        "maximum": 900
+       },
+       "y": {
+        "type": "number",
+        "minimum": 0.1,
+        "maximum": 0.92,
+        "description": "vertical centre of the caption, 0 = top"
+       },
+       "width": {
+        "type": "number",
+        "minimum": 400,
+        "maximum": 1020
+       },
+       "align": {
+        "type": "string",
+        "enum": [
+         "center",
+         "left"
+        ]
+       },
+       "color": {
+        "type": "string"
+       },
+       "upcoming": {
+        "type": "string",
+        "enum": [
+         "hidden",
+         "dim",
+         "shown"
+        ],
+        "description": "words not yet spoken"
+       },
+       "upcomingColor": {
+        "type": "string"
+       },
+       "enter": {
+        "type": "string",
+        "enum": [
+         "none",
+         "pop",
+         "rise",
+         "blur",
+         "slit",
+         "drop"
+        ],
+        "description": "how each word arrives"
+       },
+       "active": {
+        "type": "string",
+        "enum": [
+         "none",
+         "color",
+         "pill",
+         "box",
+         "underline",
+         "scale",
+         "glow",
+         "karaoke"
+        ],
+        "description": "the word being spoken"
+       },
+       "activeColor": {
+        "type": "string"
+       },
+       "hero": {
+        "type": "string",
+        "enum": [
+         "none",
+         "color",
+         "metal",
+         "shimmer",
+         "box",
+         "scale"
+        ],
+        "description": "the hero word"
+       },
+       "heroColor": {
+        "type": "string"
+       },
+       "autoHero": {
+        "type": "boolean",
+        "description": "no hero marked? use the longest word of each page"
+       },
+       "stroke": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 14
+       },
+       "strokeColor": {
+        "type": "string"
+       },
+       "shadow": {
+        "type": "string",
+        "enum": [
+         "none",
+         "soft",
+         "hard",
+         "glow"
+        ]
+       },
+       "panel": {
+        "type": "string",
+        "enum": [
+         "none",
+         "box",
+         "line-pill"
+        ]
+       },
+       "panelColor": {
+        "type": "string"
+       },
+       "panelOpacity": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "exit": {
+        "type": "string",
+        "enum": [
+         "cut",
+         "fade",
+         "rise"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "type": "stats",
+   "label": "Figures",
+   "category": "Figures",
+   "description": "2–4 numbers ticking in, with unit and label",
+   "defaultDuration": 90,
+   "defaults": {
+    "items": [
+     {
+      "value": "82",
+      "unit": "ft",
+      "label": "Front"
+     },
+     {
+      "value": "80",
+      "unit": "ft",
+      "label": "Road"
+     }
+    ],
+    "stagger": 18,
+    "x": 90,
+    "y": 760
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "items": {
+      "default": [
+       {
+        "value": "82",
+        "unit": "ft",
+        "label": "Front"
+       },
+       {
+        "value": "80",
+        "unit": "ft",
+        "label": "Road"
+       }
+      ],
+      "label": "Figures (from the brief only)",
+      "group": "Content",
+      "minItems": 1,
+      "maxItems": 4,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "value": {
+         "type": "string"
+        },
+        "unit": {
+         "type": "string"
+        },
+        "label": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "value",
+        "label"
+       ]
+      }
+     },
+     "stagger": {
+      "default": 18,
+      "label": "Gap between figures",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 60
+     },
+     "x": {
+      "default": 90,
+      "label": "Left",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 760,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     }
+    }
+   }
+  },
+  {
+   "type": "callout",
+   "label": "Callout",
+   "category": "Location",
+   "description": "A point on the picture, a leader line and a label chip",
+   "defaultDuration": 75,
+   "defaults": {
+    "text": "Double-height showroom",
+    "icon": "storefront",
+    "x": 420,
+    "y": 1030,
+    "side": "right",
+    "rise": -160,
+    "length": 80
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "text": {
+      "default": "Double-height showroom",
+      "label": "Label",
+      "group": "Content",
+      "type": "string"
+     },
+     "icon": {
+      "default": "storefront",
+      "label": "Icon",
+      "control": "icon",
+      "group": "Content",
+      "type": "string",
+      "enum": [
+       "buildings",
+       "building-office",
+       "building-apartment",
+       "storefront",
+       "house-line",
+       "house",
+       "door-open",
+       "stairs",
+       "elevator",
+       "garage",
+       "warehouse",
+       "office-chair",
+       "desk",
+       "armchair",
+       "bed",
+       "bathtub",
+       "swimming-pool",
+       "plant",
+       "tree",
+       "park",
+       "map-pin",
+       "map-pin-line",
+       "map-trifold",
+       "navigation-arrow",
+       "compass",
+       "globe-hemisphere-east",
+       "road-horizon",
+       "signpost",
+       "car",
+       "car-profile",
+       "train",
+       "airplane-takeoff",
+       "path",
+       "currency-inr",
+       "coins",
+       "hand-coins",
+       "piggy-bank",
+       "chart-line-up",
+       "trend-up",
+       "chart-bar",
+       "percent",
+       "tag",
+       "receipt",
+       "wallet",
+       "bank",
+       "vault",
+       "shield-check",
+       "lock-key",
+       "key",
+       "security-camera",
+       "seal-check",
+       "certificate",
+       "handshake",
+       "medal",
+       "trophy",
+       "crown",
+       "diamond",
+       "sparkle",
+       "star",
+       "check-circle",
+       "ruler",
+       "frame-corners",
+       "arrows-out",
+       "arrows-out-line-horizontal",
+       "square-half",
+       "blueprint",
+       "compass-tool",
+       "lightning",
+       "drop",
+       "wind",
+       "sun",
+       "wifi-high",
+       "barbell",
+       "coffee",
+       "fork-knife",
+       "shopping-bag",
+       "users-three",
+       "briefcase",
+       "calendar-check",
+       "clock",
+       "phone-call",
+       "whatsapp-logo",
+       "chat-circle-dots",
+       "envelope-simple",
+       "play-circle"
+      ]
+     },
+     "x": {
+      "default": 420,
+      "label": "Point X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 1030,
+      "label": "Point Y",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "side": {
+      "default": "right",
+      "label": "Label side",
+      "group": "Layout",
+      "type": "string",
+      "enum": [
+       "right",
+       "left"
+      ]
+     },
+     "rise": {
+      "default": -160,
+      "label": "Line rise",
+      "control": "slider",
+      "step": 5,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": -400,
+      "maximum": 400
+     },
+     "length": {
+      "default": 80,
+      "label": "Line length",
+      "control": "slider",
+      "step": 5,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 20,
+      "maximum": 400
+     }
+    }
+   }
+  },
+  {
+   "type": "rings",
+   "label": "Distance rings",
+   "category": "Location",
+   "description": "Rings opening from the site, each with a label",
+   "defaultDuration": 90,
+   "defaults": {
+    "x": 540,
+    "y": 1060,
+    "rings": [
+     {
+      "r": 170,
+      "label": "Sarabha Nagar"
+     },
+     {
+      "r": 330,
+      "label": "Ludhiana"
+     }
+    ],
+    "angle": -35
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "x": {
+      "default": 540,
+      "label": "Centre X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 1060,
+      "label": "Centre Y",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "rings": {
+      "default": [
+       {
+        "r": 170,
+        "label": "Sarabha Nagar"
+       },
+       {
+        "r": 330,
+        "label": "Ludhiana"
+       }
+      ],
+      "label": "Rings (labels from the brief only)",
+      "group": "Content",
+      "minItems": 1,
+      "maxItems": 4,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "r": {
+         "type": "number",
+         "minimum": 40,
+         "maximum": 520
+        },
+        "label": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "r",
+        "label"
+       ]
+      }
+     },
+     "angle": {
+      "default": -35,
+      "label": "Label angle",
+      "control": "slider",
+      "step": 5,
+      "unit": "°",
+      "group": "Layout",
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+     }
+    }
+   }
+  },
+  {
+   "type": "route",
+   "label": "Route",
+   "category": "Location",
+   "description": "A route that draws itself to a pinned destination",
+   "defaultDuration": 90,
+   "defaults": {
+    "d": "M180 1560 C 300 1380, 260 1210, 470 1150 S 760 990, 760 820",
+    "endText": "54D, Sarabha Nagar",
+    "icon": "buildings",
+    "drawFrames": 46
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "d": {
+      "default": "M180 1560 C 300 1380, 260 1210, 470 1150 S 760 990, 760 820",
+      "label": "Route",
+      "control": "path",
+      "group": "Content",
+      "type": "string"
+     },
+     "endText": {
+      "default": "54D, Sarabha Nagar",
+      "label": "Destination label",
+      "group": "Content",
+      "type": "string"
+     },
+     "icon": {
+      "default": "buildings",
+      "label": "Icon",
+      "control": "icon",
+      "group": "Content",
+      "type": "string",
+      "enum": [
+       "buildings",
+       "building-office",
+       "building-apartment",
+       "storefront",
+       "house-line",
+       "house",
+       "door-open",
+       "stairs",
+       "elevator",
+       "garage",
+       "warehouse",
+       "office-chair",
+       "desk",
+       "armchair",
+       "bed",
+       "bathtub",
+       "swimming-pool",
+       "plant",
+       "tree",
+       "park",
+       "map-pin",
+       "map-pin-line",
+       "map-trifold",
+       "navigation-arrow",
+       "compass",
+       "globe-hemisphere-east",
+       "road-horizon",
+       "signpost",
+       "car",
+       "car-profile",
+       "train",
+       "airplane-takeoff",
+       "path",
+       "currency-inr",
+       "coins",
+       "hand-coins",
+       "piggy-bank",
+       "chart-line-up",
+       "trend-up",
+       "chart-bar",
+       "percent",
+       "tag",
+       "receipt",
+       "wallet",
+       "bank",
+       "vault",
+       "shield-check",
+       "lock-key",
+       "key",
+       "security-camera",
+       "seal-check",
+       "certificate",
+       "handshake",
+       "medal",
+       "trophy",
+       "crown",
+       "diamond",
+       "sparkle",
+       "star",
+       "check-circle",
+       "ruler",
+       "frame-corners",
+       "arrows-out",
+       "arrows-out-line-horizontal",
+       "square-half",
+       "blueprint",
+       "compass-tool",
+       "lightning",
+       "drop",
+       "wind",
+       "sun",
+       "wifi-high",
+       "barbell",
+       "coffee",
+       "fork-knife",
+       "shopping-bag",
+       "users-three",
+       "briefcase",
+       "calendar-check",
+       "clock",
+       "phone-call",
+       "whatsapp-logo",
+       "chat-circle-dots",
+       "envelope-simple",
+       "play-circle"
+      ]
+     },
+     "drawFrames": {
+      "default": 46,
+      "label": "Draw time",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 150
+     }
+    }
+   }
+  },
+  {
+   "type": "depthReveal",
+   "label": "Depth reveal",
+   "category": "Picture",
+   "description": "A photo that builds in near → far from its depth map",
+   "defaultDuration": 90,
+   "defaults": {
+    "src": "samples/r-golden.jpg",
+    "depth": "samples/r-golden-depth.png",
+    "revealFrames": 44,
+    "width": 900,
+    "height": 1180,
+    "left": 90,
+    "top": 420,
+    "radius": 28
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "src": {
+      "default": "samples/r-golden.jpg",
+      "label": "Image",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "depth": {
+      "default": "samples/r-golden-depth.png",
+      "label": "Depth map",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "revealFrames": {
+      "default": 44,
+      "label": "Reveal time",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 150
+     },
+     "width": {
+      "default": 900,
+      "label": "Width",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1080
+     },
+     "height": {
+      "default": 1180,
+      "label": "Height",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1920
+     },
+     "left": {
+      "default": 90,
+      "label": "Left",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "top": {
+      "default": 420,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "radius": {
+      "default": 28,
+      "label": "Corner radius",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 80
+     }
+    }
+   }
+  },
+  {
+   "type": "lightLeak",
+   "label": "Light leak",
+   "category": "Effect",
+   "description": "A brand-tinted light leak across the frame (once per film)",
+   "defaultDuration": 30,
+   "defaults": {
+    "from": "left",
+    "strength": 0.55
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "from": {
+      "default": "left",
+      "label": "From",
+      "group": "Style",
+      "type": "string",
+      "enum": [
+       "left",
+       "right"
+      ]
+     },
+     "strength": {
+      "default": 0.55,
+      "label": "Strength",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "vignette",
+   "label": "Vignette",
+   "category": "Effect",
+   "description": "Soft edge darkening",
+   "defaultDuration": 150,
+   "defaults": {
+    "amount": 0.4
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "amount": {
+      "default": 0.4,
+      "label": "Amount",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "logo",
+   "label": "Logo reveal",
+   "category": "Brand",
+   "description": "The brand mark revealed in metal or as is",
+   "defaultDuration": 90,
+   "defaults": {
+    "logo": "",
+    "width": 640,
+    "y": 860,
+    "mode": "brand"
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "logo": {
+      "default": "",
+      "label": "Logo (empty = brand logo)",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "width": {
+      "default": 640,
+      "label": "Width",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 200,
+      "maximum": 1000
+     },
+     "y": {
+      "default": 860,
+      "label": "Vertical position",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "mode": {
+      "default": "brand",
+      "label": "Finish",
+      "group": "Style",
+      "help": "brand: the theme decides · mask: repaint in metal · image: as is",
+      "type": "string",
+      "enum": [
+       "brand",
+       "mask",
+       "image"
+      ]
+     }
+    }
+   }
+  }
+ ]
+}

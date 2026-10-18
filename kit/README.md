@@ -2,6 +2,7 @@
 
 Remotion components for 9:16 brand reels, taken from delivered Dhunna Infra and Crown Crest films. Every component is frame-driven, so renders are deterministic, and themed through one provider. The craft rules that go with this kit are in the `promo-reel` skill (`skills/promo-reel` in Espinage).
 
+- **Projects as data** (`src/manifest`): a film as JSON (tracks of registered components with typed settings and editor controls), played by `ManifestReel`. See the top of CATALOG.md.
 - **CATALOG.md**: every production component, with its job, key props, showcase segment and status. Start here.
 - **AUDIT.md**: why the first-pass components are now `legacy`, what replaces each one, what was fixed, and the known gaps.
 - **ICONS-AND-EFFECTS.md**: the vendored icon set and where to get more icons and effects (licences included).
@@ -55,7 +56,7 @@ public/          brand, fonts, sfx, audio, samples (committed); footage/stills/m
 
 ## Setup in a fresh clone
 
-Run `npm install`. On this machine `node_modules` is a symlink to `dhunnainfra-reel3/node_modules`. The 3D glyph script needs Python with `fonttools` and `skia-pathops`:
+Run `npm install`. The kit has its own `node_modules` (Remotion pinned to exactly 4.0.536; never use `^` for Remotion packages, because every `@remotion/*` must match). On the Mac, `remotion.config.ts` and `scripts/stills.mjs` use Chrome 149 from `/Volumes/disk 2/.reel-tools/chrome-headless-shell-149`, because Remotion 4.0.536's Chromium 157 doesn't start reliably there. The 3D glyph script needs Python with `fonttools` and `skia-pathops`:
 
 ```bash
 OUT=src/demo/type3d.json python scripts/glyphs3d.py

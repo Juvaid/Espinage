@@ -7,6 +7,9 @@ import {IconSheet} from './IconSheet';
 import {SHADER_SEG, ShaderGrid, ShaderTour} from './ShaderDemo';
 import {CAPTION_GALLERY_TOTAL, CaptionEditor, CaptionGallery, captionEditorMetadata, captionEditorSchema, FontPairs, PAIR_ROW} from './CaptionEditor';
 import {FONT_PAIRS} from '../type/pairs';
+import {ManifestReel, manifestMetadata, manifestSchema} from '../manifest';
+import {SAMPLE_MANIFEST} from './manifestSample';
+import {ALL_COMPONENTS_MANIFEST} from './manifestAll';
 import {BUNDLE_ELEMENTS_TOTAL, BundleElements, BundleTransitions, TRANSITIONS_TOTAL} from './BundleDemo';
 import {
   CompAliAbdaal,
@@ -36,6 +39,11 @@ export const Root: React.FC = () => {
     <>
       <Composition id="Icons-Sheet" component={IconSheet} durationInFrames={1} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d', weight: 'duotone' as const}} />
       {/* production components, per brand theme: the audit and preview reel */}
+      {/* Projects as data: Manifest-Demo is the sample 54D project (edit it in the props panel); Manifest renders any
+          project given with --props=project.json (the VPS render box, the Caption Studio's render jobs). */}
+      <Composition id="Manifest-Demo" component={ManifestReel} schema={manifestSchema as never} defaultProps={manifestSchema.parse(SAMPLE_MANIFEST) as never} calculateMetadata={manifestMetadata as never} durationInFrames={720} fps={30} width={1080} height={1920} />
+      <Composition id="Manifest-AllComponents" component={ManifestReel} defaultProps={manifestSchema.parse(ALL_COMPONENTS_MANIFEST) as never} calculateMetadata={manifestMetadata as never} durationInFrames={780} fps={30} width={1080} height={1920} />
+      <Composition id="Manifest" component={ManifestReel} defaultProps={{tracks: []} as never} calculateMetadata={manifestMetadata as never} durationInFrames={90} fps={30} width={1080} height={1920} />
       <Composition id="Caption-Editor" component={CaptionEditor} schema={captionEditorSchema} defaultProps={{preset: 'dhunna-steel', theme: 'dhunna_54d', script: 'O3', background: 'photo', heroWords: '', overrides: {}}} calculateMetadata={captionEditorMetadata} durationInFrames={600} fps={30} width={1080} height={1920} />
       <Composition id="Caption-Gallery-Dhunna54D" component={CaptionGallery} durationInFrames={CAPTION_GALLERY_TOTAL} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
       <Composition id="Caption-Gallery-CrownCrest" component={CaptionGallery} durationInFrames={CAPTION_GALLERY_TOTAL} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />

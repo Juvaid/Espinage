@@ -36,10 +36,12 @@ ssh hostinger-hermes 'docker run --rm -v /srv/projects/<name>:/work render-box n
 scp hostinger-hermes:/srv/projects/<name>/out/<file>.mp4 "/Volumes/disk 2/<project>/out/"
 ```
 
-- **Measured on 2026-10-19 (kit):**
-  - 240 frames of a 2D caption gallery took 25 s;
-  - 180 frames of WebGL shaders took 20 s, including container start.
-  - The WebGL and metal-bevel frames came out correct (checked).
+- **Measured on 2026-10-19 (kit, VPS):**
+  - The 24-second 54D sample project (720 frames, WebGL background, depth reveal, captions, voice), rendered from JSON, took **96 s on Remotion 4.0.536** and ≈ 390 s on 4.0.530. In a controlled test of the same 180 frames, 4.0.536 took 38 s and 4.0.530 took 140 s.
+  - Use 4.0.536 or newer for VPS renders.
+- **Render a project file (no film code):** `npx remotion render src/demo/kit-entry.ts Manifest out/<name>.mp4 --props=projects/<project>.json --gl=swangle --concurrency=4`.
+- **Pin Remotion exactly:** every `remotion` / `@remotion/*` package at the same exact version, no `^`. A caret let a fresh install mix 4.0.536 and 4.0.530, and Remotion warned "Version mismatch".
+- **Mac Chrome:** Remotion 4.0.536's own headless Chromium 157 fails to start intermittently on this Mac ("Timed out … connecting to the browser"; once "icudtl.dat not found in bundle"). Point `browserExecutable` at Chrome for Testing 149 in `/Volumes/disk 2/.reel-tools/chrome-headless-shell-149` (the kit's `remotion.config.ts` and `stills.mjs` do this). Linux is fine with the default.
 - **The project must declare its dependencies.** A symlinked `node_modules` doesn't travel. Check with `grep -rhoE "from '[^./'][^']*'" src`, compared against `package.json`.
 - **Footage projects:** sync `public/` once (it can be gigabytes), then sync only `src/` for each render. Symlinks inside `public/` must be resolved, either with `rsync -L` or by copying the real files.
 - **Leftover temp bundles:** every render leaves a `remotion-webpack-bundle-*` folder that copies `public/` (2.4–2.7 GB for footage projects). Delete them when nothing is rendering:
