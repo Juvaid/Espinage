@@ -133,3 +133,12 @@ All from `54D src/investor/GCards.tsx`, on one shared `Card` face:
 - **Under content:** keep the top third calmer where headings sit, keep energy at 0.3–0.6, and add a ±0.5/255 dither against banding after h264 (that's not grain).
 - **GLSL gotchas:** `patch`, `sample` and `input` are reserved words. Compile errors surface in the render log as `ShaderBackdrop(kind): ERROR …`.
 - **Check behind real content,** in a full frame with a heading and a card, not only in a grid of swatches. A look that's beautiful on its own can drown the card.
+
+## Transition and reveal craft (kit bundle 1)
+
+- **Directional blur:** CSS `blur()` is round. For whips, use an inline SVG `feGaussianBlur stdDeviation="x 0"` that follows the velocity (peak mid-move, `sin(π·p)`).
+- **Growing masks grow geometrically,** for example `size = a·(b/a)^p`. Linear growth spends most of the time at sizes too big to read, so the shape is never seen. Fade a solid mask layer in over the last quarter so corners a tapered shape never reaches don't pop.
+- **Depth reveals walk the histogram,** not the raw value. Facades are mostly far (mean depth ≈ 0.2), so a linear threshold shows nothing for 75% of the time and then everything. Map progress to depth quantiles.
+- **Strokes with `vector-effect: non-scaling-stroke`** take their width in screen pixels. Don't divide by the scale.
+- **Never pass `Infinity` into `interpolate`** (it throws). Branch when there's no next event.
+- **Check transitions at their midpoint,** where they break, not at their ends.

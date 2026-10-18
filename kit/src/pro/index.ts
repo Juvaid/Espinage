@@ -18,3 +18,8 @@ export * from './Effects';
 export * from '../components/graphics/TogglePills';
 export * from '../components/svg/ShapeMorph';
 export * from './Shaders';
+export * from './Transitions';
+export * from './Grade';
+export * from './TextFx';
+export * from './Location';
+export * from './DepthReveal';

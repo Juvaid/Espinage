@@ -93,6 +93,59 @@ Demos:
 
 Use one kind per film section, with a different `seed` per scene so the pattern doesn't repeat. Keep `energy` at 0.3–0.6 under content. No grain: the only noise is a ±0.5/255 dither against banding. Renders need the ANGLE GL renderer, which `remotion.config.ts` sets.
 
+## Transitions
+
+These are frame-driven, with no `@remotion/transitions` dependency. `Scenes` sequences `Scene`s and the `Cut`s between them; each cut overlaps its two scenes by its length and plays its own sound (`sfx` defaults to on). `planScenes(children).total` gives the film length for `durationInFrames`. Demo: `Bundle-Transitions-*`.
+
+| kind | Default length | Sound | Use |
+|---|---|---|---|
+| `cut` | 0 | — | Footage and presenter; the default |
+| `whip` | 8 | whip | Energy between locations; `dir` = the way the picture travels; directional blur follows the motion |
+| `push` | 10 | whoosh-hit | Into a detail or a new space (zoom-through) |
+| `blur` | 12 | — | Between worlds only, never between two cards |
+| `iris` | 16 | gleam | Opening from a point (`origin`) with a light ring |
+| `shape` | 20 | ui-animation | Opens through a `MORPH_SHAPES` outline (pin, house…) that grows geometrically; corners fade in at the end |
+| `sweep` | 16 | scan | A light bar wipes the next scene on: the big reveal, once per film |
+| `slats` | 16 | swish | Seven strips slide in, staggered |
+| `flip` | 16 | swish | The frame turns like a card: card ads |
+
+## Grade and lens
+
+Demo: `Bundle-Elements-*`, segments 0–1.
+
+| Component | Job | Key props |
+|---|---|---|
+| `Grade` | Contrast S-curve + split-tone from the brand metal + halation + saturation, in one SVG filter; wrap a picture or a whole scene | `look` (`brand`/`neutral`/`night`/`golden`), `contrast`, `tone`, `halation`, `saturation` |
+| `Vignette` | Edge falloff in the ground colour | `amount` 0.3–0.5 |
+| `LightLeak` | Brand-tinted leak drifting across once; the biggest reveal only | `at` (peak), `dur`, `from`, `strength` |
+| `FocusPull` | Rack focus with a small breath | `at, dur, from, to` (blur px) |
+
+## Text effects and figures
+
+Demo: `Bundle-Elements-*`, segments 2–4.
+
+| Component | Job | Key props |
+|---|---|---|
+| `WordRotate` | One slot; words replace each other on their frames | `words: {t, at}[]`, `size` |
+| `ShimmerText` | One pass of light through the hero word (brand ramp) | `text, at, dur, size` |
+| `BlurInText` | Words come out of focus one by one; a quiet subtitle | `text, at, stagger` or `ats` |
+| `SlitLine` | A line rises from a slit, with a drawn rule | `text, at, rule` |
+| `StatGrid` | 2–4 figures ticking in, with unit and label; facts from the brief only | `items: {value, unit, label, at}[]` |
+
+## Location
+
+Demo: `Bundle-Elements-*`, segments 5–7. Labels and distances come from the brief only.
+
+| Component | Job | Key props |
+|---|---|---|
+| `DistanceRings` | Rings open from the site, each with its chip | `x, y, start, rings: {r, label, at}[]` |
+| `RouteDraw` | Route draws with a light at its head, ending in a pin and chip | `d` (SVG path in frame px), `at, dur, end: {text, icon}` |
+| `Callout` | Point → elbow leader → solid chip with icon | `point, text, icon, at, side, rise, length` |
+
+## Depth reveal
+
+`DepthReveal` builds a photo in near → far from its depth map, with a light edge. It walks the depth histogram, so the area grows evenly even when most of the frame is far away. Props: `src, depth, at, dur, out, w, h, left, top, radius`. Demo: `Bundle-Elements-*`, segment 8.
+
 ## Rules agents must keep
 
 - One effect per beat, on the element that matters. Icons only where they mean something, never spammed.

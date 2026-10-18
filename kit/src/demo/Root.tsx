@@ -5,6 +5,7 @@ import {ShapeMorphDemo, TogglePillsDemo} from './MographDemo';
 import {ProShowcase, SEG} from './ProShowcase';
 import {IconSheet} from './IconSheet';
 import {SHADER_SEG, ShaderGrid, ShaderTour} from './ShaderDemo';
+import {BUNDLE_ELEMENTS_TOTAL, BundleElements, BundleTransitions, TRANSITIONS_TOTAL} from './BundleDemo';
 import {
   CompAliAbdaal,
   CompAppleKeynote,
@@ -33,6 +34,10 @@ export const Root: React.FC = () => {
     <>
       <Composition id="Icons-Sheet" component={IconSheet} durationInFrames={1} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d', weight: 'duotone' as const}} />
       {/* production components, per brand theme: the audit and preview reel */}
+      <Composition id="Bundle-Transitions-Dhunna54D" component={BundleTransitions} durationInFrames={TRANSITIONS_TOTAL} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
+      <Composition id="Bundle-Transitions-CrownCrest" component={BundleTransitions} durationInFrames={TRANSITIONS_TOTAL} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />
+      <Composition id="Bundle-Elements-Dhunna54D" component={BundleElements} durationInFrames={BUNDLE_ELEMENTS_TOTAL} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
+      <Composition id="Bundle-Elements-CrownCrest" component={BundleElements} durationInFrames={BUNDLE_ELEMENTS_TOTAL} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />
       <Composition id="Shaders-Dhunna54D" component={ShaderTour} durationInFrames={SHADER_SEG * 6} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna_54d'}} />
       <Composition id="Shaders-DhunnaGold" component={ShaderTour} durationInFrames={SHADER_SEG * 6} fps={30} width={1080} height={1920} defaultProps={{theme: 'dhunna'}} />
       <Composition id="Shaders-CrownCrest" component={ShaderTour} durationInFrames={SHADER_SEG * 6} fps={30} width={1080} height={1920} defaultProps={{theme: 'crown_crest'}} />

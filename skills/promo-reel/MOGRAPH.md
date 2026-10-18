@@ -23,6 +23,10 @@ For stills, run `node scripts/stills.mjs out/check <Comp>:<frame> …` (3–4 fr
 | **Lens** | A detail worth seeing in a photo | `Lens` | Loupe glides once, magnified inside |
 | **Card accents** | The card or button that matters this beat | `BorderBeam`, `ShineSweep`, `Spotlight` | One lap, one sweep, once |
 | **Shader backdrop** | The ground of a scene, instead of a flat backdrop | `ShaderBackdrop` (`mesh`, `silk`, `metal`, `aurora`, `rays`, `contour`) | Slow, frame-driven, brand palette. One kind per section, a new `seed` per scene, `energy` 0.3–0.6 under content. Pick by meaning: contour for land and location, rays for reveals, metal behind 3D type |
+| **Grade and lens** | One look across renders, footage and stock | `Grade` (brand split-tone, halation), `Vignette`, `FocusPull`, `LightLeak` (once per film) | Grade every picture in a film the same way; leak only on the reveal |
+| **Text effects** | Hero word, use-cases in one slot, quiet subtitles | `ShimmerText`, `WordRotate`, `BlurInText`, `SlitLine` | Each lands on its spoken frame; one per screen |
+| **Figures** | 2–4 numbers from the brief | `StatGrid` | Ticks in on each word |
+| **Location** | Distances, route, a point on a picture | `DistanceRings`, `RouteDraw`, `Callout` | Labels and distances from the brief only |
 | **Background line art** | Behind "vision" or "location" lines | `WireEye`, `WirePin`, `ArchGrid` | Low opacity, behind the hero, never on it |
 | **3D coins** | Money, investing, returns | `CoinRain` | Only when money is spoken |
 | **Logo reveal** | The end mark | `LogoReveal` (`mask` metal or `image` as is) | Metal fills, one sheen |

@@ -1,5 +1,7 @@
 # Transitions
 
+**Kit:** the kit has these built in. Use `Scenes` / `Scene` / `Cut kind=…` from `reel-components-kit` (`whip`, `push`, `blur`, `iris`, `shape`, `sweep`, `slats`, `flip`): each brings its own sound, and `planScenes()` gives the film length. Preview with `Bundle-Transitions-*`. `DepthReveal` builds a photo in near → far (a depth-map reveal). Film-specific moves (`SceneWindow`, GCards `Swap`, match cuts) still live in their projects until they're ported.
+
 Every transition is a choice made for its beat. Default to the simplest one that keeps the eye on the next hero. A transition never runs over a spoken hero word.
 
 | Transition | Use for | Length | How |
