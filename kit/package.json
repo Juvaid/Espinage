@@ -29,6 +29,10 @@
     "@remotion/three": "4.0.530",
     "three": "0.186.1",
     "@react-three/fiber": "9.8.1",
-    "@types/three": "0.186.0"
+    "@types/three": "0.186.0",
+    "zod": "4.5.4",
+    "@remotion/bundler": "4.0.530",
+    "@remotion/renderer": "4.0.530",
+    "@remotion/zod-types": "4.0.530"
   }
 }

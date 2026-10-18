@@ -47,7 +47,7 @@ Clone with anchored excludes: `rsync -a --exclude '/out' --exclude '/src/scenes'
 
 ## Gotchas
 
-- Internal drive is nearly full and RAM is 8 GB: caches, temp, models and renders go on `/Volumes/disk 2`; render with `--concurrency=2 --timeout=60000`; one Studio at a time while rendering.
+- Internal drive is nearly full and RAM is 8 GB: caches, temp, models and renders go on `/Volumes/disk 2` (`TMPDIR` too); render with `--concurrency=2 --timeout=60000`; one Studio at a time while rendering. Final renders and batches go to the VPS render box (OPERATIONS.md); clear leftover `remotion-webpack-bundle-*` folders after render batches.
 - Footage prep (HDR, rotation, stabilised proxies, grading): FOOTAGE.md.
 - zsh: write `${var}` before a `:` in ffmpeg filters (`$trf:s…` is a zsh modifier); vid.stab paths can't contain spaces.
 - SVG filters on near-vertical lines need `filterUnits="userSpaceOnUse"` (zero-width bounding box hides them).
