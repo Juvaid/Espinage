@@ -1,0 +1,91 @@
+{
+ "source": "work/vo-v3/B3-Puck-trim.wav",
+ "start": 0.0,
+ "end": 7.8,
+ "lines": [
+  {
+   "text": "Kuch address sirf jagah nahi hote.",
+   "words": [
+    [
+     "Kuch",
+     0.0
+    ],
+    [
+     "address",
+     0.36
+    ],
+    [
+     "sirf",
+     0.72
+    ],
+    [
+     "jagah",
+     1.16
+    ],
+    [
+     "nahi",
+     1.58
+    ],
+    [
+     "hote.",
+     1.86
+    ]
+   ]
+  },
+  {
+   "text": "Woh pehchaan bante hain.",
+   "words": [
+    [
+     "Woh",
+     2.44
+    ],
+    [
+     "pehchaan",
+     2.82
+    ],
+    [
+     "bante",
+     3.56
+    ],
+    [
+     "hain.",
+     3.88
+    ]
+   ]
+  },
+  {
+   "text": "Fifty-Four D, Sarabha Nagar.",
+   "words": [
+    [
+     "Fifty-Four",
+     4.57
+    ],
+    [
+     "D,",
+     5.26
+    ],
+    [
+     "Sarabha",
+     5.78
+    ],
+    [
+     "Nagar.",
+     6.16
+    ]
+   ]
+  },
+  {
+   "text": "Dhunna Infra.",
+   "words": [
+    [
+     "Dhunna",
+     6.82
+    ],
+    [
+     "Infra.",
+     7.36
+    ]
+   ]
+  }
+ ]
+}

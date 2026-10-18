@@ -38,7 +38,7 @@ Compositions:
 Stills for a quick check (3–4 frames per call; bigger batches run out of memory):
 
 ```bash
-node scripts/stills.mjs out/check Pro-Showcase-CrownCrest:620 Pro-Showcase-Dhunna54D:1200
+npm run stills -- out/check Pro-Showcase-CrownCrest:620 Pro-Showcase-Dhunna54D:1200
 ```
 
 ## Layout

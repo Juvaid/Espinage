@@ -1,0 +1,1712 @@
+[
+ {
+  "id": "anton",
+  "family": "Anton",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/anton/anton-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "anton",
+  "family": "Anton",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/anton/anton-latin-400-normal.woff2"
+ },
+ {
+  "id": "bebas-neue",
+  "family": "Bebas Neue",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/bebas-neue/bebas-neue-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "bebas-neue",
+  "family": "Bebas Neue",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/bebas-neue/bebas-neue-latin-400-normal.woff2"
+ },
+ {
+  "id": "dm-serif-display",
+  "family": "DM Serif Display",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/dm-serif-display/dm-serif-display-latin-ext-400-italic.woff2"
+ },
+ {
+  "id": "dm-serif-display",
+  "family": "DM Serif Display",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/dm-serif-display/dm-serif-display-latin-400-italic.woff2"
+ },
+ {
+  "id": "dm-serif-display",
+  "family": "DM Serif Display",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/dm-serif-display/dm-serif-display-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "dm-serif-display",
+  "family": "DM Serif Display",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/dm-serif-display/dm-serif-display-latin-400-normal.woff2"
+ },
+ {
+  "id": "gotu",
+  "family": "Gotu",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/gotu/gotu-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "gotu",
+  "family": "Gotu",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/gotu/gotu-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "gotu",
+  "family": "Gotu",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/gotu/gotu-latin-400-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/hind/hind-devanagari-300-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/hind/hind-latin-ext-300-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/hind/hind-latin-300-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/hind/hind-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/hind/hind-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/hind/hind-latin-400-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/hind/hind-devanagari-500-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/hind/hind-latin-ext-500-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/hind/hind-latin-500-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/hind/hind-devanagari-600-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/hind/hind-latin-ext-600-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/hind/hind-latin-600-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/hind/hind-devanagari-700-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/hind/hind-latin-ext-700-normal.woff2"
+ },
+ {
+  "id": "hind",
+  "family": "Hind",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/hind/hind-latin-700-normal.woff2"
+ },
+ {
+  "id": "instrument-serif",
+  "family": "Instrument Serif",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/instrument-serif/instrument-serif-latin-ext-400-italic.woff2"
+ },
+ {
+  "id": "instrument-serif",
+  "family": "Instrument Serif",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/instrument-serif/instrument-serif-latin-400-italic.woff2"
+ },
+ {
+  "id": "instrument-serif",
+  "family": "Instrument Serif",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/instrument-serif/instrument-serif-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "instrument-serif",
+  "family": "Instrument Serif",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/instrument-serif/instrument-serif-latin-400-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/khand/khand-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/khand/khand-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/khand/khand-latin-400-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/khand/khand-devanagari-500-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/khand/khand-latin-ext-500-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/khand/khand-latin-500-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/khand/khand-devanagari-600-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/khand/khand-latin-ext-600-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/khand/khand-latin-600-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/khand/khand-devanagari-700-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/khand/khand-latin-ext-700-normal.woff2"
+ },
+ {
+  "id": "khand",
+  "family": "Khand",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/khand/khand-latin-700-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/mukta/mukta-devanagari-300-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta/mukta-latin-ext-300-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta/mukta-latin-300-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/mukta/mukta-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta/mukta-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta/mukta-latin-400-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/mukta/mukta-devanagari-500-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta/mukta-latin-ext-500-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta/mukta-latin-500-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/mukta/mukta-devanagari-600-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta/mukta-latin-ext-600-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta/mukta-latin-600-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/mukta/mukta-devanagari-700-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta/mukta-latin-ext-700-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta/mukta-latin-700-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/mukta/mukta-devanagari-800-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta/mukta-latin-ext-800-normal.woff2"
+ },
+ {
+  "id": "mukta",
+  "family": "Mukta",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta/mukta-latin-800-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-gurmukhi-300-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-ext-300-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-300-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-gurmukhi-400-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-400-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-gurmukhi-500-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-ext-500-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-500-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-gurmukhi-600-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-ext-600-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-600-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-gurmukhi-700-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-ext-700-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-700-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-gurmukhi-800-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-ext-800-normal.woff2"
+ },
+ {
+  "id": "mukta-mahee",
+  "family": "Mukta Mahee",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/mukta-mahee/mukta-mahee-latin-800-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "300",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-300-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "300",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-300-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "300",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-300-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-300-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-300-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "300",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-300-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-400-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-400-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-400-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-400-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "500",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-500-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "500",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-500-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "500",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-500-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-500-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-500-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "500",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-500-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "600",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-600-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "600",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-600-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "600",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-600-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-600-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-600-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "600",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-600-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "700",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-700-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-700-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-700-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-700-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-700-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-700-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "800",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-800-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-800-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-800-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-800-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-800-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-800-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "900",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-900-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-900-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "italic",
+  "weight": "900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-900-italic.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "900",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/poppins/poppins-devanagari-900-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/poppins/poppins-latin-ext-900-normal.woff2"
+ },
+ {
+  "id": "poppins",
+  "family": "Poppins",
+  "style": "normal",
+  "weight": "900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/poppins/poppins-latin-900-normal.woff2"
+ },
+ {
+  "id": "rozha-one",
+  "family": "Rozha One",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/rozha-one/rozha-one-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "rozha-one",
+  "family": "Rozha One",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/rozha-one/rozha-one-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "rozha-one",
+  "family": "Rozha One",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/rozha-one/rozha-one-latin-400-normal.woff2"
+ },
+ {
+  "id": "tiro-devanagari-hindi",
+  "family": "Tiro Devanagari Hindi",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/tiro-devanagari-hindi/tiro-devanagari-hindi-devanagari-400-italic.woff2"
+ },
+ {
+  "id": "tiro-devanagari-hindi",
+  "family": "Tiro Devanagari Hindi",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "devanagari",
+  "file": "fonts/lib/tiro-devanagari-hindi/tiro-devanagari-hindi-latin-ext-400-italic.woff2"
+ },
+ {
+  "id": "tiro-devanagari-hindi",
+  "family": "Tiro Devanagari Hindi",
+  "style": "italic",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "devanagari",
+  "file": "fonts/lib/tiro-devanagari-hindi/tiro-devanagari-hindi-latin-400-italic.woff2"
+ },
+ {
+  "id": "tiro-devanagari-hindi",
+  "family": "Tiro Devanagari Hindi",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/tiro-devanagari-hindi/tiro-devanagari-hindi-devanagari-400-normal.woff2"
+ },
+ {
+  "id": "tiro-devanagari-hindi",
+  "family": "Tiro Devanagari Hindi",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "devanagari",
+  "file": "fonts/lib/tiro-devanagari-hindi/tiro-devanagari-hindi-latin-ext-400-normal.woff2"
+ },
+ {
+  "id": "tiro-devanagari-hindi",
+  "family": "Tiro Devanagari Hindi",
+  "style": "normal",
+  "weight": "400",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "devanagari",
+  "file": "fonts/lib/tiro-devanagari-hindi/tiro-devanagari-hindi-latin-400-normal.woff2"
+ },
+ {
+  "id": "anek-gurmukhi",
+  "family": "Anek Gurmukhi",
+  "style": "normal",
+  "weight": "100 800",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/anek-gurmukhi/anek-gurmukhi-gurmukhi-wght-normal.woff2"
+ },
+ {
+  "id": "anek-gurmukhi",
+  "family": "Anek Gurmukhi",
+  "style": "normal",
+  "weight": "100 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/anek-gurmukhi/anek-gurmukhi-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "anek-gurmukhi",
+  "family": "Anek Gurmukhi",
+  "style": "normal",
+  "weight": "100 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/anek-gurmukhi/anek-gurmukhi-latin-wght-normal.woff2"
+ },
+ {
+  "id": "archivo",
+  "family": "Archivo",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/archivo/archivo-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "archivo",
+  "family": "Archivo",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/archivo/archivo-latin-wght-normal.woff2"
+ },
+ {
+  "id": "archivo",
+  "family": "Archivo",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/archivo/archivo-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "archivo",
+  "family": "Archivo",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/archivo/archivo-latin-wght-italic.woff2"
+ },
+ {
+  "id": "baloo-2",
+  "family": "Baloo 2",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/baloo-2/baloo-2-devanagari-wght-normal.woff2"
+ },
+ {
+  "id": "baloo-2",
+  "family": "Baloo 2",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/baloo-2/baloo-2-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "baloo-2",
+  "family": "Baloo 2",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/baloo-2/baloo-2-latin-wght-normal.woff2"
+ },
+ {
+  "id": "baloo-paaji-2",
+  "family": "Baloo Paaji 2",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0951-0952,U+0964-0965,U+0A01-0A76,U+200C-200D,U+20B9,U+25CC,U+262C,U+A830-A839",
+  "subset": "gurmukhi",
+  "file": "fonts/lib/baloo-paaji-2/baloo-paaji-2-gurmukhi-wght-normal.woff2"
+ },
+ {
+  "id": "baloo-paaji-2",
+  "family": "Baloo Paaji 2",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/baloo-paaji-2/baloo-paaji-2-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "baloo-paaji-2",
+  "family": "Baloo Paaji 2",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/baloo-paaji-2/baloo-paaji-2-latin-wght-normal.woff2"
+ },
+ {
+  "id": "bodoni-moda",
+  "family": "Bodoni Moda",
+  "style": "normal",
+  "weight": "400 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/bodoni-moda/bodoni-moda-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "bodoni-moda",
+  "family": "Bodoni Moda",
+  "style": "normal",
+  "weight": "400 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/bodoni-moda/bodoni-moda-latin-wght-normal.woff2"
+ },
+ {
+  "id": "bodoni-moda",
+  "family": "Bodoni Moda",
+  "style": "italic",
+  "weight": "400 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/bodoni-moda/bodoni-moda-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "bodoni-moda",
+  "family": "Bodoni Moda",
+  "style": "italic",
+  "weight": "400 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/bodoni-moda/bodoni-moda-latin-wght-italic.woff2"
+ },
+ {
+  "id": "bricolage-grotesque",
+  "family": "Bricolage Grotesque",
+  "style": "normal",
+  "weight": "200 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/bricolage-grotesque/bricolage-grotesque-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "bricolage-grotesque",
+  "family": "Bricolage Grotesque",
+  "style": "normal",
+  "weight": "200 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/bricolage-grotesque/bricolage-grotesque-latin-wght-normal.woff2"
+ },
+ {
+  "id": "caveat",
+  "family": "Caveat",
+  "style": "normal",
+  "weight": "400 700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/caveat/caveat-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "caveat",
+  "family": "Caveat",
+  "style": "normal",
+  "weight": "400 700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/caveat/caveat-latin-wght-normal.woff2"
+ },
+ {
+  "id": "cormorant-garamond",
+  "family": "Cormorant Garamond",
+  "style": "normal",
+  "weight": "300 700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/cormorant-garamond/cormorant-garamond-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "cormorant-garamond",
+  "family": "Cormorant Garamond",
+  "style": "normal",
+  "weight": "300 700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/cormorant-garamond/cormorant-garamond-latin-wght-normal.woff2"
+ },
+ {
+  "id": "cormorant-garamond",
+  "family": "Cormorant Garamond",
+  "style": "italic",
+  "weight": "300 700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/cormorant-garamond/cormorant-garamond-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "cormorant-garamond",
+  "family": "Cormorant Garamond",
+  "style": "italic",
+  "weight": "300 700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/cormorant-garamond/cormorant-garamond-latin-wght-italic.woff2"
+ },
+ {
+  "id": "figtree",
+  "family": "Figtree",
+  "style": "normal",
+  "weight": "300 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/figtree/figtree-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "figtree",
+  "family": "Figtree",
+  "style": "normal",
+  "weight": "300 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/figtree/figtree-latin-wght-normal.woff2"
+ },
+ {
+  "id": "figtree",
+  "family": "Figtree",
+  "style": "italic",
+  "weight": "300 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/figtree/figtree-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "figtree",
+  "family": "Figtree",
+  "style": "italic",
+  "weight": "300 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/figtree/figtree-latin-wght-italic.woff2"
+ },
+ {
+  "id": "fraunces",
+  "family": "Fraunces",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/fraunces/fraunces-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "fraunces",
+  "family": "Fraunces",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/fraunces/fraunces-latin-wght-normal.woff2"
+ },
+ {
+  "id": "fraunces",
+  "family": "Fraunces",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/fraunces/fraunces-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "fraunces",
+  "family": "Fraunces",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/fraunces/fraunces-latin-wght-italic.woff2"
+ },
+ {
+  "id": "inter",
+  "family": "Inter",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/inter/inter-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "inter",
+  "family": "Inter",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/inter/inter-latin-wght-normal.woff2"
+ },
+ {
+  "id": "inter",
+  "family": "Inter",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/inter/inter-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "inter",
+  "family": "Inter",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/inter/inter-latin-wght-italic.woff2"
+ },
+ {
+  "id": "montserrat",
+  "family": "Montserrat",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/montserrat/montserrat-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "montserrat",
+  "family": "Montserrat",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/montserrat/montserrat-latin-wght-normal.woff2"
+ },
+ {
+  "id": "montserrat",
+  "family": "Montserrat",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/montserrat/montserrat-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "montserrat",
+  "family": "Montserrat",
+  "style": "italic",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/montserrat/montserrat-latin-wght-italic.woff2"
+ },
+ {
+  "id": "noto-sans-devanagari",
+  "family": "Noto Sans Devanagari",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/noto-sans-devanagari/noto-sans-devanagari-devanagari-wght-normal.woff2"
+ },
+ {
+  "id": "noto-sans-devanagari",
+  "family": "Noto Sans Devanagari",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "devanagari",
+  "file": "fonts/lib/noto-sans-devanagari/noto-sans-devanagari-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "noto-sans-devanagari",
+  "family": "Noto Sans Devanagari",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "devanagari",
+  "file": "fonts/lib/noto-sans-devanagari/noto-sans-devanagari-latin-wght-normal.woff2"
+ },
+ {
+  "id": "outfit",
+  "family": "Outfit",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/outfit/outfit-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "outfit",
+  "family": "Outfit",
+  "style": "normal",
+  "weight": "100 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/outfit/outfit-latin-wght-normal.woff2"
+ },
+ {
+  "id": "playfair-display",
+  "family": "Playfair Display",
+  "style": "normal",
+  "weight": "400 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/playfair-display/playfair-display-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "playfair-display",
+  "family": "Playfair Display",
+  "style": "normal",
+  "weight": "400 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/playfair-display/playfair-display-latin-wght-normal.woff2"
+ },
+ {
+  "id": "playfair-display",
+  "family": "Playfair Display",
+  "style": "italic",
+  "weight": "400 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/playfair-display/playfair-display-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "playfair-display",
+  "family": "Playfair Display",
+  "style": "italic",
+  "weight": "400 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/playfair-display/playfair-display-latin-wght-italic.woff2"
+ },
+ {
+  "id": "plus-jakarta-sans",
+  "family": "Plus Jakarta Sans",
+  "style": "normal",
+  "weight": "200 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/plus-jakarta-sans/plus-jakarta-sans-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "plus-jakarta-sans",
+  "family": "Plus Jakarta Sans",
+  "style": "normal",
+  "weight": "200 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/plus-jakarta-sans/plus-jakarta-sans-latin-wght-normal.woff2"
+ },
+ {
+  "id": "plus-jakarta-sans",
+  "family": "Plus Jakarta Sans",
+  "style": "italic",
+  "weight": "200 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/plus-jakarta-sans/plus-jakarta-sans-latin-ext-wght-italic.woff2"
+ },
+ {
+  "id": "plus-jakarta-sans",
+  "family": "Plus Jakarta Sans",
+  "style": "italic",
+  "weight": "200 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/plus-jakarta-sans/plus-jakarta-sans-latin-wght-italic.woff2"
+ },
+ {
+  "id": "syne",
+  "family": "Syne",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/syne/syne-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "syne",
+  "family": "Syne",
+  "style": "normal",
+  "weight": "400 800",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/syne/syne-latin-wght-normal.woff2"
+ },
+ {
+  "id": "teko",
+  "family": "Teko",
+  "style": "normal",
+  "weight": "300 700",
+  "unicodeRange": "U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09",
+  "subset": "devanagari",
+  "file": "fonts/lib/teko/teko-devanagari-wght-normal.woff2"
+ },
+ {
+  "id": "teko",
+  "family": "Teko",
+  "style": "normal",
+  "weight": "300 700",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/teko/teko-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "teko",
+  "family": "Teko",
+  "style": "normal",
+  "weight": "300 700",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/teko/teko-latin-wght-normal.woff2"
+ },
+ {
+  "id": "unbounded",
+  "family": "Unbounded",
+  "style": "normal",
+  "weight": "200 900",
+  "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+  "subset": "latin-ext",
+  "file": "fonts/lib/unbounded/unbounded-latin-ext-wght-normal.woff2"
+ },
+ {
+  "id": "unbounded",
+  "family": "Unbounded",
+  "style": "normal",
+  "weight": "200 900",
+  "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+  "subset": "latin",
+  "file": "fonts/lib/unbounded/unbounded-latin-wght-normal.woff2"
+ }
+]

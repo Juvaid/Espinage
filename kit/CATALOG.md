@@ -146,10 +146,37 @@ Demo: `Bundle-Elements-*`, segments 5–7. Labels and distances come from the br
 
 `DepthReveal` builds a photo in near → far from its depth map, with a light edge. It walks the depth histogram, so the area grows evenly even when most of the frame is far away. Props: `src, depth, at, dur, out, w, h, left, top, radius`. Demo: `Bundle-Elements-*`, segment 8.
 
+## Fonts, pairs and captions
+
+**Font library** (`src/type/fonts.ts`): 31 OFL families vendored as woff2 under `public/fonts/lib` (re-vendor with `scripts/fonts-vendor.mjs`), plus the brand faces Geist, Archivo and Cinzel. Each family carries its Latin, Devanagari and Gurmukhi subsets with their Unicode ranges, so Hinglish, Hindi and Punjabi lines render in designed fonts. Call `useFonts([...families])` to hold the frame until they load.
+
+**Font pairs** (`src/type/pairs.ts`): 17 `FONT_PAIRS`, each with a lead, hero and label face plus matching Devanagari and Gurmukhi faces, and a `why` line. `faceCss(pair, 'lead' | 'hero' | 'label')` returns the CSS with the Indic fallbacks in the stack. See the `Font-Pairs` specimen.
+
+**Captions** (`src/captions`):
+
+| Piece | Job |
+|---|---|
+| `CaptionTrack` | Word timings + a style → paged, animated captions over any scene; layouts `line`, `stack` (lead / hero / tail) and `word` |
+| `captionStyleSchema` / `CaptionStyle` | The style as plain JSON (zod): pair, layout, words per page, case, size, hero scale, position, colours (theme tokens or CSS), enter / active / hero effects, stroke, shadow, panel, exit |
+| `CAPTION_PRESETS` (20) | Grouped by look: brand (Dhunna steel, Dhunna gold, Crown Crest italic), editorial, energy, clean, indic. Each has a note on when to use it |
+| `fromVoJson`, `fromAutocaption`, `fromSrt`, `spread` | Word timings from our voice-over JSON, AutoCaption Studio cues or SRT; `spread` gives even timing, with `*word*` marking a hero |
+
+The editor is the `Caption-Editor` composition in Studio. Pick a preset, theme, script (O3–B3 play the real voice-overs) and background, then override any field in the props panel; Save writes the props to `KitRoot.tsx`. To keep a look, copy the `overrides` into a preset in `style.ts`.
+
+Previews:
+- `Caption-Gallery-*` plays every preset in turn;
+- `Font-Pairs` is the specimen sheet.
+
+Type rules learned:
+- Devanagari has no capitals, so hierarchy comes from size and weight.
+- Strokes use `paint-order: stroke fill`.
+- Gradient-filled words (karaoke, shimmer) get `drop-shadow`, not `text-shadow`, and no stroke.
+- A caption panel arrives with its first word.
+
 ## Rules agents must keep
 
 - One effect per beat, on the element that matters. Icons only where they mean something, never spammed.
 - CTA never over a card: wrap the cards in `MakeRoom`.
 - Real assets only: Phosphor icons, project renders, depth maps. No plain line icons, no glassmorphism, no grain or dot textures.
 - Never invent facts (prices, phone numbers, RERA, amenities a project doesn't have).
-- Render stills and look at them before reporting: `node scripts/stills.mjs out/check Pro-Showcase-Dhunna54D:1200` (3–4 frames per call).
+- Render stills and look at them before reporting: `npm run stills -- out/check Pro-Showcase-Dhunna54D:1200` (3–4 frames per call; it puts temp files on disk 2 — the internal drive is full).
