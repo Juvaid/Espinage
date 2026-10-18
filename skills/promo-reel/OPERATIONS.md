@@ -50,7 +50,7 @@ scp hostinger-hermes:/srv/projects/<name>/out/<file>.mp4 "/Volumes/disk 2/<proje
   ```
 
   On 2026-10-19 there were 198 of them (≈ 86 GB). In scripts, `bundle()` once and reuse the bundle for every composition.
-- **Licence:** Remotion is free for organisations of up to 3 employees; above that it needs a company licence (remotion.pro). Flag it before any team-scale use.
+- **Licence:** Remotion is free for organisations of up to 3 employees. WordLord has 3 (owner, 2026-10-19), so the free tier applies. At 4 or more it needs a company licence (remotion.pro).
 
 ## Storage and assets
 
@@ -85,4 +85,12 @@ scp hostinger-hermes:/srv/projects/<name>/out/<file>.mp4 "/Volumes/disk 2/<proje
 
 ## Platform direction
 
-Agents build compositions as **manifests**: JSON naming kit components with their zod-typed props. The Caption Studio opens, previews, edits and renders them with the same components. The VPS renders. Gemini does only transcription, scripts and voice. The plan is in `/Volumes/disk 2/autocaption/docs/REMOTION-PLATFORM.md`.
+The product is **one user-facing editor**, the Caption Studio (AutoCaption) merged with Remotion. Anyone on the team can make and adjust videos there like in any editor, without an agent:
+
+- **Script and voice:** Gemini writes a script, or uses one from a person or an agent, and turns it into the voiceover. Captions follow.
+- **Building blocks:** kit components and presets with real controls, generated from their zod schemas.
+- **Editing:** a timeline and a live Player preview.
+- **Observability:** a visible job record for every generation and render.
+- **Rendering:** on the VPS.
+
+A project is a manifest: JSON naming kit components and their props. Agents are optional helpers that edit the same manifest. Plan: `/Volumes/disk 2/autocaption/docs/REMOTION-PLATFORM.md`.
