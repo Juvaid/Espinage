@@ -40,7 +40,7 @@ Shared elements (toggle pills, counters, morphs, cards) take the look from the t
   - The OSM map holds on Ludhiana, then falls to Sarabha Nagar.
   - It match-cuts into one 3D scene: the steel pin and clay 54D rise, the chrome 54D lands behind the building, and the 80 ft road is lit with a floating label.
   - Then the GCards layouts.
-- **Voice:** the user records; the old takes were Gemini Charon (male) / Aoede.
+- **Voice:** the user records, or Gemini speech. What the user wants (19 Oct 2026): **mature and commanding**, natural spoken Hinglish with an authentic Punjabi-Delhi accent, unhurried and assured; never sing-song, excited or off-accent. Rejected: Bodi (accent, noise) and the first O/R takes ("not Hinglish, not mature, not commanding"). Use `scripts/tts_commanding.mjs <film> Charon Alnilam` in the 54D project; the full flash-tts model reads the direction aloud, so cut it with `scripts/trim_direction.py` and check every take with whisper (a take whose transcript drifts into another script, e.g. Tamil, has drifted off-accent: reject it). Offer two voices per film and let the user pick by ear.
 - Six current films and the archive are listed in the project's `docs/FILMS.md`. Drive: "Dhunna Ad Creatives / 54D · Current films (16 Oct)".
 
 ## Projects and assets

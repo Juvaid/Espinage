@@ -44,6 +44,9 @@ If you can't fill all three lines, the scene isn't ready to build.
 - Symmetric grids of identical icons with labels. Use a checklist card, a carousel or a tracked tag (see the "information is a UI" rule in SKILL.md).
 - Legend boxes, keys and fake UI chrome (fake browser bars, fake phone frames, fake dashboards).
 - Content in the bottom ~360 px (the Reels caption and button zone), or pressed against the frame edge.
+- A fact shown as a huge numeral floating over the map with a thin dimension bar, an uppercase tracked label ("WIDE ROAD", "PLOT") and the pin under it, while the caption repeats the same words (rejected 19 Oct 2026 on the 54D A, B, C, G, N, O, P, R films). Facts take the house heading in the fixed slot ("**80 ft** chaudi road"), and the caption steps aside while it shows.
+- A glossy app-icon tile ("P" for parking) with animated chevrons and a tracked label. Say it in a heading ("Basement **parking**") or show the real thing.
+- A dark, warm carved-stone look on a film whose brand look is navy and steel (54D Lumière, rejected as "too dull"): muddy brown grounds, words carved so faintly they don't read, a 5 s static end card on stone.
 
 **Colour and finish**
 - More than one accent colour.
