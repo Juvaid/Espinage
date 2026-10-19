@@ -41,8 +41,8 @@ export const manifestSchema = z.object({
   title: ui(z.string().default('Untitled film'), { label: 'Title', group: 'Project' }),
   theme: ui(z.enum(THEME_IDS).default('dhunna_54d'), { label: 'Brand look', group: 'Project' }),
   fps: ui(z.number().int().min(24).max(60).default(30), { label: 'Frame rate', control: 'number', unit: 'fps', group: 'Project', help: '30 for reels; 60 for smooth motion' }),
-  width: z.number().int().default(1080),
-  height: z.number().int().default(1920),
+  width: z.number().int().min(240).max(4096).default(1080),
+  height: z.number().int().min(240).max(4096).default(1920),
   durationInFrames: ui(z.number().int().min(1).optional(), { label: 'Length (empty = until the last item ends)', control: 'frames', group: 'Project' }),
   voice: ui(
     z
