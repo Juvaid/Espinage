@@ -3,6 +3,7 @@ import { REGISTRY } from '../src/manifest/registry';
 import { manifestDuration, newItem, parseManifest } from '../src/manifest/schema';
 import { SAMPLE_MANIFEST } from '../src/demo/manifestSample';
 import { ALL_COMPONENTS_MANIFEST } from '../src/demo/manifestAll';
+import { motionDefaults, TRANSITIONS } from '../src/manifest/motion';
 
 let fail = 0;
 const check = (name: string, ok: boolean, extra = '') => {
@@ -35,4 +36,19 @@ check('a new item round-trips through parse', withItem.ok);
 let threw = false;
 try { newItem('nope', 0, 'x'); } catch { threw = true; }
 check('newItem refuses an unknown type', threw);
+
+// motion (enter / exit / transform / animate): optional in saved files, no-op by default, validated when present
+const old = parseManifest({ tracks: [{ id: 't', items: [{ id: 'x', type: 'title', from: 0, durationInFrames: 30, props: {} }] }] });
+const oldItem = old.ok ? (old.manifest.tracks[0].items[0] as Record<string, any>) : null;
+check('a project saved before motion existed still parses', old.ok);
+check('motion defaults are no-ops', !!oldItem && oldItem.enter.type === 'none' && oldItem.exit.type === 'none' && oldItem.transform.scale === 1 && oldItem.transform.opacity === 1 && oldItem.animate.on === false);
+const md = motionDefaults();
+check('motionDefaults matches what parse fills', !!oldItem && JSON.stringify(md.transform) === JSON.stringify(oldItem.transform) && md.enter.type === 'none');
+const moved = parseManifest({ tracks: [{ id: 't', items: [{ id: 'x', type: 'title', from: 0, durationInFrames: 30, props: {}, enter: { type: 'rise' }, transform: { x: 40, rotate: 5 } }] }] });
+check('partial motion settings fill the rest from defaults', moved.ok && (moved.manifest.tracks[0].items[0] as any).enter.duration === 14 && (moved.manifest.tracks[0].items[0] as any).transform.scale === 1);
+const badMotion = parseManifest({ tracks: [{ id: 't', items: [{ id: 'x', type: 'title', from: 0, durationInFrames: 30, props: {}, enter: { type: 'teleport' } }] }] });
+check('an unknown transition is refused, naming the field', !badMotion.ok && badMotion.problems.some((p) => p.includes('enter.type')));
+check('every transition is listed', TRANSITIONS.length >= 14 && TRANSITIONS[0] === 'none');
+check('every component has a known category and a description', REGISTRY.every((e) => e.description.length > 10));
+check('component types are unique', new Set(REGISTRY.map((e) => e.type)).size === REGISTRY.length);
 process.exit(fail ? 1 : 0);

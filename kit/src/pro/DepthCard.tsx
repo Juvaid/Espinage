@@ -1,5 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {continueRender, delayRender, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {continueRender, delayRender, interpolate, useCurrentFrame} from 'remotion';
+import {asset} from '../lib/asset';
 import {ThreeCanvas} from '@remotion/three';
 import {useThree} from '@react-three/fiber';
 import * as THREE from 'three';
@@ -20,7 +21,7 @@ const Plane: React.FC<{src: string; depth: string; aspect: number; imgAspect: nu
   const [handle] = useState(() => delayRender(`depth card ${src}`));
   useEffect(() => {
     const l = new THREE.TextureLoader();
-    Promise.all([l.loadAsync(staticFile(src)), l.loadAsync(staticFile(depth))]).then(
+    Promise.all([l.loadAsync(asset(src)), l.loadAsync(asset(depth))]).then(
       ([map, d]) => {
         map.colorSpace = THREE.NoColorSpace;
         map.minFilter = THREE.LinearMipmapLinearFilter;

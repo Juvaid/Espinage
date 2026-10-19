@@ -1,14 +1,21 @@
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig, type CalculateMetadataFunction } from 'remotion';
+import { AbsoluteFill, Audio, Sequence, useVideoConfig, type CalculateMetadataFunction } from 'remotion';
 import '../lib/fonts';
+import { asset } from '../lib/asset';
 import { BevelDefs } from '../pro/Bevel';
 import { KitThemeProvider } from '../theme/KitTheme';
+import { ItemMotion, motionDefaults } from './motion';
 import { registryByType } from './registry';
 import { manifestDuration, parseManifest, type Manifest } from './schema';
 
 // Plays a project (manifest). The same component runs in the Remotion Studio, in the Caption Studio's Player
 // (inputProps = manifest) and on the VPS render box (--props=manifest.json), so the preview is the render.
-const src = (p: string) => (/^https?:\/\//.test(p) ? p : staticFile(p));
+// uploaded media (absolute URLs, root paths) pass through; the rest are kit assets
+const src = asset;
+
+// only the motion fields an item actually has (parsed items have all four)
+const pick = (it: { enter?: unknown; exit?: unknown; transform?: unknown; animate?: unknown }) =>
+  Object.fromEntries((['enter', 'exit', 'transform', 'animate'] as const).filter((k) => it[k] !== undefined).map((k) => [k, it[k]]));
 
 const Problem: React.FC<{ title: string; lines: string[] }> = ({ title, lines }) => (
   <AbsoluteFill style={{ background: '#1a0d10', color: '#ffd5d5', padding: 60, fontFamily: 'system-ui', fontSize: 30, lineHeight: 1.4 }}>
@@ -37,7 +44,9 @@ export const ManifestReel: React.FC<Record<string, unknown>> = (raw) => {
                 if (!e) return null; // parseManifest already rejects unknown types
                 return (
                   <Sequence key={it.id} from={it.from} durationInFrames={it.durationInFrames} name={it.label || e.label} layout="none">
-                    <AbsoluteFill>{e.render(it.props as never, { fps, from: it.from, durationInFrames: it.durationInFrames, voiceWords })}</AbsoluteFill>
+                    <ItemMotion durationInFrames={it.durationInFrames} {...motionDefaults()} {...pick(it)}>
+                      {e.render(it.props as never, { fps, from: it.from, durationInFrames: it.durationInFrames, voiceWords })}
+                    </ItemMotion>
                   </Sequence>
                 );
               })}

@@ -1,5 +1,6 @@
 import React, {useId} from 'react';
-import {AbsoluteFill, Audio, Easing, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, Sequence, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {asset} from '../lib/asset';
 import {MORPH_SHAPES} from '../components/svg/ShapeMorph';
 import {alpha, useKitTheme} from '../theme/KitTheme';
 
@@ -289,7 +290,7 @@ export const Scenes: React.FC<{children: React.ReactNode; sfx?: boolean}> = ({ch
             const at = Math.max(0, s.start + Math.round(n / 2) - (def?.[2] ?? 4));
             return (
               <Sequence key={`sfx${i}`} from={at} durationInFrames={60}>
-                <Audio src={staticFile(src)} volume={def?.[1] ?? 0.12} />
+                <Audio src={asset(src)} volume={def?.[1] ?? 0.12} />
               </Sequence>
             );
           })

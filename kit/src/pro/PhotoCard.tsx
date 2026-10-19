@@ -1,5 +1,6 @@
 import React from 'react';
-import {Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'remotion';
+import {Img, OffthreadVideo, Sequence, useCurrentFrame} from 'remotion';
+import {asset} from '../lib/asset';
 import {ease, ramp} from '../lib/anim';
 import {alpha, useKitTheme} from '../theme/KitTheme';
 
@@ -51,10 +52,10 @@ export const PhotoCard: React.FC<{
     >
       {video ? (
         <Sequence from={at - 12} layout="none">
-          <OffthreadVideo src={staticFile(video)} muted style={media} />
+          <OffthreadVideo src={asset(video)} muted style={media} />
         </Sequence>
       ) : src ? (
-        <Img src={staticFile(src)} style={media} />
+        <Img src={asset(src)} style={media} />
       ) : null}
       {/* soft top sheen so the card reads as a physical print */}
       <div style={{position: 'absolute', inset: 0, background: `linear-gradient(160deg, oklch(1 0 0 / 0.12) 0%, transparent 28%, transparent 70%, ${alpha(C.deep, 0.45)} 100%)`}} />

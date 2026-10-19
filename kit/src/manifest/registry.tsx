@@ -1,11 +1,17 @@
 import React from 'react';
-import { AbsoluteFill, Img, OffthreadVideo, interpolate, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Img, OffthreadVideo, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { z } from 'zod';
 import { CaptionTrack } from '../captions/CaptionTrack';
 import { captionStyleSchema, presetById, PRESET_IDS } from '../captions/style';
 import { spread, type CapWord } from '../captions/words';
 import { KIT_ICON_NAMES, type KitIconName } from '../icons/KitIcon';
+import { ShapeMorph, MORPH_SHAPES } from '../components/svg/ShapeMorph';
+import { TogglePills, type ToggleItem } from '../components/graphics/TogglePills';
+import { Checklist } from '../pro/Checklist';
 import { DepthReveal } from '../pro/DepthReveal';
+import { AnimatedBeam, Lens, NumberTicker, Spotlight } from '../pro/Effects';
+import { Carousel, CTA, Heading, Place, SidePair, TextBehind, Wordmark } from '../pro/parts';
+import { ArchGrid, WireEye, WirePin } from '../pro/Wireframes';
 import { Grade, LightLeak, Vignette } from '../pro/Grade';
 import { Callout, DistanceRings, RouteDraw } from '../pro/Location';
 import { LogoReveal } from '../pro/LogoReveal';
@@ -13,6 +19,7 @@ import { PhotoCard } from '../pro/PhotoCard';
 import { SHADER_KINDS, ShaderBackdrop, type ShaderKind } from '../pro/Shaders';
 import { BlurInText, ShimmerText, SlitLine, StatGrid, WordRotate } from '../pro/TextFx';
 import { useKitTheme, type KitTheme } from '../theme/KitTheme';
+import { asset } from '../lib/asset';
 import { colorField, posX, posY, ui, unit01 } from './controls';
 
 // The component registry: every kit component a project (manifest) can use, with its settings schema (which doubles
@@ -23,11 +30,13 @@ import { colorField, posX, posY, ui, unit01 } from './controls';
 // showcase in the Manifest-Demo project. Never change the meaning of an existing field (saved projects use it);
 // add a new one with a default instead.
 
+export const CATEGORIES = ['Background', 'Picture', 'Text', 'Captions', 'Figures', 'Lists', 'Location', 'Graphics', 'Effect', 'Brand'] as const;
+export type Category = (typeof CATEGORIES)[number];
 export type RenderCtx = { fps: number; from: number; durationInFrames: number; voiceWords: CapWord[] };
 export type RegistryEntry<S extends z.ZodObject = z.ZodObject> = {
   type: string;
   label: string;
-  category: 'Background' | 'Picture' | 'Text' | 'Captions' | 'Figures' | 'Location' | 'Effect' | 'Brand';
+  category: Category;
   description: string;
   defaultDuration: number; // frames at 30 fps
   props: S;
@@ -38,20 +47,25 @@ const entry = <S extends z.ZodObject>(e: RegistryEntry<S>) => e as unknown as Re
 const tokenColor = (c: string, C: KitTheme) =>
   (({ ivory: C.ivory, dim: C.dim, accent: C.accent, deep: C.deep, ground: C.ground, glow: C.glow }) as Record<string, string>)[c] ?? c;
 const media = (label: string, accept: 'image' | 'video' | 'audio', def = '') => ui(z.string().default(def), { label, control: 'media', accept, group: 'Content' });
-const src = (p: string) => (/^https?:\/\//.test(p) ? p : staticFile(p));
+// absolute URLs and root paths (e.g. the Caption Studio's /studio/api/media/<key>) pass through; the rest are kit
+// assets resolved by staticFile
+const src = asset;
 
 // ── Background ──────────────────────────────────────────────────────────────
 const backgroundProps = z.object({
-  mode: ui(z.enum(['shader', 'solid']).default('shader'), { label: 'Type', group: 'Style' }),
+  mode: ui(z.enum(['shader', 'solid', 'gradient']).default('shader'), { label: 'Type', group: 'Style' }),
   shader: ui(z.enum(SHADER_KINDS as [ShaderKind, ...ShaderKind[]]).default('mesh'), { label: 'Look', group: 'Style', help: 'mesh · silk · metal · aurora · rays · contour' }),
   energy: unit01('Energy', 0.5),
   speed: ui(z.number().min(0.2).max(3).default(1), { label: 'Speed', control: 'slider', step: 0.1, group: 'Style' }),
   seed: ui(z.number().int().min(0).max(99).default(0), { label: 'Variation', control: 'slider', step: 1, group: 'Style' }),
   color: colorField('Colour (solid)', 'ground'),
+  color2: colorField('Second colour (gradient)', 'deep'),
+  angle: ui(z.number().min(0).max(360).default(180), { label: 'Gradient angle', control: 'slider', step: 5, unit: '°', group: 'Style' }),
 });
 const Background: React.FC<z.infer<typeof backgroundProps>> = (p) => {
   const C = useKitTheme();
   if (p.mode === 'solid') return <AbsoluteFill style={{ background: tokenColor(p.color, C) }} />;
+  if (p.mode === 'gradient') return <AbsoluteFill style={{ background: `linear-gradient(${p.angle}deg, ${tokenColor(p.color, C)}, ${tokenColor(p.color2, C)})` }} />;
   return <ShaderBackdrop kind={p.shader} energy={p.energy} speed={p.speed} seed={p.seed} />;
 };
 
@@ -218,6 +232,188 @@ const VideoClip: React.FC<z.infer<typeof videoProps>> = (p) => {
   return <AbsoluteFill>{p.grade ? <Grade>{clip}</Grade> : clip}</AbsoluteFill>;
 };
 
+
+// ── More components (wrapping src/pro and src/components) ───────────────────
+// Some pro components count time in 30 fps "film frames" (useT), so their cue frames are converted here.
+const film = (frames: number, c: RenderCtx) => (frames * 30) / c.fps;
+const textField = (label: string, def: string, control: 'text' | 'textarea' = 'text') => ui(z.string().default(def), { label, control, group: 'Content' });
+const pictureList = (def: { src: string; label: string }[]) =>
+  ui(z.array(z.object({ src: media('Picture', 'image'), label: z.string().default('Concept visualisation') })).min(1).max(8).default(def), { label: 'Pictures', group: 'Content' });
+
+const headingProps = z.object({
+  light: textField('Light words', 'Your next'),
+  accent: textField('Accent words', 'address'),
+  size: ui(z.number().min(40).max(200).default(104), { label: 'Size', control: 'slider', step: 2, unit: 'px', group: 'Style' }),
+  y: posY(250, 'Vertical position'),
+  stagger: ui(z.number().int().min(0).max(30).default(5), { label: 'Gap between words', control: 'frames', group: 'Timing' }),
+});
+const placeProps = z.object({ text: textField('Place', 'Sarabha Nagar, Ludhiana') });
+const tickerProps = z.object({
+  value: textField('Number', '82'),
+  size: ui(z.number().min(40).max(400).default(200), { label: 'Size', control: 'slider', step: 2, unit: 'px', group: 'Style' }),
+  color: colorField('Colour', 'ivory'),
+  rollFrames: ui(z.number().int().min(4).max(60).default(22), { label: 'Roll time', control: 'frames', group: 'Timing' }),
+  x: posX(540, 'Centre X'),
+  y: posY(800, 'Top'),
+});
+const checklistProps = z.object({
+  title: textField('Title', 'Inside the building'),
+  items: ui(z.array(z.object({ icon: ui(iconEnum.default('check-circle' as KitIconName), { label: 'Icon', control: 'icon' }), text: z.string().default('Item') })).min(1).max(8).default([
+    { icon: 'car' as KitIconName, text: 'Basement parking' },
+    { icon: 'elevator' as KitIconName, text: 'Lifts to every floor' },
+    { icon: 'storefront' as KitIconName, text: 'Double-height showrooms' },
+  ]), { label: 'Items (from the brief only)', group: 'Content' }),
+  stagger: ui(z.number().int().min(4).max(60).default(16), { label: 'Gap between items', control: 'frames', group: 'Timing' }),
+  x: posX(90, 'Left'),
+  y: posY(620, 'Top'),
+  width: ui(z.number().min(400).max(1000).default(900), { label: 'Width', control: 'slider', step: 10, unit: 'px', group: 'Layout' }),
+});
+const togglesProps = z.object({
+  items: ui(z.array(z.object({ line1: z.string().default('Benefit'), line2: z.string().default(''), icon: ui(iconEnum.default('check-circle' as KitIconName), { label: 'Icon', control: 'icon' }) })).min(1).max(4).default([
+    { line1: 'Prime', line2: 'frontage', icon: 'storefront' as KitIconName },
+    { line1: 'Basement', line2: 'parking', icon: 'car' as KitIconName },
+  ]), { label: 'Toggles (from the brief only)', group: 'Content' }),
+  stagger: ui(z.number().int().min(4).max(60).default(20), { label: 'Gap between toggles', control: 'frames', group: 'Timing' }),
+  x: posX(110, 'Left'),
+  y: posY(600, 'Top'),
+  rowGap: ui(z.number().min(140).max(320).default(210), { label: 'Row spacing', control: 'slider', step: 5, unit: 'px', group: 'Layout' }),
+});
+const carouselProps = z.object({
+  pictures: pictureList([{ src: 'samples/s-double-height.jpg', label: 'Showroom' }, { src: 'samples/o-open-plan.jpg', label: 'Offices' }, { src: 'samples/b-parking.jpg', label: 'Parking' }]),
+  every: ui(z.number().int().min(10).max(150).default(36), { label: 'Time per picture', control: 'frames', group: 'Timing' }),
+});
+const sidePairProps = z.object({
+  a: media('Left picture', 'image', 'samples/s-double-height.jpg'),
+  aLabel: textField('Left label', 'Showroom'),
+  b: media('Right picture', 'image', 'samples/o-open-plan.jpg'),
+  bLabel: textField('Right label', 'Offices'),
+  bAt: ui(z.number().int().min(0).max(120).default(18), { label: 'Right card lands at', control: 'frames', group: 'Timing' }),
+});
+const textBehindProps = z.object({
+  src: media('Picture', 'image', 'samples/r-statue-tight.jpg'),
+  cutout: media('Subject cut-out (transparent PNG)', 'image', 'samples/r-statue-tight-cutout.png'),
+  word: textField('Word', '54D'),
+  size: ui(z.number().min(80).max(420).default(230), { label: 'Size', control: 'slider', step: 2, unit: 'px', group: 'Style' }),
+  wordY: ui(z.number().min(0).max(0.9).default(0.3), { label: 'Word height', control: 'slider', step: 0.01, group: 'Layout' }),
+  wordX: ui(z.number().min(-400).max(400).default(0), { label: 'Word sideways', control: 'slider', step: 2, unit: 'px', group: 'Layout' }),
+  label: textField('Card label', 'Concept visualisation'),
+});
+const lensProps = z.object({
+  src: media('Picture', 'image', 'samples/r-golden.jpg'),
+  showPicture: ui(z.boolean().default(true), { label: 'Show the picture', group: 'Content', help: 'off: only the loupe, over a picture on a track below (same box)' }),
+  zoom: ui(z.number().min(1.2).max(5).default(2.2), { label: 'Magnification', control: 'slider', step: 0.1, group: 'Style' }),
+  r: ui(z.number().min(60).max(320).default(150), { label: 'Lens size', control: 'slider', step: 5, unit: 'px', group: 'Style' }),
+  startX: ui(z.number().min(0).max(1).default(0.25), { label: 'Start X', control: 'slider', step: 0.01, group: 'Motion' }),
+  startY: ui(z.number().min(0).max(1).default(0.4), { label: 'Start Y', control: 'slider', step: 0.01, group: 'Motion' }),
+  endX: ui(z.number().min(0).max(1).default(0.7), { label: 'End X', control: 'slider', step: 0.01, group: 'Motion' }),
+  endY: ui(z.number().min(0).max(1).default(0.55), { label: 'End Y', control: 'slider', step: 0.01, group: 'Motion' }),
+  width: ui(z.number().min(300).max(1080).default(920), { label: 'Width', control: 'slider', step: 10, unit: 'px', group: 'Layout' }),
+  height: ui(z.number().min(300).max(1920).default(1100), { label: 'Height', control: 'slider', step: 10, unit: 'px', group: 'Layout' }),
+  left: posX(80, 'Left'),
+  top: posY(420, 'Top'),
+});
+const spotlightProps = z.object({ sweepFrames: ui(z.number().int().min(10).max(120).default(36), { label: 'Sweep time', control: 'frames', group: 'Timing' }) });
+const beamProps = z.object({
+  x1: posX(200, 'From X'),
+  y1: posY(1300, 'From Y'),
+  x2: posX(860, 'To X'),
+  y2: posY(700, 'To Y'),
+  curve: ui(z.number().min(-1).max(1).default(-0.25), { label: 'Curve', control: 'slider', step: 0.01, group: 'Layout' }),
+  drawFrames: ui(z.number().int().min(6).max(90).default(26), { label: 'Draw time', control: 'frames', group: 'Timing' }),
+});
+const SHAPE_IDS = Object.keys(MORPH_SHAPES) as [keyof typeof MORPH_SHAPES, ...(keyof typeof MORPH_SHAPES)[]];
+const morphProps = z.object({
+  steps: ui(z.array(z.object({ shape: z.enum(SHAPE_IDS).default('pin'), label: z.string().default('') })).min(2).max(6).default([
+    { shape: 'pin', label: 'Location' },
+    { shape: 'building', label: 'Building' },
+    { shape: 'house', label: 'Home' },
+  ]), { label: 'Shapes', group: 'Content' }),
+  every: ui(z.number().int().min(10).max(120).default(30), { label: 'Time per shape', control: 'frames', group: 'Timing' }),
+  size: ui(z.number().min(160).max(800).default(420), { label: 'Size', control: 'slider', step: 10, unit: 'px', group: 'Style' }),
+  fill: ui(z.enum(['metal', 'outline']).default('metal'), { label: 'Finish', group: 'Style' }),
+  y: posY(640, 'Top'),
+});
+const gridProps = z.object({ opacity: ui(z.number().min(0.01).max(0.2).default(0.065), { label: 'Strength', control: 'slider', step: 0.005, group: 'Style' }) });
+const eyeProps = z.object({
+  x: posX(130, 'Left'),
+  y: posY(300, 'Top'),
+  width: ui(z.number().min(300).max(1000).default(820), { label: 'Width', control: 'slider', step: 10, unit: 'px', group: 'Layout' }),
+  blinkAt: ui(z.number().int().min(0).max(300).default(40), { label: 'Blink at', control: 'frames', group: 'Timing' }),
+  opacity: unit01('Strength', 0.92),
+});
+const pinProps = z.object({ x: posX(750, 'X'), y: posY(1080, 'Y'), opacity: unit01('Strength', 0.94) });
+const ctaProps = z.object({
+  label: textField('Button', 'Message us'),
+  logo: media('Logo (empty = brand logo)', 'image', ''),
+  pressAt: ui(z.number().int().min(0).max(300).default(36), { label: 'Button press at', control: 'frames', group: 'Timing' }),
+  y: posY(1395, 'Top'),
+});
+const wordmarkProps = z.object({ logo: media('Logo (empty = brand logo)', 'image', '') });
+
+const Ticker: React.FC<z.infer<typeof tickerProps>> = (p) => {
+  const C = useKitTheme();
+  return <NumberTicker value={p.value} at={6} dur={p.rollFrames} size={p.size} color={tokenColor(p.color, C)} style={{ position: 'absolute', left: 0, width: p.x * 2, top: p.y, display: 'flex', justifyContent: 'center' }} />;
+};
+
+const LensItem: React.FC<z.infer<typeof lensProps> & { durationInFrames: number }> = (p) => {
+  const C = useKitTheme();
+  return (
+    <>
+      {p.showPicture ? (
+        <div style={{ position: 'absolute', left: p.left, top: p.top, width: p.width, height: p.height, borderRadius: 28, overflow: 'hidden', border: `1.5px solid ${C.hair}`, boxShadow: `0 36px 70px ${C.shadow}` }}>
+          <Img src={asset(p.src)} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+      ) : null}
+      <Lens src={p.src} w={p.width} h={p.height} left={p.left} top={p.top} at={6} dur={Math.max(12, p.durationInFrames - 12)} path={[[p.startX, p.startY], [p.endX, p.endY]]} zoom={p.zoom} r={p.r} />
+    </>
+  );
+};
+
+const BrandLogo: React.FC<{ logo: string; children: (logo: string) => React.ReactNode }> = ({ logo, children }) => {
+  const C = useKitTheme();
+  return <>{children(logo || C.logo)}</>;
+};
+
+const MORE: RegistryEntry[] = [
+  entry({ type: 'heading', label: 'Two-weight heading', category: 'Text', description: 'Light words and accent words landing one by one', defaultDuration: 90, props: headingProps, render: (p, c) => {
+    const words = [...p.light.split(/\s+/).filter(Boolean).map((t) => ({ t, role: 'light' as const })), ...p.accent.split(/\s+/).filter(Boolean).map((t) => ({ t, role: 'accent' as const }))];
+    return <Heading lines={[words.map((w, i) => ({ ...w, at: film(2 + i * p.stagger, c) }))]} from={0} to={film(c.durationInFrames, c)} y={p.y} size={p.size} />;
+  } }),
+  entry({ type: 'place', label: 'Place line', category: 'Text', description: 'A small tracked place name under a light rule', defaultDuration: 75, props: placeProps, render: (p, c) => <Place from={film(2, c)} to={film(c.durationInFrames, c)} text={p.text} /> }),
+  entry({ type: 'ticker', label: 'Number ticker', category: 'Figures', description: 'One big number rolling into place', defaultDuration: 75, props: tickerProps, render: (p) => <Ticker {...p} /> }),
+  entry({ type: 'checklist', label: 'Checklist', category: 'Lists', description: 'A card of items, each ticked on its cue', defaultDuration: 120, props: checklistProps, render: (p, c) => {
+    const items = p.items.map((it, i) => ({ icon: it.icon, text: it.text, at: 10 + i * p.stagger }));
+    return <Checklist title={p.title} items={items} end={Math.max(items[items.length - 1].at + 20, c.durationInFrames - 10)} style={{ position: 'absolute', left: p.x, top: p.y, width: p.width }} />;
+  } }),
+  entry({ type: 'toggles', label: 'Toggle pills', category: 'Lists', description: '2–4 benefits switching on, one by one', defaultDuration: 120, props: togglesProps, render: (p) => (
+    <TogglePills items={p.items.map((it, i) => ({ label: [it.line1, it.line2 || undefined], icon: it.icon, at: 14 + i * p.stagger }) as ToggleItem)} startFrame={2} top={p.y} left={p.x} rowGap={p.rowGap} />
+  ) }),
+  entry({ type: 'carousel', label: 'Carousel', category: 'Picture', description: 'Cards advancing one picture at a time', defaultDuration: 150, props: carouselProps, render: (p, c) => (
+    <Carousel items={p.pictures.map((m) => ({ image: m.src, label: m.label }))} steps={p.pictures.slice(1).map((_, i) => film((i + 1) * p.every, c))} dur={film(c.durationInFrames, c)} />
+  ) }),
+  entry({ type: 'sidePair', label: 'Side-by-side cards', category: 'Picture', description: 'Two picture cards, the second landing on its cue', defaultDuration: 105, props: sidePairProps, render: (p, c) => (
+    <SidePair a={{ image: p.a, label: p.aLabel }} b={{ image: p.b, label: p.bLabel }} bAt={film(p.bAt, c)} dur={film(c.durationInFrames, c)} />
+  ) }),
+  entry({ type: 'textBehind', label: 'Word behind subject', category: 'Picture', description: 'A word placed between the picture and its cut-out subject', defaultDuration: 105, props: textBehindProps, render: (p, c) => (
+    <TextBehind src={p.src} cutout={p.cutout} word={p.word} at={film(10, c)} dur={film(c.durationInFrames, c)} size={p.size} wordY={p.wordY} wordX={p.wordX} label={p.label} />
+  ) }),
+  entry({ type: 'lens', label: 'Magnifier', category: 'Picture', description: 'A loupe gliding over a picture, magnified inside', defaultDuration: 105, props: lensProps, render: (p, c) => <LensItem {...p} durationInFrames={c.durationInFrames} /> }),
+  entry({ type: 'spotlight', label: 'Spotlight', category: 'Effect', description: 'A soft cone of light sweeping once across the frame', defaultDuration: 45, props: spotlightProps, render: (p) => <Spotlight at={2} dur={p.sweepFrames} /> }),
+  entry({ type: 'beam', label: 'Beam', category: 'Graphics', description: 'A curved line drawing between two points, then a light running it', defaultDuration: 60, props: beamProps, render: (p) => <AnimatedBeam from={[p.x1, p.y1]} to={[p.x2, p.y2]} at={4} curve={p.curve} dur={p.drawFrames} /> }),
+  entry({ type: 'shapeMorph', label: 'Shape morph', category: 'Graphics', description: 'One outline becoming the next (pin → building → home)', defaultDuration: 120, props: morphProps, render: (p) => (
+    <AbsoluteFill style={{ alignItems: 'center' }}>
+      <ShapeMorph shapes={p.steps.map((x) => MORPH_SHAPES[x.shape])} at={p.steps.map((_, i) => 6 + i * p.every)} labels={p.steps.some((x) => x.label) ? p.steps.map((x) => x.label) : undefined} size={p.size} fill={p.fill} style={{ position: 'absolute', top: p.y }} />
+    </AbsoluteFill>
+  ) }),
+  entry({ type: 'archGrid', label: 'Architect grid', category: 'Background', description: 'A faint drifting architectural grid over the background', defaultDuration: 150, props: gridProps, render: (p) => <ArchGrid opacity={p.opacity} /> }),
+  entry({ type: 'wireEye', label: 'Wireframe eye', category: 'Graphics', description: 'A wireframe eye that traces in and blinks, behind "vision" lines', defaultDuration: 90, props: eyeProps, render: (p, c) => <WireEye start={0} end={c.durationInFrames - 1} x={p.x} y={p.y} w={p.width} blinkAt={p.blinkAt} opacity={p.opacity} /> }),
+  entry({ type: 'wirePin', label: 'Wireframe pin', category: 'Graphics', description: 'A wireframe map pin over a ground grid', defaultDuration: 90, props: pinProps, render: (p, c) => <WirePin start={0} end={c.durationInFrames - 1} from={[p.x, p.y]} opacity={p.opacity} /> }),
+  entry({ type: 'cta', label: 'Call to action', category: 'Brand', description: 'Wordmark and a button that gets pressed on its cue', defaultDuration: 90, props: ctaProps, render: (p, c) => (
+    <BrandLogo logo={p.logo}>{(logo) => <CTA from={film(2, c)} press={film(p.pressAt, c)} logo={logo} label={p.label} top={p.y} />}</BrandLogo>
+  ) }),
+  entry({ type: 'wordmark', label: 'End wordmark', category: 'Brand', description: 'The wordmark alone, large, with one gleam', defaultDuration: 75, props: wordmarkProps, render: (p, c) => <BrandLogo logo={p.logo}>{(logo) => <Wordmark from={film(2, c)} logo={logo} />}</BrandLogo> }),
+];
+
 export const REGISTRY: RegistryEntry[] = [
   entry({ type: 'background', label: 'Background', category: 'Background', description: 'Animated brand background (shader) or a solid colour', defaultDuration: 150, props: backgroundProps, render: (p) => <Background {...p} /> }),
   entry({ type: 'image', label: 'Full-frame picture', category: 'Picture', description: 'A photo filling the frame, with zoom, drift, grade and vignette', defaultDuration: 120, props: imageProps, render: (p, c) => <Picture {...p} durationInFrames={c.durationInFrames} /> }),
@@ -248,6 +444,7 @@ export const REGISTRY: RegistryEntry[] = [
   entry({ type: 'lightLeak', label: 'Light leak', category: 'Effect', description: 'A brand-tinted light leak across the frame (once per film)', defaultDuration: 30, props: leakProps, render: (p, c) => <LightLeak at={Math.floor(c.durationInFrames / 2)} dur={c.durationInFrames} from={p.from} strength={p.strength} /> }),
   entry({ type: 'vignette', label: 'Vignette', category: 'Effect', description: 'Soft edge darkening', defaultDuration: 150, props: vignetteProps, render: (p) => <Vignette amount={p.amount} /> }),
   entry({ type: 'logo', label: 'Logo reveal', category: 'Brand', description: 'The brand mark revealed in metal or as is', defaultDuration: 90, props: logoProps, render: (p) => <Logo {...p} /> }),
+  ...MORE,
 ];
 
 export const registryByType = (type: string) => REGISTRY.find((e) => e.type === type);

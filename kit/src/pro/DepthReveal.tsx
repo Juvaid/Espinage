@@ -1,5 +1,6 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
-import {continueRender, delayRender, Easing, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {continueRender, delayRender, Easing, interpolate, useCurrentFrame} from 'remotion';
+import {asset} from '../lib/asset';
 import {useKitTheme} from '../theme/KitTheme';
 
 // Depth reveal: a photo builds in from near to far using its depth map (Depth Anything V2: white = near), with a
@@ -35,7 +36,7 @@ const load = (src: string) =>
     i.crossOrigin = 'anonymous';
     i.onload = () => res(i);
     i.onerror = () => rej(new Error(`DepthReveal: cannot load ${src}`));
-    i.src = staticFile(src);
+    i.src = asset(src);
   });
 
 type St = {gl: WebGL2RenderingContext; loc: Record<string, WebGLUniformLocation | null>; aspect: number; q: number[]};

@@ -13,7 +13,9 @@
     "energy": 0.5,
     "speed": 1,
     "seed": 0,
-    "color": "ground"
+    "color": "ground",
+    "color2": "deep",
+    "angle": 180
    },
    "props": {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -26,7 +28,8 @@
       "type": "string",
       "enum": [
        "shader",
-       "solid"
+       "solid",
+       "gradient"
       ]
      },
      "shader": {
@@ -80,6 +83,24 @@
       "control": "color",
       "group": "Style",
       "type": "string"
+     },
+     "color2": {
+      "default": "deep",
+      "label": "Second colour (gradient)",
+      "control": "color",
+      "group": "Style",
+      "type": "string"
+     },
+     "angle": {
+      "default": 180,
+      "label": "Gradient angle",
+      "control": "slider",
+      "step": 5,
+      "unit": "°",
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 360
      }
     }
    }
@@ -1480,6 +1501,1393 @@
        "mask",
        "image"
       ]
+     }
+    }
+   }
+  },
+  {
+   "type": "heading",
+   "label": "Two-weight heading",
+   "category": "Text",
+   "description": "Light words and accent words landing one by one",
+   "defaultDuration": 90,
+   "defaults": {
+    "light": "Your next",
+    "accent": "address",
+    "size": 104,
+    "y": 250,
+    "stagger": 5
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "light": {
+      "default": "Your next",
+      "label": "Light words",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "accent": {
+      "default": "address",
+      "label": "Accent words",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "size": {
+      "default": 104,
+      "label": "Size",
+      "control": "slider",
+      "step": 2,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 40,
+      "maximum": 200
+     },
+     "y": {
+      "default": 250,
+      "label": "Vertical position",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "stagger": {
+      "default": 5,
+      "label": "Gap between words",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 30
+     }
+    }
+   }
+  },
+  {
+   "type": "place",
+   "label": "Place line",
+   "category": "Text",
+   "description": "A small tracked place name under a light rule",
+   "defaultDuration": 75,
+   "defaults": {
+    "text": "Sarabha Nagar, Ludhiana"
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "text": {
+      "default": "Sarabha Nagar, Ludhiana",
+      "label": "Place",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     }
+    }
+   }
+  },
+  {
+   "type": "ticker",
+   "label": "Number ticker",
+   "category": "Figures",
+   "description": "One big number rolling into place",
+   "defaultDuration": 75,
+   "defaults": {
+    "value": "82",
+    "size": 200,
+    "color": "ivory",
+    "rollFrames": 22,
+    "x": 540,
+    "y": 800
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "value": {
+      "default": "82",
+      "label": "Number",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "size": {
+      "default": 200,
+      "label": "Size",
+      "control": "slider",
+      "step": 2,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 40,
+      "maximum": 400
+     },
+     "color": {
+      "default": "ivory",
+      "label": "Colour",
+      "control": "color",
+      "group": "Style",
+      "type": "string"
+     },
+     "rollFrames": {
+      "default": 22,
+      "label": "Roll time",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 4,
+      "maximum": 60
+     },
+     "x": {
+      "default": 540,
+      "label": "Centre X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 800,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     }
+    }
+   }
+  },
+  {
+   "type": "checklist",
+   "label": "Checklist",
+   "category": "Lists",
+   "description": "A card of items, each ticked on its cue",
+   "defaultDuration": 120,
+   "defaults": {
+    "title": "Inside the building",
+    "items": [
+     {
+      "icon": "car",
+      "text": "Basement parking"
+     },
+     {
+      "icon": "elevator",
+      "text": "Lifts to every floor"
+     },
+     {
+      "icon": "storefront",
+      "text": "Double-height showrooms"
+     }
+    ],
+    "stagger": 16,
+    "x": 90,
+    "y": 620,
+    "width": 900
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "title": {
+      "default": "Inside the building",
+      "label": "Title",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "items": {
+      "default": [
+       {
+        "icon": "car",
+        "text": "Basement parking"
+       },
+       {
+        "icon": "elevator",
+        "text": "Lifts to every floor"
+       },
+       {
+        "icon": "storefront",
+        "text": "Double-height showrooms"
+       }
+      ],
+      "label": "Items (from the brief only)",
+      "group": "Content",
+      "minItems": 1,
+      "maxItems": 8,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "icon": {
+         "default": "check-circle",
+         "label": "Icon",
+         "control": "icon",
+         "type": "string",
+         "enum": [
+          "buildings",
+          "building-office",
+          "building-apartment",
+          "storefront",
+          "house-line",
+          "house",
+          "door-open",
+          "stairs",
+          "elevator",
+          "garage",
+          "warehouse",
+          "office-chair",
+          "desk",
+          "armchair",
+          "bed",
+          "bathtub",
+          "swimming-pool",
+          "plant",
+          "tree",
+          "park",
+          "map-pin",
+          "map-pin-line",
+          "map-trifold",
+          "navigation-arrow",
+          "compass",
+          "globe-hemisphere-east",
+          "road-horizon",
+          "signpost",
+          "car",
+          "car-profile",
+          "train",
+          "airplane-takeoff",
+          "path",
+          "currency-inr",
+          "coins",
+          "hand-coins",
+          "piggy-bank",
+          "chart-line-up",
+          "trend-up",
+          "chart-bar",
+          "percent",
+          "tag",
+          "receipt",
+          "wallet",
+          "bank",
+          "vault",
+          "shield-check",
+          "lock-key",
+          "key",
+          "security-camera",
+          "seal-check",
+          "certificate",
+          "handshake",
+          "medal",
+          "trophy",
+          "crown",
+          "diamond",
+          "sparkle",
+          "star",
+          "check-circle",
+          "ruler",
+          "frame-corners",
+          "arrows-out",
+          "arrows-out-line-horizontal",
+          "square-half",
+          "blueprint",
+          "compass-tool",
+          "lightning",
+          "drop",
+          "wind",
+          "sun",
+          "wifi-high",
+          "barbell",
+          "coffee",
+          "fork-knife",
+          "shopping-bag",
+          "users-three",
+          "briefcase",
+          "calendar-check",
+          "clock",
+          "phone-call",
+          "whatsapp-logo",
+          "chat-circle-dots",
+          "envelope-simple",
+          "play-circle"
+         ]
+        },
+        "text": {
+         "default": "Item",
+         "type": "string"
+        }
+       }
+      }
+     },
+     "stagger": {
+      "default": 16,
+      "label": "Gap between items",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 4,
+      "maximum": 60
+     },
+     "x": {
+      "default": 90,
+      "label": "Left",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 620,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "width": {
+      "default": 900,
+      "label": "Width",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 400,
+      "maximum": 1000
+     }
+    }
+   }
+  },
+  {
+   "type": "toggles",
+   "label": "Toggle pills",
+   "category": "Lists",
+   "description": "2–4 benefits switching on, one by one",
+   "defaultDuration": 120,
+   "defaults": {
+    "items": [
+     {
+      "line1": "Prime",
+      "line2": "frontage",
+      "icon": "storefront"
+     },
+     {
+      "line1": "Basement",
+      "line2": "parking",
+      "icon": "car"
+     }
+    ],
+    "stagger": 20,
+    "x": 110,
+    "y": 600,
+    "rowGap": 210
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "items": {
+      "default": [
+       {
+        "line1": "Prime",
+        "line2": "frontage",
+        "icon": "storefront"
+       },
+       {
+        "line1": "Basement",
+        "line2": "parking",
+        "icon": "car"
+       }
+      ],
+      "label": "Toggles (from the brief only)",
+      "group": "Content",
+      "minItems": 1,
+      "maxItems": 4,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "line1": {
+         "default": "Benefit",
+         "type": "string"
+        },
+        "line2": {
+         "default": "",
+         "type": "string"
+        },
+        "icon": {
+         "default": "check-circle",
+         "label": "Icon",
+         "control": "icon",
+         "type": "string",
+         "enum": [
+          "buildings",
+          "building-office",
+          "building-apartment",
+          "storefront",
+          "house-line",
+          "house",
+          "door-open",
+          "stairs",
+          "elevator",
+          "garage",
+          "warehouse",
+          "office-chair",
+          "desk",
+          "armchair",
+          "bed",
+          "bathtub",
+          "swimming-pool",
+          "plant",
+          "tree",
+          "park",
+          "map-pin",
+          "map-pin-line",
+          "map-trifold",
+          "navigation-arrow",
+          "compass",
+          "globe-hemisphere-east",
+          "road-horizon",
+          "signpost",
+          "car",
+          "car-profile",
+          "train",
+          "airplane-takeoff",
+          "path",
+          "currency-inr",
+          "coins",
+          "hand-coins",
+          "piggy-bank",
+          "chart-line-up",
+          "trend-up",
+          "chart-bar",
+          "percent",
+          "tag",
+          "receipt",
+          "wallet",
+          "bank",
+          "vault",
+          "shield-check",
+          "lock-key",
+          "key",
+          "security-camera",
+          "seal-check",
+          "certificate",
+          "handshake",
+          "medal",
+          "trophy",
+          "crown",
+          "diamond",
+          "sparkle",
+          "star",
+          "check-circle",
+          "ruler",
+          "frame-corners",
+          "arrows-out",
+          "arrows-out-line-horizontal",
+          "square-half",
+          "blueprint",
+          "compass-tool",
+          "lightning",
+          "drop",
+          "wind",
+          "sun",
+          "wifi-high",
+          "barbell",
+          "coffee",
+          "fork-knife",
+          "shopping-bag",
+          "users-three",
+          "briefcase",
+          "calendar-check",
+          "clock",
+          "phone-call",
+          "whatsapp-logo",
+          "chat-circle-dots",
+          "envelope-simple",
+          "play-circle"
+         ]
+        }
+       }
+      }
+     },
+     "stagger": {
+      "default": 20,
+      "label": "Gap between toggles",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 4,
+      "maximum": 60
+     },
+     "x": {
+      "default": 110,
+      "label": "Left",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 600,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "rowGap": {
+      "default": 210,
+      "label": "Row spacing",
+      "control": "slider",
+      "step": 5,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 140,
+      "maximum": 320
+     }
+    }
+   }
+  },
+  {
+   "type": "carousel",
+   "label": "Carousel",
+   "category": "Picture",
+   "description": "Cards advancing one picture at a time",
+   "defaultDuration": 150,
+   "defaults": {
+    "pictures": [
+     {
+      "src": "samples/s-double-height.jpg",
+      "label": "Showroom"
+     },
+     {
+      "src": "samples/o-open-plan.jpg",
+      "label": "Offices"
+     },
+     {
+      "src": "samples/b-parking.jpg",
+      "label": "Parking"
+     }
+    ],
+    "every": 36
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "pictures": {
+      "default": [
+       {
+        "src": "samples/s-double-height.jpg",
+        "label": "Showroom"
+       },
+       {
+        "src": "samples/o-open-plan.jpg",
+        "label": "Offices"
+       },
+       {
+        "src": "samples/b-parking.jpg",
+        "label": "Parking"
+       }
+      ],
+      "label": "Pictures",
+      "group": "Content",
+      "minItems": 1,
+      "maxItems": 8,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "src": {
+         "default": "",
+         "label": "Picture",
+         "control": "media",
+         "accept": "image",
+         "group": "Content",
+         "type": "string"
+        },
+        "label": {
+         "default": "Concept visualisation",
+         "type": "string"
+        }
+       }
+      }
+     },
+     "every": {
+      "default": 36,
+      "label": "Time per picture",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 150
+     }
+    }
+   }
+  },
+  {
+   "type": "sidePair",
+   "label": "Side-by-side cards",
+   "category": "Picture",
+   "description": "Two picture cards, the second landing on its cue",
+   "defaultDuration": 105,
+   "defaults": {
+    "a": "samples/s-double-height.jpg",
+    "aLabel": "Showroom",
+    "b": "samples/o-open-plan.jpg",
+    "bLabel": "Offices",
+    "bAt": 18
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "a": {
+      "default": "samples/s-double-height.jpg",
+      "label": "Left picture",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "aLabel": {
+      "default": "Showroom",
+      "label": "Left label",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "b": {
+      "default": "samples/o-open-plan.jpg",
+      "label": "Right picture",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "bLabel": {
+      "default": "Offices",
+      "label": "Right label",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "bAt": {
+      "default": 18,
+      "label": "Right card lands at",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 120
+     }
+    }
+   }
+  },
+  {
+   "type": "textBehind",
+   "label": "Word behind subject",
+   "category": "Picture",
+   "description": "A word placed between the picture and its cut-out subject",
+   "defaultDuration": 105,
+   "defaults": {
+    "src": "samples/r-statue-tight.jpg",
+    "cutout": "samples/r-statue-tight-cutout.png",
+    "word": "54D",
+    "size": 230,
+    "wordY": 0.3,
+    "wordX": 0,
+    "label": "Concept visualisation"
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "src": {
+      "default": "samples/r-statue-tight.jpg",
+      "label": "Picture",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "cutout": {
+      "default": "samples/r-statue-tight-cutout.png",
+      "label": "Subject cut-out (transparent PNG)",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "word": {
+      "default": "54D",
+      "label": "Word",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "size": {
+      "default": 230,
+      "label": "Size",
+      "control": "slider",
+      "step": 2,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 80,
+      "maximum": 420
+     },
+     "wordY": {
+      "default": 0.3,
+      "label": "Word height",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.9
+     },
+     "wordX": {
+      "default": 0,
+      "label": "Word sideways",
+      "control": "slider",
+      "step": 2,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": -400,
+      "maximum": 400
+     },
+     "label": {
+      "default": "Concept visualisation",
+      "label": "Card label",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     }
+    }
+   }
+  },
+  {
+   "type": "lens",
+   "label": "Magnifier",
+   "category": "Picture",
+   "description": "A loupe gliding over a picture, magnified inside",
+   "defaultDuration": 105,
+   "defaults": {
+    "src": "samples/r-golden.jpg",
+    "showPicture": true,
+    "zoom": 2.2,
+    "r": 150,
+    "startX": 0.25,
+    "startY": 0.4,
+    "endX": 0.7,
+    "endY": 0.55,
+    "width": 920,
+    "height": 1100,
+    "left": 80,
+    "top": 420
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "src": {
+      "default": "samples/r-golden.jpg",
+      "label": "Picture",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "showPicture": {
+      "default": true,
+      "label": "Show the picture",
+      "group": "Content",
+      "help": "off: only the loupe, over a picture on a track below (same box)",
+      "type": "boolean"
+     },
+     "zoom": {
+      "default": 2.2,
+      "label": "Magnification",
+      "control": "slider",
+      "step": 0.1,
+      "group": "Style",
+      "type": "number",
+      "minimum": 1.2,
+      "maximum": 5
+     },
+     "r": {
+      "default": 150,
+      "label": "Lens size",
+      "control": "slider",
+      "step": 5,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 60,
+      "maximum": 320
+     },
+     "startX": {
+      "default": 0.25,
+      "label": "Start X",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "startY": {
+      "default": 0.4,
+      "label": "Start Y",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "endX": {
+      "default": 0.7,
+      "label": "End X",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "endY": {
+      "default": 0.55,
+      "label": "End Y",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Motion",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "width": {
+      "default": 920,
+      "label": "Width",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1080
+     },
+     "height": {
+      "default": 1100,
+      "label": "Height",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1920
+     },
+     "left": {
+      "default": 80,
+      "label": "Left",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "top": {
+      "default": 420,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     }
+    }
+   }
+  },
+  {
+   "type": "spotlight",
+   "label": "Spotlight",
+   "category": "Effect",
+   "description": "A soft cone of light sweeping once across the frame",
+   "defaultDuration": 45,
+   "defaults": {
+    "sweepFrames": 36
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "sweepFrames": {
+      "default": 36,
+      "label": "Sweep time",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 120
+     }
+    }
+   }
+  },
+  {
+   "type": "beam",
+   "label": "Beam",
+   "category": "Graphics",
+   "description": "A curved line drawing between two points, then a light running it",
+   "defaultDuration": 60,
+   "defaults": {
+    "x1": 200,
+    "y1": 1300,
+    "x2": 860,
+    "y2": 700,
+    "curve": -0.25,
+    "drawFrames": 26
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "x1": {
+      "default": 200,
+      "label": "From X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y1": {
+      "default": 1300,
+      "label": "From Y",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "x2": {
+      "default": 860,
+      "label": "To X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y2": {
+      "default": 700,
+      "label": "To Y",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "curve": {
+      "default": -0.25,
+      "label": "Curve",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Layout",
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+     },
+     "drawFrames": {
+      "default": 26,
+      "label": "Draw time",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 6,
+      "maximum": 90
+     }
+    }
+   }
+  },
+  {
+   "type": "shapeMorph",
+   "label": "Shape morph",
+   "category": "Graphics",
+   "description": "One outline becoming the next (pin → building → home)",
+   "defaultDuration": 120,
+   "defaults": {
+    "steps": [
+     {
+      "shape": "pin",
+      "label": "Location"
+     },
+     {
+      "shape": "building",
+      "label": "Building"
+     },
+     {
+      "shape": "house",
+      "label": "Home"
+     }
+    ],
+    "every": 30,
+    "size": 420,
+    "fill": "metal",
+    "y": 640
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "steps": {
+      "default": [
+       {
+        "shape": "pin",
+        "label": "Location"
+       },
+       {
+        "shape": "building",
+        "label": "Building"
+       },
+       {
+        "shape": "house",
+        "label": "Home"
+       }
+      ],
+      "label": "Shapes",
+      "group": "Content",
+      "minItems": 2,
+      "maxItems": 6,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "shape": {
+         "default": "pin",
+         "type": "string",
+         "enum": [
+          "pin",
+          "building",
+          "key",
+          "circle",
+          "house",
+          "diamond"
+         ]
+        },
+        "label": {
+         "default": "",
+         "type": "string"
+        }
+       }
+      }
+     },
+     "every": {
+      "default": 30,
+      "label": "Time per shape",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 120
+     },
+     "size": {
+      "default": 420,
+      "label": "Size",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Style",
+      "type": "number",
+      "minimum": 160,
+      "maximum": 800
+     },
+     "fill": {
+      "default": "metal",
+      "label": "Finish",
+      "group": "Style",
+      "type": "string",
+      "enum": [
+       "metal",
+       "outline"
+      ]
+     },
+     "y": {
+      "default": 640,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     }
+    }
+   }
+  },
+  {
+   "type": "archGrid",
+   "label": "Architect grid",
+   "category": "Background",
+   "description": "A faint drifting architectural grid over the background",
+   "defaultDuration": 150,
+   "defaults": {
+    "opacity": 0.065
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "opacity": {
+      "default": 0.065,
+      "label": "Strength",
+      "control": "slider",
+      "step": 0.005,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0.01,
+      "maximum": 0.2
+     }
+    }
+   }
+  },
+  {
+   "type": "wireEye",
+   "label": "Wireframe eye",
+   "category": "Graphics",
+   "description": "A wireframe eye that traces in and blinks, behind \"vision\" lines",
+   "defaultDuration": 90,
+   "defaults": {
+    "x": 130,
+    "y": 300,
+    "width": 820,
+    "blinkAt": 40,
+    "opacity": 0.92
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "x": {
+      "default": 130,
+      "label": "Left",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 300,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "width": {
+      "default": 820,
+      "label": "Width",
+      "control": "slider",
+      "step": 10,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 300,
+      "maximum": 1000
+     },
+     "blinkAt": {
+      "default": 40,
+      "label": "Blink at",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 300
+     },
+     "opacity": {
+      "default": 0.92,
+      "label": "Strength",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "wirePin",
+   "label": "Wireframe pin",
+   "category": "Graphics",
+   "description": "A wireframe map pin over a ground grid",
+   "defaultDuration": 90,
+   "defaults": {
+    "x": 750,
+    "y": 1080,
+    "opacity": 0.94
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "x": {
+      "default": 750,
+      "label": "X",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1080
+     },
+     "y": {
+      "default": 1080,
+      "label": "Y",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     },
+     "opacity": {
+      "default": 0.94,
+      "label": "Strength",
+      "control": "slider",
+      "step": 0.01,
+      "group": "Style",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "cta",
+   "label": "Call to action",
+   "category": "Brand",
+   "description": "Wordmark and a button that gets pressed on its cue",
+   "defaultDuration": 90,
+   "defaults": {
+    "label": "Message us",
+    "logo": "",
+    "pressAt": 36,
+    "y": 1395
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "label": {
+      "default": "Message us",
+      "label": "Button",
+      "control": "text",
+      "group": "Content",
+      "type": "string"
+     },
+     "logo": {
+      "default": "",
+      "label": "Logo (empty = brand logo)",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
+     },
+     "pressAt": {
+      "default": 36,
+      "label": "Button press at",
+      "control": "frames",
+      "group": "Timing",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 300
+     },
+     "y": {
+      "default": 1395,
+      "label": "Top",
+      "control": "slider",
+      "step": 1,
+      "unit": "px",
+      "group": "Layout",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1920
+     }
+    }
+   }
+  },
+  {
+   "type": "wordmark",
+   "label": "End wordmark",
+   "category": "Brand",
+   "description": "The wordmark alone, large, with one gleam",
+   "defaultDuration": 75,
+   "defaults": {
+    "logo": ""
+   },
+   "props": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "logo": {
+      "default": "",
+      "label": "Logo (empty = brand logo)",
+      "control": "media",
+      "accept": "image",
+      "group": "Content",
+      "type": "string"
      }
     }
    }

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Easing, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {Easing, Img, interpolate, useCurrentFrame} from 'remotion';
+import {asset} from '../lib/asset';
 import {alpha, useKitTheme} from '../theme/KitTheme';
 
 // Stylised effects from the shadcn ecosystem (Magic UI, Aceternity UI), rebuilt frame-driven so they render the same
@@ -99,7 +100,7 @@ export const Lens: React.FC<{src: string; w: number; h: number; left: number; to
   const cx = (path[0][0] + (path[1][0] - path[0][0]) * p) * w, cy = (path[0][1] + (path[1][1] - path[0][1]) * p) * h;
   return (
     <div style={{position: 'absolute', left: left + cx - r, top: top + cy - r, width: r * 2, height: r * 2, borderRadius: '50%', overflow: 'hidden', opacity: vis, border: `3px solid ${C.type3d.ramp[0][1]}`, boxShadow: `0 20px 50px ${C.shadow}, 0 0 30px ${alpha(C.glow, 0.5)}`}}>
-      <Img src={staticFile(src)} style={{position: 'absolute', width: w * zoom, height: h * zoom, objectFit: 'cover', left: -(cx * zoom - r), top: -(cy * zoom - r)}} />
+      <Img src={asset(src)} style={{position: 'absolute', width: w * zoom, height: h * zoom, objectFit: 'cover', left: -(cx * zoom - r), top: -(cy * zoom - r)}} />
     </div>
   );
 };

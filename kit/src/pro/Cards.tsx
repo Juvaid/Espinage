@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Easing, Img, OffthreadVideo, Sequence, interpolate, useCurrentFrame} from 'remotion';
+import {asset} from '../lib/asset';
 import {Bevel} from './Bevel';
 import {alpha, useKitTheme} from '../theme/KitTheme';
 
@@ -42,7 +43,7 @@ const Fill: React.FC<{m: Media; dur: number; zoom?: [number, number]}> = ({m, du
   const f = useCurrentFrame();
   const z = interpolate(f, [0, dur], zoom, clamp);
   const css = {position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z})`} as const;
-  return m.video ? <OffthreadVideo muted src={staticFile(m.video)} startFrom={Math.round((m.offset ?? 0) * 30)} style={css} /> : <Img src={staticFile(m.image!)} style={css} />;
+  return m.video ? <OffthreadVideo muted src={asset(m.video)} startFrom={Math.round((m.offset ?? 0) * 30)} style={css} /> : <Img src={asset(m.image!)} style={css} />;
 };
 
 // the shared card face; `from` is when its media starts (videos play from there)

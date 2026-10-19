@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { KIT_THEMES } from '../theme/KitTheme';
 import { ui } from './controls';
+import { motionFields, type ItemAnimate, type ItemTransform, type ItemTransition } from './motion';
 import { REGISTRY } from './registry';
 
 // A project (manifest): plain JSON a person edits in the Caption Studio, an agent can write, and the renderer plays.
@@ -16,6 +17,8 @@ const itemBase = {
   from: ui(z.number().int().min(0), { label: 'Starts at', control: 'frames', group: 'Timing' }),
   durationInFrames: ui(z.number().int().min(1), { label: 'Length', control: 'frames', group: 'Timing' }),
   label: ui(z.string().optional(), { label: 'Name in timeline', group: 'Timing' }),
+  locked: ui(z.boolean().optional(), { label: 'Locked', help: 'locked items cannot be moved in the timeline' }),
+  ...motionFields, // enter, exit, transform, animate (motion.tsx): defaults change nothing
 };
 
 export const itemSchema = z.discriminatedUnion(
@@ -67,7 +70,20 @@ export const manifestSchema = z.object({
 });
 
 // The union is built from the registry at runtime, so its static type is spelled out here.
-export type ManifestItem = { id: string; type: string; from: number; durationInFrames: number; label?: string; props: Record<string, unknown> };
+export type ManifestItem = {
+  id: string;
+  type: string;
+  from: number;
+  durationInFrames: number;
+  label?: string;
+  locked?: boolean;
+  // filled with no-op defaults by parseManifest; an editor may hold items without them
+  enter?: ItemTransition;
+  exit?: ItemTransition;
+  transform?: ItemTransform;
+  animate?: ItemAnimate;
+  props: Record<string, unknown>;
+};
 export type ManifestTrack = Omit<z.infer<typeof trackSchema>, 'items'> & { items: ManifestItem[] };
 export type Manifest = Omit<z.infer<typeof manifestSchema>, 'tracks'> & { tracks: ManifestTrack[] };
 

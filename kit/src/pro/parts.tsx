@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Easing, Img, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, Img, Sequence, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {asset} from '../lib/asset';
 import {Bevel} from './Bevel';
 import {Card, type Media} from './Cards';
 import {DepthCard, type Move} from './DepthCard';
@@ -183,11 +184,11 @@ export const TextBehind: React.FC<{src: string; cutout: string; word: string; at
     <AbsoluteFill style={{opacity: 1 - out}}>
       <div style={{position: 'absolute', left: 540 - W / 2, top, width: W, height: H, borderRadius: 28, overflow: 'hidden', border: `1.5px solid ${C.hair}`, boxShadow: `inset 0 1.5px 0 oklch(1 0 0 / 0.28), 0 36px 70px ${C.shadow}, 0 0 140px ${alpha(C.glow, 0.3)}`, background: C.deep, transform: `translateY(${(1 - inn) * 140}px)`, opacity: inn}}>
         <div style={{position: 'absolute', inset: 0, transform: `scale(${z})`}}>
-          <Img src={staticFile(src)} style={img} />
+          <Img src={asset(src)} style={img} />
           <div style={{position: 'absolute', left: 0, right: 0, top: `${wordY * 100}%`, display: 'flex', justifyContent: 'center', opacity: p, transform: `translate(${wordX}px, ${(1 - p) * 120}px)`}}>
             <Bevel tone={C.metal} size="lg" sheen={sheen} glow={0.8}>{() => <span style={{fontFamily: C.fontHead, fontWeight: 640, fontSize: size, letterSpacing: '-0.04em', lineHeight: 1}}>{word}</span>}</Bevel>
           </div>
-          <Img src={staticFile(cutout)} style={img} />
+          <Img src={asset(cutout)} style={img} />
         </div>
         <Chip text={label} />
       </div>
@@ -220,7 +221,7 @@ export const CTA: React.FC<{from: number; press: number; logo: string; label: st
   const ring = ramp(f, press + 3, 18);
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 26, opacity: ramp(f, from, 12)}}>
-      <Img src={staticFile(logo)} style={{width: 250, filter: `drop-shadow(0 6px 20px ${C.shadow})`}} />
+      <Img src={asset(logo)} style={{width: 250, filter: `drop-shadow(0 6px 20px ${C.shadow})`}} />
       <div style={{position: 'relative', opacity: btn, transform: `translateY(${(1 - btn) * 16}px) scale(${k})`}}>
         <div style={{position: 'absolute', inset: -2, borderRadius: 999, border: `2px solid ${C.accent}`, opacity: (1 - ring) * 0.85, transform: `scale(${1 + ring * 0.16}, ${1 + ring * 0.5})`}} />
         <div style={{display: 'flex', alignItems: 'center', gap: 16, padding: '24px 46px', borderRadius: 999, background: `linear-gradient(180deg, color-mix(in oklch, ${C.accent} 14%, white), color-mix(in oklch, ${C.accent} 42%, white))`, color: C.deep, fontFamily: C.fontHead, fontWeight: 640, fontSize: 40, boxShadow: `0 16px 40px ${C.shadow}`}}>
@@ -241,8 +242,8 @@ export const Wordmark: React.FC<{from: number; logo: string}> = ({from, logo}) =
   return (
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', opacity: p}}>
       <div style={{position: 'relative', transform: `scale(${0.94 + 0.06 * p})`}}>
-        <Img src={staticFile(logo)} style={{width: 620, filter: `drop-shadow(0 0 40px ${alpha(C.glow, 0.45)})`}} />
-        <div style={{position: 'absolute', inset: 0, background: `linear-gradient(105deg, transparent ${sweep - 12}%, oklch(1 0 0 / 0.55) ${sweep}%, transparent ${sweep + 12}%)`, mixBlendMode: 'overlay', WebkitMaskImage: `url(${staticFile(logo)})`, WebkitMaskSize: '100% 100%'}} />
+        <Img src={asset(logo)} style={{width: 620, filter: `drop-shadow(0 0 40px ${alpha(C.glow, 0.45)})`}} />
+        <div style={{position: 'absolute', inset: 0, background: `linear-gradient(105deg, transparent ${sweep - 12}%, oklch(1 0 0 / 0.55) ${sweep}%, transparent ${sweep + 12}%)`, mixBlendMode: 'overlay', WebkitMaskImage: `url(${asset(logo)})`, WebkitMaskSize: '100% 100%'}} />
       </div>
     </AbsoluteFill>
   );
@@ -261,11 +262,11 @@ export const FilmAudio: React.FC<{vo: string; music: string; musicDrop: number; 
   const music = interpolate(f, [0, 10, mark - 4, mark + 2, mark + 26, total - 60, total - 20, total], [0, bed, bed, 0.24, bed + 0.01, 0.2, 0.2, 0], clamp);
   return (
     <>
-      <Sequence from={Math.round(LEAD * k)}><Audio src={staticFile(vo)} /></Sequence>
-      <Audio src={staticFile(track)} volume={music} startFrom={Math.max(0, Math.round((musicDrop - mark / 30) * fps))} />
+      <Sequence from={Math.round(LEAD * k)}><Audio src={asset(vo)} /></Sequence>
+      <Audio src={asset(track)} volume={music} startFrom={Math.max(0, Math.round((musicDrop - mark / 30) * fps))} />
       {events.map((x, i) => (
         <Sequence key={i} from={Math.max(0, Math.round(x.t * k))} durationInFrames={Math.round(60 * k)}>
-          <Audio src={staticFile(x.src)} volume={x.vol} />
+          <Audio src={asset(x.src)} volume={x.vol} />
         </Sequence>
       ))}
     </>

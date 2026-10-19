@@ -39,7 +39,7 @@ export const SAMPLE_MANIFEST = {
       id: 'text',
       name: 'Text & figures',
       items: [
-        { id: 't1', type: 'stats', from: 140, durationInFrames: 90, props: { items: [{ value: '82', unit: 'ft', label: 'Front' }, { value: '80', unit: 'ft', label: 'Road' }], y: 1180 } },
+        { id: 't1', type: 'stats', from: 140, durationInFrames: 90, props: { items: [{ value: '82', unit: 'ft', label: 'Front' }, { value: '80', unit: 'ft', label: 'Road' }], y: 760 } },
         { id: 't2', type: 'title', from: 601, durationInFrames: 50, props: { text: 'Floor plans?', effect: 'shimmer', size: 140, y: 820 } },
       ],
     },

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Img, staticFile, useCurrentFrame} from 'remotion';
+import {Img, useCurrentFrame} from 'remotion';
+import {asset} from '../lib/asset';
 import {ease, ramp} from '../lib/anim';
 import {alpha, useKitTheme} from '../theme/KitTheme';
 
@@ -12,7 +13,7 @@ export const LogoReveal: React.FC<{logo: string; ratio: number; start: number; w
   const frame = useCurrentFrame();
   const C = useKitTheme();
   const SRC = logo;
-  const url = `url(${staticFile(SRC)})`;
+  const url = `url(${asset(SRC)})`;
   const h = width * ratio;
 
   const saber = ramp(frame, start, 14, -6, 106, ease.inOut); // head position, %
@@ -39,11 +40,11 @@ export const LogoReveal: React.FC<{logo: string; ratio: number; start: number; w
   if (mode === 'image') {
     return (
       <div style={{position: 'relative', width, height: h, transform: `scale(${0.96 + 0.04 * (fill / 100) + drift * 0.0006})`, ...style}}>
-        <Img src={staticFile(SRC)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', clipPath: `inset(-5% ${100 - fill}% -5% 0)`, filter: `drop-shadow(0 0 24px ${alpha(C.glow, 0.5)})`}} />
+        <Img src={asset(SRC)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', clipPath: `inset(-5% ${100 - fill}% -5% 0)`, filter: `drop-shadow(0 0 24px ${alpha(C.glow, 0.5)})`}} />
         <div style={masked({background: `linear-gradient(112deg, transparent ${sheen - 14}%, rgba(255,250,240,0.2) ${sheen - 5}%, rgba(255,252,246,0.85) ${sheen}%, rgba(255,250,240,0.2) ${sheen + 5}%, transparent ${sheen + 14}%)`, mixBlendMode: 'screen'})} />
         {saber > 0 && saber < 100 ? (
           <div style={{position: 'absolute', inset: 0, WebkitMaskImage: `linear-gradient(90deg, transparent ${saber - 6}%, black ${saber}%, transparent ${saber + 1}%)`, maskImage: `linear-gradient(90deg, transparent ${saber - 6}%, black ${saber}%, transparent ${saber + 1}%)`, filter: `drop-shadow(0 0 10px ${C.type3d.ramp[0][1]}) drop-shadow(0 0 28px ${C.accent})`}}>
-            <Img src={staticFile(SRC)} style={{width: '100%', height: '100%', filter: 'brightness(1.6)'}} />
+            <Img src={asset(SRC)} style={{width: '100%', height: '100%', filter: 'brightness(1.6)'}} />
           </div>
         ) : null}
       </div>
@@ -95,7 +96,7 @@ export const LogoReveal: React.FC<{logo: string; ratio: number; start: number; w
           filter: `drop-shadow(0 0 6px ${C.accent}) drop-shadow(0 0 18px ${alpha(C.glow, 0.7)})`,
         }}
       >
-        <Img src={staticFile(SRC)} style={{width: '100%', height: '100%', filter: 'url(#logo-edge)'}} />
+        <Img src={asset(SRC)} style={{width: '100%', height: '100%', filter: 'url(#logo-edge)'}} />
       </div>
       {saber > 0 && saber < 100 ? (
         <div
@@ -107,7 +108,7 @@ export const LogoReveal: React.FC<{logo: string; ratio: number; start: number; w
             filter: `drop-shadow(0 0 10px ${C.type3d.ramp[0][1]}) drop-shadow(0 0 28px ${C.accent})`,
           }}
         >
-          <Img src={staticFile(SRC)} style={{width: '100%', height: '100%', filter: 'url(#logo-edge) brightness(1.4)'}} />
+          <Img src={asset(SRC)} style={{width: '100%', height: '100%', filter: 'url(#logo-edge) brightness(1.4)'}} />
         </div>
       ) : null}
     </div>
