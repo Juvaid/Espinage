@@ -21,12 +21,19 @@ Shared elements (toggle pills, counters, morphs, cards) take the look from the t
 ## Approved looks (client signed off)
 
 - Location: **black & white drone over the real 59-D site** (top view, opposite GNPS School) with the main road painted gold (feathered edges, saber glints along the edges), the plot outlined thin gold in real colour, tag "Project 59-D · Opp. GNPS School · Sarabha Nagar". No legend box.
-- Developer credibility: Gurmeet Tower dusk pull-back (verify Dhunna built it before claiming).
+- Developer credibility: Gurmeet Tower dusk pull-back. **Dhunna Infra built Gurmeet Tower** (client, 20 Oct 2026): use it as proof.
 - Landmark: B&W aerial with a solid tag pinned to the Singh Sabha Gurudwara dome.
 - Renders: hero aerial push for "opulent", statue entrance, cinema-frame montage, floor plans as a carousel.
 - Music: "Luxury Flow" (vittemacop, Pixabay, no Content ID) — re-time per reel so the drop hits the slam or logo.
 
-## 54D films (Oct 2026): the navy direction
+## 59D (active from 20 Oct 2026; 54D is sold out)
+
+- **Spelling:** **59D** on screen (numeral, no hyphen, no space); the voice says "Fifty-Nine D". The architect's deck writes "59-D"; don't copy it.
+- **Corner site** opposite GNPS School. Facts and open questions: `/Volumes/disk 2/dhunnainfra-59d-films/docs/FACTS.md` (plans: 70 × 114 ft plot, 96 ft frontage, G+3 + mansard, five SCOs per floor, 680–1,110 sq ft carpet).
+- **Ask:** every film ends on **"Click to start the chat"** (the ads open a chat). No phone or WhatsApp number, no RERA line on 59D creatives.
+- Plan, formats and scripts: `docs/PLAN.md`, `docs/SCRIPTS-59D-v1.json` in that project.
+
+## 54D films (Oct 2026, SOLD OUT): the navy direction
 
 - **Spelling:** always **54D** on screen: a numeral, no hyphen, no space. Never "Fifty-Four D" or "54-D". Voice scripts may spell it "Fifty-Four D" so the voice says it right; captions convert it (the kit's `writtenForm`, on by default). Numbers on screen are numerals: 80 ft, 82 ft.
 - **54D** = Sarabha Nagar commercial (showrooms on two floors, corporate offices above, parking below; 80 ft road, 82 ft front).
