@@ -72,7 +72,10 @@ export const Bevel: React.FC<{
   glow?: number;
   children: () => React.ReactNode;
   style?: React.CSSProperties;
-}> = ({tone, size, sheen = -99, glow = 0, children, style}) => {
+  /** Optional CSS gradient for the letter face (a metal ramp) instead of the tone's flat face colour. Keep ramps smooth,
+   *  with wide transitions: no hard dark band through the letters. */
+  fill?: string;
+}> = ({tone, size, sheen = -99, glow = 0, children, style, fill}) => {
   const t = TONES[tone];
   const s = SIZES[size];
   const stack = Array.from({length: s.extrude}, (_, i) => `0 ${i + 1}px 0 ${mix(t.extrude[0], t.extrude[1], i / Math.max(1, s.extrude - 1))}`);
@@ -89,7 +92,16 @@ export const Bevel: React.FC<{
       <div aria-hidden style={{position: 'absolute', inset: 0, color: t.extrude[0], textShadow: stack.join(', ')}}>
         {children()}
       </div>
-      <div style={{position: 'relative', color: t.face, filter: `url(#bevel-${size}-${tone})`}}>{children()}</div>
+      <div
+        style={{
+          position: 'relative',
+          color: t.face,
+          filter: `url(#bevel-${size}-${tone})`,
+          ...(fill ? {backgroundImage: fill, WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'} : {}),
+        }}
+      >
+        {children()}
+      </div>
       {sheenOn ? (
         <div
           aria-hidden

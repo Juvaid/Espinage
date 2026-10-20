@@ -30,6 +30,7 @@ Shared elements (toggle pills, counters, morphs, cards) take the look from the t
 
 - **Spelling:** **59D** on screen (numeral, no hyphen, no space); the voice says "Fifty-Nine D". The architect's deck writes "59-D"; don't copy it.
 - **Corner site** opposite GNPS School. Facts and open questions: `/Volumes/disk 2/dhunnainfra-59d-films/docs/FACTS.md` (plans: 70 × 114 ft plot, 96 ft frontage, G+3 + mansard, five SCOs per floor, 680–1,110 sq ft carpet).
+- **Gold type:** headings' gold words carry a metal **gradient** face (client, 20 Oct 2026: not a flat colour): `Bevel fill={GOLD_RAMP}` (kit), ramp in `dhunnainfra-59d-films/studio/src/system.tsx`. Wordmark: the current DHUNNA / INFRA white master filled with the gold ramp.
 - **Ask:** every film ends on **"Click to start the chat"** (the ads open a chat). No phone or WhatsApp number, no RERA line on 59D creatives.
 - Plan, formats and scripts: `docs/PLAN.md`, `docs/SCRIPTS-59D-v1.json` in that project.
 
