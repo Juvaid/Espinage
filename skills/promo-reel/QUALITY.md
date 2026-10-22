@@ -1,10 +1,15 @@
 # Review checklist
 
-Run on rendered stills at every beat (scale 0.4), then on a half-res review render with audio. Each item comes from a correction the user made; all must pass.
+Run on rendered stills at every beat (scale 0.4), then the **every-second audit** (below), then on a half-res review render with audio. Each item comes from a correction the user made; all must pass.
+
+**Every-second audit (before calling any film done):** render one frame per second of the whole film into contact sheets and look at every cell for collisions, clipped text, unreadable sizes and empty frames. Spot stills at the beats miss the in-between frames, which is where text lands on cards (22 Oct 2026). Tools: `techlords-reels/scripts/audit.mjs <dir> 30 Comp…` (one bundle, one browser) and `scripts/audit_sheet.py <dir> <Comp>`.
 
 ## Type
+- Captions centred; nothing overlaps a caption (chips, stickers, satellites, window edges) in any frame.
+- One reading target at a time: while a card or window shows text to read, the caption is ≤ 4 words or off.
+- Text inside cards and UI ≥ 30 px, code ≥ 32 px, tags ≥ 24 px, at 1080 wide.
 - Every line sits inside the 96 px margins: hero words through `fitSize`, supporting lines ≤ `size.l`, long lines wrap or split.
-- Nothing important below y ≈ 1560 (Reels caption + UI zone), in the top ~250 px (account header), or in the right ~120 px from y 900 down (Reels buttons).
+- Everything inside the cross-platform safe frame (EDIT.md §3): x 80–930, y 250–1480, nothing in the right 150 px below y 900.
 - Every heading is at most 7 words and stays on screen at least 0.25 s per word + 0.5 s.
 - Word spaces present in mixed-size rows (flex `gap` in em needs the row's own `fontSize`).
 - Every caption legible over its footage: caption shadow on, lists on a solid card, tags on solid pills.

@@ -21,7 +21,7 @@ VPS services (`docker ps`; Caddy at `/etc/caddy/Caddyfile`, with a backup made b
 
 ## Rendering
 
-**On the Mac:** always set `TMPDIR="/Volumes/disk 2/tmp/render"`, use `--concurrency=2`, run one Studio at a time, and render stills in batches of 3–4.
+**On the Mac:** always set `TMPDIR="/Volumes/disk 2/tmp/render"`, use `--concurrency=2`, run one Studio at a time, and render stills in batches of 3–4. **Before a full render, check `sysctl -n vm.swapusage`:** with more than ~6 GB of swap used, Chrome times out connecting ("Timed out … connecting to the browser"), twice on 22 Oct 2026. Stop the Studio, or render on the VPS, or hand the render to the user.
 
 **On the VPS (preferred for finals and batches):**
 

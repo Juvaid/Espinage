@@ -142,3 +142,20 @@ All from `54D src/investor/GCards.tsx`, on one shared `Card` face:
 - **Strokes with `vector-effect: non-scaling-stroke`** take their width in screen pixels. Don't divide by the scale.
 - **Never pass `Infinity` into `interpolate`** (it throws). Branch when there's no next event.
 - **Check transitions at their midpoint,** where they break, not at their ends.
+
+## SaaS one-take kit (Tech Lords, `techlords-reels/src/stage/`)
+
+- **Camera:** `Stage` + `camAt`: Hermite spline through keys `{f, x, y, z, rx, ry, rz}` with neighbour tangents, so velocity carries through keys (no dead stops). CSS 3D: `perspective: 2000`, the world translated to screen centre, rotated, scaled, then offset by the camera. `shake(f, at)` for one impact word.
+- **Hero window:** `HeroWindow` keys `{at, mode, tab, w, h, x, y, z, r, dim, o, chrome}`; geometry transfers in 22 frames (in-out) with a small lift arc; content of the old mode lifts and blurs out while the new one rises; one orange border-beam lap per mode change. The window never leaves: it dims and sinks to z −800 and comes back.
+- **Satellites:** `Place` (world position, depth) + `pop(f, in, out)`; cards overlap the window's lower half; one per beat.
+- **Cursor:** `Cursor` keys `{f, x, y, click, hide}`: arcs between keys, dip + ripple on click. It causes the action (Run, Send, Follow).
+- **Rewind / freeze for non-linear scripts:** wrap the stage in Remotion `<Freeze frame={g(f)}>` with a remapped frame to play a stretch backwards or hold it (HOOKS.md S1, S5).
+- **Images:** use Remotion `<Img>` for photos and SVG marks. A plain `<img>` or a CSS mask isn't awaited, so stills render it blank.
+
+## Cast and mascots drawn in code
+
+- `Mascot` (`src/stage/Mascot.tsx`): SVG bust (head, hair, brows, eyes with lids, mouth, clothes) per character; moods are parameter sets (brow height and angle, eye size, pupil, lid, smile, mouth width, tilt, sweat) blended over 8 frames from `MoodKey[]`.
+- **Lip-sync:** `scripts/envelope.py take.wav out.json` → loudness per frame (−42 dB closed … −16 dB open, smoothed). Only the line's speaker gets the envelope (`Turn[]` from the aligned script's speaker labels); the speaker leans in, scales 1.05 and gets an orange backlight; the listener looks at them.
+- **Life:** deterministic blinks every 2.5–4.5 s, breathing (scaleY ±0.8 %), a head bob tied to loudness.
+- **Layout:** `Duo` (two at the foot, y 1050, 360 px) and `Host` (one presenter, bottom right). Review sheet: `Cast-Sheet` composition.
+- Use unique SVG ids per instance (`React.useId()`): shared filter or clip ids make one character's glow apply to all.

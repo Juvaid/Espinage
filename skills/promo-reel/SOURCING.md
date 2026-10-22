@@ -26,6 +26,12 @@ The user's ChatGPT desktop app is Codex (`com.openai.codex`). It generates image
   - The user may still remove one after seeing it (a three-quarter view was cut from Crown Crest v2d).
 - **Images, not video:** Google Flow makes short clips. Crop the sparkle watermark (bottom ~8%).
 
+## Pictures of what the voice names
+
+- **People:** Wikimedia Commons (API search, `prop=imageinfo&iiprop=extmetadata` gives the licence and author). Use CC0 / CC BY / CC BY-SA only, credit on screen ("Photo: <author> · CC BY 3.0"), crop tight on the face, grade toward the brand.
+- **Companies, products, tools:** Simple Icons (CC0 SVG marks) from `cdn.jsdelivr.net/npm/simple-icons@<version>/icons/<slug>.svg`, painted in the brand's ink. Some brands asked to be removed (Slack, OpenAI): use a plain glyph with the name instead of drawing their logo.
+- Record every source in the project's `public/img/SOURCES.md`.
+
 ## Voiceover
 
 - **Two routes:** the user's own recordings (Drive "Your voice recordings" or `work/vo-human/`; `docs/VO-RECORDING-SHEET.md` is the script sheet), or **Gemini speech with the autocaption key**. The Gemini route was approved for Flagship v2 (16 Oct 2026).
@@ -47,6 +53,8 @@ The user's ChatGPT desktop app is Codex (`com.openai.codex`). It generates image
   - Two of five takes leaked on 17 Oct.
 - **Check every take** with `scripts/vo_check.py`: loudness, pitch spread (flat reads robotic, 4–7 semitones is natural promo), and whether whisper hears the key names.
 - **Whisper:** use `small` with `initial_prompt` naming the brand ("Dhunna", "Sarabha"); `base` mishears names. Large models froze the Mac.
+- **Two speakers in one take (conversation reels):** `multiSpeakerVoiceConfig` with one `speakerVoiceConfigs` entry per name. The 3.8 TTS models need **one content part per line**, each with `speechMetadata: {speaker}`; a single "Name: text" block is rejected. Template: `techlords-reels/scripts/tts_duo.mjs`. Then `scripts/tighten.py` (pauses ≤ 0.3 s) and align with speaker labels stripped.
+- **Recurring cast:** a brand with a host keeps one voice per character in every reel (brand file), and its scripts are written in that character's voice.
 - **Gemini limits and gotchas:**
   - Gemini TTS allows 10 requests a day per model per key, and its output is band-limited to ~12.5 kHz.
   - The full `flash-tts` model reads style hints aloud, so trim with whisper.

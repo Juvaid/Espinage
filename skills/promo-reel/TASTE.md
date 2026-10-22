@@ -22,6 +22,8 @@ If you can't fill all three lines, the scene isn't ready to build.
 - Gradient-filled text.
 - Rainbow or neon glows.
 - Hero words wider than the safe width. Use `fitSize`, not "it fits on my screen".
+- Left-aligned captions by default (rejected 22 Oct 2026: "why are you left-aligning every caption?"). Centre them unless the brand file says otherwise.
+- Too much to read: a two-line caption over a card full of text, or chips and stickers crowding the caption (rejected 22 Oct 2026: "text obstructing the cards… caption becomes too much").
 - Three or more type sizes in one frame.
 - Every word bold. Contrast comes from light 300 next to display 640.
 - More than one hero word per line.
@@ -136,3 +138,19 @@ Thinking a scene through isn't checking it. **After you design or change any sce
 - Would it still look intentional with the logo covered, or is it a template?
 
 Any "no" means the frame fails. Go back to step 4.
+
+## 6. Why rules were missed (22 Oct 2026, Tech Lords) and what to do instead
+
+Each of these rules already existed; an agent applied it narrowly and the user had to correct it. Read every rule at its full scope.
+
+| Rule (where) | How it was missed | Do this instead |
+|---|---|---|
+| Hinglish voiceover (SKILL.md) | The user pasted English copy for a new brand; the agent voiced it in English without asking | Hinglish by default; rewrite pasted copy in the brand's voice and show it before voicing |
+| Reveal on the word (SKILL.md) | Applied only to the client's own brand; Karpathy, Tesla and the tools named in the VO had no picture | Every named person, company, tool and source gets its picture on its word |
+| One text at a time (SKILL.md) | Read as "heading vs caption panel"; captions ran over windows full of text | Count text inside cards and windows; one reading target per moment |
+| Labels ≥ 44 px (MOGRAPH.md) | UI inside windows treated as exempt; 18 px tags shipped | Minimums apply inside cards: text ≥ 30 px, code ≥ 32 px, tags ≥ 24 px |
+| Final renders on the VPS (OPERATIONS.md) | Rendered on the 8 GB Mac with Studio open; Chrome timed out twice | Check `sysctl vm.swapusage` first; over ~6 GB used, render on the VPS (or let the user render) |
+| Storyboard before building (SKILL.md step 4) | Built a whole first draft for a new brand; the user rejected its static style after the build | For a new brand or format, show 3–4 direction stills first |
+| Stills at every beat (TASTE.md §4) | Beat stills passed while in-between frames had collisions | Add the every-second audit (QUALITY.md) |
+
+New rules from the same day (not in the skill before): centred captions; the cross-platform safe frame; hooks and non-linear structures (HOOKS.md); recurring cast and code-drawn mascots; the SaaS one-take for explainers (STYLES.md 9); freebies the CTA promises are built and hosted (EDIT.md §5).

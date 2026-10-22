@@ -39,6 +39,8 @@ Done when the fact sheet exists and the user has confirmed audience, message and
   - Numbers and names written as spoken.
   - The brand named once at the reveal and once in the ask.
 - **Variants:** write two hook variants per script, so the user can A/B them as ads.
+- **Hooks and structure:** pick one hook type and one structure from [`HOOKS.md`](HOOKS.md) per script, different from the last reel. Explainer and channel content is playful and a bit sarcastic (owner, 22 Oct 2026): a real joke every 8–10 s, landing on a visual.
+- **Language:** Hinglish by default, even when the user pastes English copy: rewrite it in the brand's voice (and its recurring host, if it has one) and show it before voicing.
 
 ## 3. Structure and pacing
 
@@ -48,10 +50,12 @@ Done when the fact sheet exists and the user has confirmed audience, message and
 - **Ask:** the CTA stays on screen at least 2.5 s, with the button pressed on "karo". The last frame must work as a still.
 - **Loop:** the last frame should sit comfortably before the first (Reels replay).
 - **Reading time:** at most 7 words per heading, on screen for at least 0.25 s per word plus 0.5 s.
-- **Safe zones (1080×1920):** keep type and faces out of:
-  - the top ~250 px (account header);
-  - the bottom ~360 px (caption and buttons);
-  - the right ~120 px from y 900 down (Reels like, comment and share column).
+- **Safe frame (1080×1920), cross-platform** (Instagram Reels, YouTube Shorts, TikTok share the same file):
+  - top 250 px: account header and status bar;
+  - bottom: nothing below y 1480 (Shorts and TikTok captions sit higher than Reels' 1560);
+  - right: nothing in the right 150 px from y 900 down (like, comment, share, remix rail);
+  - left: 80 px margin.
+  - Captions centred at y ≈ 320; the hero picture or window between y 520 and 1040 when a cast or presenter sits below it; a cast or presenter between y 1050 and 1480.
 
 ## 4. Sound
 
@@ -67,6 +71,8 @@ Done when the fact sheet exists and the user has confirmed audience, message and
 - **Events:** one sound per kind of event (SKILL.md). A beat of near-silence before the reveal word makes the boom land.
 
 ## 5. Deliverables
+
+- **Freebies the CTA promises** ("comment X and I'll DM you…"): build the thing (template, checklist, script), test it, and host it where it can be linked (a public GitHub repo per brand, e.g. `Juvaid/techlords-resources`, one folder per comment word). Never promise a freebie that doesn't exist yet.
 
 - **Master:** 1080×1920 at 30 fps, or 60 fps with motion blur for 3D films (MOTION.md). Name it by the scheme (SKILL.md).
 - **WhatsApp share copy:** under 16 MB (`-crf 26`, AAC 128k).

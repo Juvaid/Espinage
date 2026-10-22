@@ -5,14 +5,17 @@ description: Art-direct and build 9:16 promo reels and ads (real estate / brand)
 
 # Promo reel
 
-A reel here is a 10–50 s vertical film with a Hinglish voiceover (or music only), type that lands on the spoken word, and mastered sound. It can be one of several styles (STYLES.md): footage promo, presenter reel, 3D card ad, motion-graphics explainer, map reel, single take, brand film, or story/poster in motion. Every film is built in Remotion, one project per brand.
+A reel here is a 10–50 s vertical film with a Hinglish voiceover (or music only; **Hinglish even when the user's draft copy is in English**: translate it into the brand's voice and ask before voicing another language), type that lands on the spoken word, and mastered sound. It can be one of several styles (STYLES.md): footage promo, presenter reel, 3D card ad, motion-graphics explainer, map reel, single take, brand film, or story/poster in motion. Every film is built in Remotion, one project per brand.
 
 **Shared craft, brand looks.** Everything in this skill's shared files (STYLES, EDIT, TASTE, TECHNIQUES, FOOTAGE, TRANSITIONS, MOGRAPH, MOTION, SOURCING) applies to every brand. A brand's look (tokens, faces, metal, signature move, approved looks, facts) lives only in its brand file and its theme in `reel-components-kit/src/presets/themes.ts`. A technique learned on one brand is written into the shared files; a correction about one brand's look goes into its brand file.
 
 Read the brand file before touching design:
 - Dhunna Infra → [`brands/dhunna-infra.md`](brands/dhunna-infra.md)
 - Crown Crest → [`brands/crown-crest.md`](brands/crown-crest.md)
+- Tech Lords (@techlordbywlm, AI-engineering explainers) → [`brands/tech-lords.md`](brands/tech-lords.md)
 - Any other brand → [`NEW-BRAND.md`](NEW-BRAND.md) first, then write its `brands/<brand>.md`.
+
+**Rules apply at full scope.** A rule written from one case covers every element of that kind: "one text at a time" counts text inside cards and windows; "reveal on the word" covers every named person, company, tool and source; the 44 px label minimum applies inside UI cards too. On 22 Oct 2026 an agent read these narrowly and the user had to correct each one ([`TASTE.md`](TASTE.md) §6).
 
 **Read [`TASTE.md`](TASTE.md) before designing anything.** It holds the user's own corrections, what reads as slop, and the render → look → critique → fix loop. No visual is done until you have looked at it rendered.
 
@@ -28,7 +31,8 @@ Reach for these when a branch needs them:
 - [`TECHNIQUES.md`](TECHNIQUES.md): recipes for 3D type and chrome, depth-photo camera moves, text behind objects, map → 3D match cuts, procedural 3D props, card layouts.
 - [`SOURCING.md`](SOURCING.md): briefing ChatGPT/Codex for stills and angles, voiceover (the user records it), footage grading, OpenStreetMap data.
 - [`MOTION.md`](MOTION.md): making motion feel premium: 60 fps and motion blur, easing and springs, overlap and follow-through, depth of field and focus pulls, bloom, GSAP.
-- [`QUALITY.md`](QUALITY.md): the per-frame checklist.
+- [`QUALITY.md`](QUALITY.md): the per-frame checklist and the every-second audit.
+- [`HOOKS.md`](HOOKS.md): hook types (first second, spoken + visual), non-linear structures, joke craft, recurring casts and mascots.
 
 ## Steps
 
@@ -59,13 +63,16 @@ Reach for these when a branch needs them:
 
 ## Design rules (all brands)
 
-- **One text at a time.** A heading, a 3D label or a type beat carries the line. A caption panel shows only where nothing else says it, so two texts never say the same words.
+- **One text at a time, one reading target per moment.** A heading, a 3D label or a type beat carries the line. A caption panel shows only where nothing else says it, so two texts never say the same words. Text inside cards, windows and chips counts: while a card has something to read, the caption is ≤ 4 words or off.
+- **Captions centred** in the one fixed slot by default (left-aligned only when the brand file says so), ≤ 6 words a line, 2 lines max, never touching a card.
+- **Cross-platform safe frame** (Reels, Shorts, TikTok): content inside x 80–930 and y 250–1480; nothing in the right 150 px below y 900.
 - **Headings** sit in one fixed slot, in sentence case. Each pairs a light 300 word with a display 640 accent word in the brand metal (bevel, one sheen pass, deep soft glow in the brand's hue).
 - **Cards, not full-bleed**, for stills and clips. They share one card face (hairline edge, top-edge highlight, concept label), and the layout changes per beat.
 - **Wide shots.** Show the whole building with sky and road around it. If the only shot of the hero building is tight, fisheye or cropped, get a ChatGPT angle or a reshoot instead.
 - **Type-only beats live in 3D space**: extruded lettering, depth, floating elements.
 - **Text behind the subject wherever the scene allows.** When a shot has a clear foreground subject (statue, tower, person, car, tree) against open background, set the heading's hero word behind it using a depth cut-out (TECHNIQUES.md). Use it at least once per film where such a shot exists.
-- **Reveal on the word.** A brand, place or product appears on its spoken name.
+- **Reveal on the word, and names get pictures.** A brand, place or product appears on its spoken name. Every named person, company, tool, product or source gets its picture on its word: a photo card (licensed, credited on screen), a logo mark, or the mark inside the card that cites it (SOURCING.md "Pictures of what the voice names").
+- **Explainers are one take, not slides.** For explainers (tech, process, how-to) use the SaaS one-take (STYLES.md 9): one world, one moving camera, one hero window that morphs, satellites and a cursor. Static card-per-beat scenes were rejected as "too static" (22 Oct 2026).
 - **Stage take** (TECHNIQUES.md) when the user asks for a single take or no cuts: locked camera, elements build on and off, hand off and match-transform inside the frame. Its terms (stage, anchor, build on/off, hand-off, match transform, object wipe, diorama, beat stack) are the shared vocabulary for storyboards.
 - **Motion:**
   - One steady camera move per shot (depth push, slide, orbit), and clean slides between cards.

@@ -11,6 +11,7 @@ The edit styles this studio makes, so a film is a deliberate choice, not the las
 | **5. Map and location reel** | The address is the message | OSM map from the city to the site, road highlight, travel-time tag, landmark tags, then the building | `MapScene`, `CCMap`, `Address3D` |
 | **6. Single take** | The user asks for no cuts | Flying camera (one world, camera travels) or stage take (camera holds, elements build, hand off and morph) | `OneTake`, `OneTakeV2` (TECHNIQUES.md) |
 | **7. Brand film** | Mood, not facts; music-led, 10–20 s | Few words, big type, slow moves, material close-ups, a mark reveal | Noir, Clay, Lumière, Drawn, B3 |
+| **9. SaaS one-take explainer** | Tech, process, product explainers; anything taught with UI, code or diagrams | One world and one moving camera (spline, no cuts); a hero window that morphs between modes (editor → chat → terminal → diagram → comment pill); satellites rise from it; the host's cursor causes actions; optional cast of code-drawn mascots at the foot | Tech Lords `VibeOneTake`, `ProdUdaDiya`, `McpReel`, `FakePackages` (`techlords-reels/src/stage/`, docs/HOUSE-FORMAT.md) |
 | **8. Story / poster in motion** | 15 s Stories, or animating an approved poster or carousel | One idea per screen; the poster's own layout animated (builds, light sweep, parallax) | Dhunna poster and carousel sets on Drive |
 
 ## Choosing
@@ -19,6 +20,7 @@ The edit styles this studio makes, so a film is a deliberate choice, not the las
 2. **No footage, a building to sell?** 3D card ad (3), with a map beat (5) for the address.
 3. **A list of benefits or numbers?** Motion-graphics explainer (4), or toggle pills / counters as a guest element.
 4. **Mood or brand awareness?** Brand film (7).
+4b. **Teaching something (tech, a process, a product)?** SaaS one-take explainer (9), with the cast for conversation scripts.
 5. **The user asks for "one take", "no cuts" or "smooth like After Effects"?** Single take (6).
 
 Write the chosen style and guest elements into the brief (EDIT.md §1).
@@ -40,4 +42,5 @@ Write the chosen style and guest elements into the brief (EDIT.md §1).
 - **Map reel:** real OSM data only; hold on the city before the fall; the road lit at its real width; the travel time only if the client confirms it.
 - **Single take:** TECHNIQUES.md "Stage take" / "Single take".
 - **Brand film:** one hero material or object; type is the picture; music carries; 1–3 lines of voice at most.
+- **SaaS one-take explainer:** the camera never stops dead and never cuts; the window is the anchor and never leaves (it steps back and returns); one satellite per beat proving the line; every named tool or person shows its mark or photo; captions centred above, cast below, all inside the safe frame.
 - **Story / poster in motion:** keep the approved layout; animate it, don't redesign it; 15 s; the CTA is a sticker-like button.
