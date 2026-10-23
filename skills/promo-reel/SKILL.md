@@ -55,6 +55,7 @@ Reach for these when a branch needs them:
 7. **Deliver.**
    - Render masters only now, or when the user asks: batch every fix into one render pass (EDIT.md §6).
    - Full render (retry loop, concurrency 2), loudness to −14 LUFS, copy into the brand's `out/current`. Add the share copy and any cutdowns the placement needs (EDIT.md §5).
+   - **Post copy goes to Haiku** (owner, 23 Oct 2026): captions, title/cover options, pinned comment, hashtags, alt text and the YouTube/LinkedIn title are drafted by a Haiku subagent (Agent tool, `model: "haiku"`, in the background while you render or fix). Give it the film's fact source (script JSON or carousel data file), the brand's post rules and one approved example, tell it to use only facts in that source, and have it write to `docs/drafts/` with a "Facts used" list. Then check every number, date and name against the source, fix the voice, and merge the result into the brand's caption kit. Haiku drafts; you sign off.
    - Name every master `<brand>-<project>_<film>_<audience>_<ratio>_<voice>_v<NN>_<YYYY-MM-DD>.mp4`, all lower case with hyphens inside a field and underscores between fields. Example: `dhunna-54d_o3-offices_companies_9x16_puck_v04_2026-10-17.mp4`. Use the same name locally (`out/current`) and on Drive.
    - Upload to the brand's Drive folder, with replaced cuts moved to `_replaced/` under their scheme name.
    - Add the files to the Drive index sheet ("00 Index · every creative" in Dhunna Ad Creatives) so they can be found by film, audience, type, status or date.
