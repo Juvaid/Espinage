@@ -34,7 +34,13 @@ ap.add_argument('--dark', type=int, default=4, help='palette colours for dark to
 ap.add_argument('--mid', type=int, default=9, help='palette colours for mid tones')
 ap.add_argument('--light', type=int, default=5, help='palette colours for light tones')
 ap.add_argument('--bg-tol', type=int, default=22)
+# tracer smoothness: higher corner threshold = rounder curves; bigger speckle/length = fewer tiny bits
+ap.add_argument('--corner', type=int, default=100)
+ap.add_argument('--length', type=float, default=8.0)
+ap.add_argument('--speckle', type=int, default=14)
+ap.add_argument('--layer-diff', type=int, default=10)
 ap.add_argument('--shadow-tol', type=int, default=48, help='wider fill from the bottom edge for a floor shadow; 0 = off')
+ap.add_argument('--keep-hues', action='store_true', help='keep purples/greens (skip the backdrop-contamination fix)')
 ap.add_argument('--logo', default=None, help='cx,cy,width in crop pixels: place the Winter Arc vector logo there (e.g. a hoodie print)')
 ap.add_argument('--logo-svg', default='assets/winter-arc/brand/wordlord-winter-light.svg')
 a = ap.parse_args()
@@ -96,13 +102,26 @@ out = pal_bgr[idx].reshape(arr.shape)
 out[is_mark.reshape(arr.shape[:2])] = MARK[::-1]
 out = cv2.medianBlur(out, 3)  # tidy one-pixel stairs on edges
 qa = cv2.cvtColor(out, cv2.COLOR_BGR2RGB)
+# Backdrop contamination: the magenta (or a green chroma) backdrop drags some palette colours toward purple/green.
+# Snap them back: dark purples are the iris navy, light ones are white; greens go to fur or white. (The mascots here
+# have no purple or green of their own; pass --keep-hues to skip this for art that does.)
+if not a.keep_hues:
+    hsv_q = cv2.cvtColor(np.ascontiguousarray(qa), cv2.COLOR_RGB2HSV).astype(int)
+    hq, sq, vq = hsv_q[..., 0] * 2, hsv_q[..., 1], hsv_q[..., 2]
+    notmark = ~np.all(qa == np.array(MARK, np.uint8), axis=-1)
+    purple = notmark & (hq > 255) & (hq < 335) & (sq > 50)
+    green = notmark & (hq > 75) & (hq < 165) & (sq > 50)
+    qa[purple & (vq < 110)] = (0x1B, 0x2A, 0x66)
+    qa[purple & (vq >= 110)] = (0xEE, 0xF1, 0xF6)
+    qa[green & (vq < 140)] = (0x15, 0x15, 0x15)
+    qa[green & (vq >= 140)] = (0xF2, 0xF2, 0xF4)
 prep = re.sub(r'\.svg$', '.prep.png', a.out)
 Image.fromarray(qa).save(prep)
 
 vtracer.convert_image_to_svg_py(
     prep, a.out, colormode='color', hierarchical='cutout', mode='spline',
-    filter_speckle=6, color_precision=8, layer_difference=6, corner_threshold=60,
-    length_threshold=4.0, max_iterations=10, splice_threshold=45, path_precision=2,
+    filter_speckle=a.speckle, color_precision=8, layer_difference=a.layer_diff, corner_threshold=a.corner,
+    length_threshold=a.length, max_iterations=10, splice_threshold=45, path_precision=2,
 )
 
 svg = open(a.out).read()

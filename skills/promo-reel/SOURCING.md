@@ -90,5 +90,6 @@ Prep and editing of real footage: FOOTAGE.md. Sourcing notes:
   - `split_parts.py` keys and splits a sheet; `--expect N` separates touching drawings with a watershed.
   - `trace_mascot.py` enlarges, smooths, snaps colours to a palette per brightness band, traces with vtracer (cutout mode) and drops the backdrop. `--logo` places a vector logo on top.
   - `fit_rig.py` template-matches the pieces of an exploded sheet onto its assembled figure.
+  - `place_logo.py` puts a real vector logo on each drawing's chest. It finds the chest as the biggest circle that fits in the hoodie's white, and takes per-drawing overrides from JSON.
 - **Rigs:** start from an exploded sheet (the assembled character plus pieces at the same scale), fit the pieces, and keep the joints few. Use drawn library poses for specific hand gestures.
 

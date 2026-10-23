@@ -58,3 +58,10 @@ The owner set the bar at **8.5/10**, as for Tech Lords. Shared rules live in `br
 - **Arm order:** a raised arm draws in front of the head, a hanging one behind it.
 - **Chroma backgrounds:** use pure green for anything with a white hoodie on a white background, so the hoodie and backdrop never merge.
 - **Separating drawings:** touching drawings split with a watershed. Loose marks (sparks, bulbs) join only a nearby drawing.
+- **Only the actual logo.** Every logo instance (hoodies, covers, rig) is the master SVG's paths, recoloured to the owner's Winter version. Never a traced, redrawn or generated logo.
+- **Refinement checks for the rig:** compare it at full size against the assembled drawing, then look for:
+  - stubs or seams at the neck (cut pieces at the chin; fill the hood's V with fur);
+  - stray limbs or tails that the reference view doesn't show (hide them by default);
+  - backdrop colour leaking into the art (purple or green turning up in an iris or an edge; snap it back before tracing).
+- **Trace smoothness:** corner 100, length 8, speckle 14 at 4× (rounder curves, no specks). The earlier, sharper settings showed steps at zoom.
+
