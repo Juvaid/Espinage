@@ -8,6 +8,8 @@ import {continueRender, delayRender, useCurrentFrame, useVideoConfig} from 'remo
 //   Spacing ≥ 14 px keeps the dots crisp after Instagram's re-encode (8–10 px dots smear into grey).
 //   fade [from, to] (px from the top): the small background dots exist only below `from`, full by `to`. Keep them out
 //   of the text zone: dots behind type turn it muddy once the shimmer passes (owner, 23 Oct 2026).
+//   fadeHot [from, to]: the same for the mask's own dots, so art of any shape rises from below the text instead of
+//   running up behind it (logos have tall parts the layout can't predict).
 export type DotMask =
   | {type: 'text'; text: string; font: string; x: number; y: number; align?: CanvasTextAlign}
   | {type: 'image'; src: string; x: number; y: number; w: number; h: number}
@@ -17,7 +19,7 @@ export type DotMask =
 const FRAG = `#version 300 es
 precision highp float;
 uniform vec2 u_res; uniform float u_t; uniform float u_sp; uniform float u_noise; uniform float u_shimmer; uniform float u_seed;
-uniform vec3 u_dot; uniform vec3 u_hot; uniform vec3 u_shine; uniform sampler2D u_mask; uniform vec2 u_fade;
+uniform vec3 u_dot; uniform vec3 u_hot; uniform vec3 u_shine; uniform sampler2D u_mask; uniform vec2 u_fade; uniform vec2 u_fadeHot;
 out vec4 o;
 vec3 mod289(vec3 x){return x - floor(x*(1.0/289.0))*289.0;}
 vec2 mod289(vec2 x){return x - floor(x*(1.0/289.0))*289.0;}
@@ -50,7 +52,7 @@ void main(){
   float vis = mix((0.28 + 0.5*max(n, 0.0) + 0.5*sh)*zone, 1.0, m);
   vec3 col = mix(u_dot, u_hot, m);
   col = mix(col, u_shine, sh*(0.35 + 0.45*m));
-  float A = a*clamp(vis, 0.0, 1.0);
+  float A = a*clamp(vis, 0.0, 1.0)*mix(1.0, smoothstep(u_fadeHot.x, u_fadeHot.y, c.y), m);
   o = vec4(col*A, A);
 }`;
 const VERT = `#version 300 es
@@ -71,8 +73,9 @@ export const DotField: React.FC<{
   seed?: number;
   colors?: {dot?: string; hot?: string; shine?: string};
   fade?: [number, number];
+  fadeHot?: [number, number];
   style?: React.CSSProperties;
-}> = ({mask, spacing = 16, noise = 1, shimmer = 1, speed = 1, seed = 0, colors = {}, fade = [-1, 0], style}) => {
+}> = ({mask, spacing = 16, noise = 1, shimmer = 1, speed = 1, seed = 0, colors = {}, fade = [-1, 0], fadeHot = [-1, 0], style}) => {
   const frame = useCurrentFrame();
   const {width, height, fps} = useVideoConfig();
   const ref = useRef<HTMLCanvasElement>(null);
@@ -105,7 +108,7 @@ export const DotField: React.FC<{
     gl.enableVertexAttribArray(a);
     gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
     const loc: St['loc'] = {};
-    for (const n of ['u_res', 'u_t', 'u_sp', 'u_noise', 'u_shimmer', 'u_seed', 'u_dot', 'u_hot', 'u_shine', 'u_mask', 'u_fade']) loc[n] = gl.getUniformLocation(prog, n);
+    for (const n of ['u_res', 'u_t', 'u_sp', 'u_noise', 'u_shimmer', 'u_seed', 'u_dot', 'u_hot', 'u_shine', 'u_mask', 'u_fade', 'u_fadeHot']) loc[n] = gl.getUniformLocation(prog, n);
     st.current = {gl, loc};
 
     const mc = document.createElement('canvas');
@@ -170,6 +173,7 @@ export const DotField: React.FC<{
     gl.uniform3f(loc.u_shine, ...rgb(colors.shine ?? '#FFE2CF'));
     gl.uniform1i(loc.u_mask, 0);
     gl.uniform2f(loc.u_fade, fade[0], fade[1]);
+    gl.uniform2f(loc.u_fadeHot, fadeHot[0], fadeHot[1]);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   });
 

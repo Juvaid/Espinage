@@ -100,7 +100,8 @@ Status: **prod** = shipped in a film; **new** = built for the kit and checked fr
 
 `DotField` (`src/pro/DotField.tsx`) is a halftone dot screen drawn by one WebGL2 shader. It is transparent between dots, so it layers over any ground.
 
-- **Props:** `mask, spacing (16), noise (1), shimmer (1), speed, seed, colors {dot, hot, shine}, fade [fromY, toY]`.
+- **Props:** `mask, spacing (16), noise (1), shimmer (1), speed, seed, colors {dot, hot, shine}, fade [fromY, toY], fadeHot [fromY, toY]`.
+- `fadeHot` does the same as `fade` for the mask's own dots, so a logo of any shape rises from below the text instead of running up behind it.
 - **`mask`:**
   - `{type: 'text', text, font, x, y}`: a giant number or word.
   - `{type: 'image', src, x, y, w, h}`: a logo SVG.
