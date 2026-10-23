@@ -91,5 +91,10 @@ Prep and editing of real footage: FOOTAGE.md. Sourcing notes:
   - `trace_mascot.py` enlarges, smooths, snaps colours to a palette per brightness band, traces with vtracer (cutout mode) and drops the backdrop. `--logo` places a vector logo on top.
   - `fit_rig.py` template-matches the pieces of an exploded sheet onto its assembled figure.
   - `place_logo.py` puts a real vector logo on each drawing's chest. It finds the chest as the biggest circle that fits in the hoodie's white, and takes per-drawing overrides from JSON.
-- **Rigs:** start from an exploded sheet (the assembled character plus pieces at the same scale), fit the pieces, and keep the joints few. Use drawn library poses for specific hand gestures.
+- **Animating a mascot: draw frames; don't build a cut-out puppet.** The owner rejected a cut-out puppet for the WordLord bull as "no good". The method that works:
+  1. Pose sheets of four frames per sheet, on the same body and camera as the neutral frame (attach it), changing only the arms and face.
+  2. `align_frames.py --ref neutral`: one height, one baseline, one head centre.
+  3. Drawn blink and mouth frames. `face_swap_frames.py` keeps the base body and takes only the eyes or mouth from the new drawing.
+  4. `compose_face_svg.py` builds the blink and talk SVGs on the base pose's vector paths, with the new face through a feathered mask. Zero body pixels change.
+  - Waves alternate two drawings on twos.
 

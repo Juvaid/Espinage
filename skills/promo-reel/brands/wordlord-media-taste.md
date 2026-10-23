@@ -18,7 +18,7 @@ The owner set the bar at **8.5/10**, as for Tech Lords. Shared rules live in `br
 
 - **True to the owner's reference, always.** Redraw it, never redesign it. Every new drawing goes through the pipeline in `wordlord-social/src/winter/README.md` and is checked against the reference sheet.
 - **Rig vs library:**
-  - Use the **rig** (`<Bull>`) for body language and talking.
+  - Use the **rig** (`<Bull>`, drawn frames) for animated poses, blinking and talking.
   - Use the **library** (`<BullArt>`) for specific gestures: point, thumbs-up, peace, laptop, phone, chart, camera, growth arrow, events, chair.
   - Use **stickers** as reaction punctuation in corners.
 - **Covers:** the bull is the hero. A big pose drawing bleeds off a frame edge, with the headline set *behind* or *beside* him, never on his face.
@@ -34,7 +34,7 @@ The owner set the bar at **8.5/10**, as for Tech Lords. Shared rules live in `br
 
 ## Motion
 
-- Each part of the rig moves with a purpose: breathing, bob, tilt, tail swish, crown bounce, and a blink about every 3 s.
+- The rig swaps drawings; it never bends them. Ambient motion: breathing, a soft sway, and a drawn blink about every 3 s.
 - **Gestures:** waves swing about ±12°. Hops squash and stretch gently (0.93/1.05; heavier looked rubbery).
 - **Covers are complete on frame 0.** The mascot can be mid-pose, but nothing enters on the first frame.
 - **Reactions:** swap between library drawings with a quick squash, settle in 6–8 frames with ease-out, and never scale up from 0.
@@ -50,12 +50,12 @@ The owner set the bar at **8.5/10**, as for Tech Lords. Shared rules live in `br
 ## Lessons from building the bull (23 Oct 2026)
 
 - **Rig v1 failed:** the parts were drawn separately and then assembled by hand. The head, muzzle and limbs didn't add up to the character.
-- **Rig v2 works:**
-  - an exploded sheet (the assembled bull plus the same pieces at the same scale);
-  - pieces template-matched onto the assembled drawing;
-  - fewer joints (each arm keeps its hand, each leg keeps its shoe).
-- **Eyelids and mouth patches** must use the fur's *sampled* colour (`#212121`), with feathered edges. A slightly different black shows up as an oval.
-- **Arm order:** a raised arm draws in front of the head, a hanging one behind it.
+- **Rig v2 (a cut-out puppet from an exploded sheet) was also rejected ("no good").** Rotated sleeves look rubbery, arms stretch, and one hand drawing can't make every gesture. Painted-on lids and mouths look like stickers on the face, whatever the colour match.
+- **Rig v3 works: drawn frames only.** Every pose, blink and mouth shape is a drawing of the owner's bull (`wordlord-social/src/winter/README.md`):
+  - Draw four frames per sheet on one camera, with the neutral frame attached, changing only the arms and face.
+  - Normalise every frame to the neutral one by horn-top, sole-bottom and head centre (`align_frames.py`), so swaps never jump.
+  - Blink and talk frames keep the base pose's body exactly: only the eyes or mouth come from the new drawing (`face_swap_frames.py`, then `compose_face_svg.py` on the vector paths). Separately drawn or traced bodies shimmer: 3–8% of the silhouette for drawings, about 1.5% of the outline pixels for traces.
+  - Motion on top stays tiny: 0.7% breathing, a 0.6° sway, a squash on pose change. Waves alternate two drawings on twos.
 - **Chroma backgrounds:** use pure green for anything with a white hoodie on a white background, so the hoodie and backdrop never merge.
 - **Separating drawings:** touching drawings split with a watershed. Loose marks (sparks, bulbs) join only a nearby drawing.
 - **Only the actual logo.** Every logo instance (hoodies, covers, rig) is the master SVG's paths, recoloured to the owner's Winter version. Never a traced, redrawn or generated logo.
