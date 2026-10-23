@@ -21,7 +21,19 @@ VPS services (`docker ps`; Caddy at `/etc/caddy/Caddyfile`, with a backup made b
 
 ## Rendering
 
-**On the Mac:** always set `TMPDIR="/Volumes/disk 2/tmp/render"`, use `--concurrency=2`, run one Studio at a time, and render stills in batches of 3–4. **Before a full render, check `sysctl -n vm.swapusage`:** with more than ~6 GB of swap used, Chrome times out connecting ("Timed out … connecting to the browser"), twice on 22 Oct 2026. Stop the Studio, or render on the VPS, or hand the render to the user.
+**On the Mac:** always set `TMPDIR="/Volumes/disk 2/tmp/render"`, use `--concurrency=2`, run one Studio at a time, and render stills in batches of 3–4.
+
+**Render with `render-batch.mjs`, not one `npx remotion render` per file** (23 Oct 2026). Each CLI call re-bundles webpack (35–45 s) and launches a new Chrome, and that launch is what times out. The kit's `scripts/render-batch.mjs` bundles once, opens one browser and renders every composition through it, with the same h264/CRF/pixel format as the CLI. Measured on the Mac: Tech Lords carousel slides (150 frames, 1080×1350) went from 1–2 min each, with 3 Chrome timeouts in 6 slides, to 3–6 s each after one 35–45 s bundle. A slide rendered both ways matched at PSNR 52.9 dB / SSIM 0.9988, which is visually identical, with the same codec, profile, colour space, fps and bitrate.
+
+```bash
+cd <project>   # entry src/index.ts; run with TMPDIR set as above
+node "/Volumes/disk 2/reel-components-kit/scripts/render-batch.mjs" --out out/carousels/claude-duet --match N-claude-duet- --muted
+node "/Volumes/disk 2/reel-components-kit/scripts/render-batch.mjs" --out out/current VibeOneTake=techlords_vibe_v03.mp4 McpReel
+```
+
+Options: `--conc 4` by default for flat 2D, and `--conc 2` for heavy 3D/WebGL films on the Mac. Pass `--muted` only for silent pieces. The script retries a failed file up to 3 times inside the same browser. Projects with a naming scheme keep a thin wrapper, e.g. Tech Lords' `scripts/render-carousel.mjs <carousel-id> [slides]`.
+
+**Before a full render, check `sysctl -n vm.swapusage`:** with more than ~6 GB of swap used, Chrome times out connecting ("Timed out … connecting to the browser"), twice on 22 Oct 2026. Stop the Studio, or render on the VPS, or hand the render to the user.
 
 **On the VPS (preferred for finals and batches):**
 

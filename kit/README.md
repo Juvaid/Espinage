@@ -50,7 +50,7 @@ src/theme/       KitTheme tokens: dhunna_54d, dhunna, crown_crest
 src/icons/       Phosphor subset (MIT) + KitIcon
 src/components/  legacy first pass (+ TogglePills, ShapeMorph, which are current)
 src/demo/        showcase compositions
-scripts/         stills.mjs (batch stills), glyphs3d.py (3D glyph outlines for TypeSpace)
+scripts/         render-batch.mjs (render many comps from one bundle + one browser; 3–6 s a short clip instead of ~1 min), stills.mjs (batch stills), glyphs3d.py (3D glyph outlines for TypeSpace)
 public/          brand, fonts, sfx, audio, samples (committed); footage/stills/maps/models/... are local symlinks
 ```
 
