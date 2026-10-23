@@ -75,3 +75,20 @@ Prep and editing of real footage: FOOTAGE.md. Sourcing notes:
 - **Unnamed roads:** pick the OSM way nearest the Google Business pin with the right direction, and record its id.
   - Barewal Road is way 256721737.
 - **Credit** "map data © OpenStreetMap" on screen.
+
+## Mascots: generate, trace, rig (from the WordLord bull, 23 Oct 2026)
+
+- **Generate headlessly:** the ChatGPT app bundles the Codex CLI at `/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex`.
+  - Run `codex exec -s workspace-write -C <project> --skip-git-repo-check -i <reference.png> - < prompt.txt`.
+  - The prompt tells it to save the PNG into the project. Independent sheets can run in parallel.
+- **A style reference with a character in it gets copied, body shape included.** To borrow only a style, describe it in words and attach only the brand reference.
+- **Sheets for cutting out:**
+  - a pure `#00FF00` background with wide gaps;
+  - no text;
+  - "REDRAW, do not redesign" when a reference exists.
+- **Tools, in the kit's `scripts/`** (run with `/Volumes/disk 2/.reel-tools/venv/bin/python -I`):
+  - `split_parts.py` keys and splits a sheet; `--expect N` separates touching drawings with a watershed.
+  - `trace_mascot.py` enlarges, smooths, snaps colours to a palette per brightness band, traces with vtracer (cutout mode) and drops the backdrop. `--logo` places a vector logo on top.
+  - `fit_rig.py` template-matches the pieces of an exploded sheet onto its assembled figure.
+- **Rigs:** start from an exploded sheet (the assembled character plus pieces at the same scale), fit the pieces, and keep the joints few. Use drawn library poses for specific hand gestures.
+
