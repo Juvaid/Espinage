@@ -13,13 +13,15 @@ import {useKitTheme} from '../theme/KitTheme';
 //   rays    · shafts of light falling from above: reveals, the brand name
 //   contour · drifting topographic lines: location, map and land beats
 //
-// No grain (brand rule). A ±0.5/255 dither is applied only to stop banding in dark gradients after h264.
+// Grain is off by default (client brands: no grain). `grain` (0..1) adds a static luminance grain for brands that
+// want texture (Tech Lords): it never changes between frames, so h264 spends almost no bits on it, and it dithers dark
+// gradients so they don't band after Instagram re-encodes them. A ±0.5/255 dither runs either way.
 export type ShaderKind = 'mesh' | 'silk' | 'metal' | 'aurora' | 'rays' | 'contour';
 export const SHADER_KINDS: ShaderKind[] = ['mesh', 'silk', 'metal', 'aurora', 'rays', 'contour'];
 
 const COMMON = `#version 300 es
 precision highp float;
-uniform vec2 u_res; uniform float u_t; uniform float u_energy; uniform float u_seed;
+uniform vec2 u_res; uniform float u_t; uniform float u_energy; uniform float u_seed; uniform float u_grain;
 uniform vec3 u_bg; uniform vec3 u_deep; uniform vec3 u_mid; uniform vec3 u_light; uniform vec3 u_hi;
 out vec4 o;
 vec3 lin(vec3 c){return pow(c, vec3(2.2));}
@@ -47,6 +49,9 @@ void finish(vec3 c, vec2 uv){
   float v = smoothstep(1.25, 0.35, length((uv - vec2(0.5, 0.55))*vec2(1.0, 0.85)));
   c = mix(lin(u_deep), c, 0.35 + 0.65*v);
   vec3 s = srgb(c) + (hash(gl_FragCoord.xy + u_t) - 0.5)/255.0;
+  // static grain, stronger in the shadows like film; same value every frame for a given pixel
+  float lum = dot(s, vec3(0.2126, 0.7152, 0.0722));
+  s += (hash(floor(gl_FragCoord.xy) + 0.37) - 0.5)*u_grain*0.16*(1.0 - 0.5*lum);
   o = vec4(s, 1.0);
 }
 `;
@@ -198,23 +203,25 @@ const build = (canvas: HTMLCanvasElement, kind: ShaderKind): GLState | null => {
   gl.enableVertexAttribArray(a);
   gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
   const loc: GLState['loc'] = {};
-  for (const n of ['u_res', 'u_t', 'u_energy', 'u_seed', 'u_bg', 'u_deep', 'u_mid', 'u_light', 'u_hi']) loc[n] = gl.getUniformLocation(prog, n);
+  for (const n of ['u_res', 'u_t', 'u_energy', 'u_seed', 'u_grain', 'u_bg', 'u_deep', 'u_mid', 'u_light', 'u_hi']) loc[n] = gl.getUniformLocation(prog, n);
   return {gl, prog, loc, kind};
 };
 
 // kind: the look; energy: highlight strength (0..1); speed: time multiplier; seed: shifts the pattern so two scenes
 // using the same kind don't match; res: render scale (default 0.5, upscaled: these are soft, so it's free; contour 1);
-// colors: override the theme palette {bg, deep, mid, light, hi} as hex.
+// colors: override the theme palette {bg, deep, mid, light, hi} as hex; grain: static film grain (0..1, default 0);
+// at res 0.5 each grain is 2 px and soft after the upscale, which survives Instagram's re-encode (1 px grain turns to mush).
 export const ShaderBackdrop: React.FC<{
   kind?: ShaderKind;
   energy?: number;
   speed?: number;
   seed?: number;
+  grain?: number;
   res?: number;
   opacity?: number;
   colors?: Partial<Record<'bg' | 'deep' | 'mid' | 'light' | 'hi', string>>;
   style?: React.CSSProperties;
-}> = ({kind = 'mesh', energy = 0.5, speed = 1, seed = 0, res: resProp, opacity = 1, colors, style}) => {
+}> = ({kind = 'mesh', energy = 0.5, speed = 1, seed = 0, grain = 0, res: resProp, opacity = 1, colors, style}) => {
   const res = resProp ?? (kind === 'contour' ? 1 : 0.5); // contour lines need full resolution to stay fine
   const C = useKitTheme();
   const frame = useCurrentFrame();
@@ -238,6 +245,7 @@ export const ShaderBackdrop: React.FC<{
     gl.uniform1f(loc.u_t, (frame / fps) * speed);
     gl.uniform1f(loc.u_energy, energy);
     gl.uniform1f(loc.u_seed, seed * 13.7);
+    gl.uniform1f(loc.u_grain, grain);
     gl.uniform3f(loc.u_bg, ...hex(pal.bg));
     gl.uniform3f(loc.u_deep, ...hex(pal.deep));
     gl.uniform3f(loc.u_mid, ...hex(pal.mid));

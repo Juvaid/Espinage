@@ -96,9 +96,23 @@ Status: **prod** = shipped in a film; **new** = built for the kit and checked fr
 | `Spotlight` | Soft cone sweeps once across a card or word | `at, dur` | 14 | new |
 | `Post` / `StudioEnv` | R3F post (bokeh depth of field + gentle bloom) and studio reflections | `focus, aperture, maxblur, bloom` | — | prod (OneTake) |
 
+## Halftone dots
+
+`DotField` (`src/pro/DotField.tsx`) is a halftone dot screen drawn by one WebGL2 shader. It is transparent between dots, so it layers over any ground.
+
+- **Props:** `mask, spacing (16), noise (1), shimmer (1), speed, seed, colors {dot, hot, shine}, fade [fromY, toY]`.
+- **`mask`:**
+  - `{type: 'text', text, font, x, y}`: a giant number or word.
+  - `{type: 'image', src, x, y, w, h}`: a logo SVG.
+  - `{type: 'poly', points}` or `{type: 'polys', polys}`: a shard or a traced logo.
+- Dots in the mask are big and `hot`. The rest are small, noisy and kept below `fade`, so never behind type.
+- One shimmer band crosses the field.
+- Spacing of 12 px or more survives Instagram's re-encode.
+- **In use:** Tech Lords carousel v3 covers and closing slides (`techlords-reels/src/carousel/v3/art.tsx`). Status: prod (Tech Lords).
+
 ## Shader backdrops
 
-`ShaderBackdrop` is a full-frame WebGL2 fragment shader, frame-driven and coloured from the theme's 3D palette. It replaces `Backdrop` for a scene. Its props are `kind, energy (0..1, default 0.5), speed, seed, res, opacity, colors`.
+`ShaderBackdrop` is a full-frame WebGL2 fragment shader, frame-driven and coloured from the theme's 3D palette. It replaces `Backdrop` for a scene. Its props are `kind, energy (0..1, default 0.5), speed, seed, grain (0..1, default 0: static film grain, off for client brands), res, opacity, colors`.
 
 Demos:
 - `Shaders-Dhunna54D`, `-DhunnaGold`, `-CrownCrest`: each kind for 90 frames behind a heading and a card.

@@ -41,3 +41,13 @@ Rules:
 - **Effects:** one per beat, on the element that matters. Port Magic UI or Aceternity ideas frame-driven; never use CSS keyframes.
 - **New elements go into the kit:** add the component to `src/pro`, a showcase segment, a CATALOG row and a still check, themed by tokens so every brand gets them. Then sync the kit to Espinage. Brand-only looks stay in the brand file and theme.
 - **GSAP** (`@remotion/gsap`, installed in the 54D project) suits dense, staggered element choreography (MOTION.md). GSAP's MorphSVG plugin is an alternative to `ShapeMorph` for complex outlines.
+
+## Texture effects (kit `src/pro/`, added 23 Oct 2026)
+
+- **`DotField`:** a halftone dot screen from one WebGL2 shader. Its mask can be text (a giant number), an image (a logo SVG), or one or more polygons (a shard, a traced logo).
+  - Dots inside the mask are big and hot; dots outside are small, noisy and fade by `fade=[fromY, toY]`.
+  - One shimmer band crosses the field. The canvas is transparent between dots, so it layers over any ground.
+  - Spacing: 12 px or more; 14–16 for big art.
+- **`ShaderBackdrop` `grain`:** static luminance grain (0..1, default 0, so client brands stay grain-free). It is about 2 px and soft at the default `res` 0.5.
+- **Use them like Tech Lords v3** (`techlords-reels/src/carousel/v3/art.tsx`): art in the frame's back layer, under calm bands, never behind type.
+

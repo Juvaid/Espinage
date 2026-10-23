@@ -154,3 +154,28 @@ Each of these rules already existed; an agent applied it narrowly and the user h
 | Stills at every beat (TASTE.md §4) | Beat stills passed while in-between frames had collisions | Add the every-second audit (QUALITY.md) |
 
 New rules from the same day (not in the skill before): centred captions; the cross-platform safe frame; hooks and non-linear structures (HOOKS.md); recurring cast and code-drawn mascots; the SaaS one-take for explainers (STYLES.md 9); freebies the CTA promises are built and hosted (EDIT.md §5).
+
+## 7. Lessons from the Tech Lords v3 carousel rounds (23 Oct 2026)
+
+The owner scored rounds 6/10 → 7/10 → "cool, keep it up". What moved the score:
+
+- **Texture never sits behind type.**
+  - Dot fields, silk folds and shimmer looked fine on a still and turned the text muddy once the slide played.
+  - Paint art in a layer under calm bands, and fade background texture out of the text zone (`DotField fade`).
+  - Judge a moving frame, not frame 0 alone.
+- **One template for every hero reads as lazy.**
+  - Choose the cover design from the story: a number, one company, a roundup.
+  - Keep a small set of designs and add one when a story doesn't fit.
+- **Poster type: one size, the author's breaks.**
+  - Per-line fitted sizes and automatic re-breaking both looked jumbled.
+  - Write 2–3 short lines and set them at one size, fixed by the longest.
+- **Exaggerate where it earns it.** Headline scale and one hero visual on the cover. Logos are sign-offs (the outro mark at 380 px was "too large"; ~256 px is right).
+- **Check a display face's numerals** before adopting it. Hubot Sans has a barred zero that reads as θ, so its sibling Mona Sans sets the numbers.
+- **Covers are complete on frame 0** (the thumbnail). No entrances on covers.
+- **Every moving element needs a job.** Cut spinning rings and pulsing glows; keep one shimmer pass, breathing noise and a slow float.
+- **Survive the re-encode.**
+  - Static grain dithers dark gradients so they don't band.
+  - Dot spacing of 12 px or more stays crisp at 3.5 Mbps; 8–10 px dots turn to grey.
+  - Test with a re-encode crop before calling a texture done.
+- **Show a side-by-side, not a single guess,** when type is in question. The `Type-test` comps render one slide in three pairings.
+

@@ -12,7 +12,7 @@ A reel here is a 10–50 s vertical film with a Hinglish voiceover (or music onl
 Read the brand file before touching design:
 - Dhunna Infra → [`brands/dhunna-infra.md`](brands/dhunna-infra.md)
 - Crown Crest → [`brands/crown-crest.md`](brands/crown-crest.md)
-- Tech Lords (@techlordsbywlm, AI-engineering explainers) → [`brands/tech-lords.md`](brands/tech-lords.md)
+- Tech Lords (@techlordsbywlm, AI-engineering explainers) → [`brands/tech-lords.md`](brands/tech-lords.md) and its taste, [`brands/tech-lords-taste.md`](brands/tech-lords-taste.md) (also the base for WordLord Media's own pieces)
 - Any other brand → [`NEW-BRAND.md`](NEW-BRAND.md) first, then write its `brands/<brand>.md`.
 
 **Rules apply at full scope.** A rule written from one case covers every element of that kind: "one text at a time" counts text inside cards and windows; "reveal on the word" covers every named person, company, tool and source; the 44 px label minimum applies inside UI cards too. On 22 Oct 2026 an agent read these narrowly and the user had to correct each one ([`TASTE.md`](TASTE.md) §6).
