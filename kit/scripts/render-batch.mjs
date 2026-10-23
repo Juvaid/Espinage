@@ -36,7 +36,18 @@ const serveUrl = await bundle({entryPoint: entry});
 // Mac: use the Chrome 149 copy (see remotion.config.ts); elsewhere Remotion's default
 const MAC_CHROME = '/Volumes/disk 2/.reel-tools/chrome-headless-shell-149/chrome-headless-shell';
 const browserExecutable = process.platform === 'darwin' && existsSync(MAC_CHROME) ? MAC_CHROME : null;
-const browser = await openBrowser('chrome', {browserExecutable, chromiumOptions: {gl: 'angle'}});
+// Chrome sometimes misses the 25 s connect window under memory pressure: retry the launch, not the whole run
+const launch = async () => {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await openBrowser('chrome', {browserExecutable, chromiumOptions: {gl: 'angle'}});
+    } catch (e) {
+      if (attempt === 3) throw e;
+      console.log(`browser launch ${attempt} failed, retrying`);
+    }
+  }
+};
+const browser = await launch();
 const all = await getCompositions(serveUrl, {puppeteerInstance: browser});
 const jobs = match
   ? all.filter((c) => c.id.startsWith(match)).map((c) => [c, `${c.id}.mp4`])
