@@ -48,7 +48,7 @@ const launch = async () => {
   }
 };
 const browser = await launch();
-const all = await getCompositions(serveUrl, {puppeteerInstance: browser});
+const all = await getCompositions(serveUrl, {puppeteerInstance: browser, timeoutInMilliseconds: 120000});
 const jobs = match
   ? all.filter((c) => c.id.startsWith(match)).map((c) => [c, `${c.id}.mp4`])
   : args.map((a) => {
