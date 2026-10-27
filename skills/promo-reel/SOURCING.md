@@ -25,8 +25,17 @@ The user's ChatGPT desktop app is Codex (`com.openai.codex`). It generates image
   - Reject any that alter the building.
   - The user may still remove one after seeing it (a three-quarter view was cut from Crown Crest v2d).
 - **Images, not video:** Google Flow makes short clips. Crop the sparkle watermark (bottom ~8%).
+- **Which ChatGPT route (27 Oct 2026):**
+  - **Claude in Chrome** (the user's real Chrome): uploads and downloads work. Best when it's connected; check `list_connected_browsers` first.
+  - **ChatGPT desktop app** (`com.openai.codex`, now ChatGPT + Codex with a mode switch top-left): only redraws in front, so it needs full-screen control. Attach references with **+ → Add photos & files → cmd+shift+G** and type the path. Save a result with the image's share button → **Download** (a Save dialog follows); never the public-link buttons.
+  - **Built-in browser pane:** often a different ChatGPT account from the desktop app. Uploads, paste and clipboard reads are blocked, and so are downloads; get images out with tiled 1:1 screenshots (memory: chatgpt-pane-image-export).
+- **Use the owner's finished art when it fits:** if they send a finished composite (art with type baked in), lift the type off and keep the art as a clean plate instead of regenerating (`wordlord-social/scripts/clean_elephant_cover.py`: type found against a max-filter wall estimate; small boxes inpainted, big type areas rebuilt as a fitted wall surface).
+- **Cutouts:** ask for flat #00FF00 and key with `wordlord-social/scripts/key_green.py` (it un-mixes green from edge pixels, so fur and knit stay clean).
 
 ## Pictures of what the voice names
+
+- **Check trend claims against the source pictures, not just articles** (27 Oct 2026): a "Prada showed cobalt for FW26" line from trend roundups did not hold up; neither Prada FW26 runway gallery had a cobalt garment. Before a brand carries a claim, find the actual look.
+- **Image rights, best first:** the brand's own press images (galleries credited "Courtesy of <brand>", newsroom images) → agency runway photos (Launchmetrics, Getty: don't reuse) → paparazzi or celebrity posts (agency-owned; use only if the owner chooses, credited, and tell them the rights sit with the agency).
 
 - **People:** Wikimedia Commons (API search, `prop=imageinfo&iiprop=extmetadata` gives the licence and author). Use CC0 / CC BY / CC BY-SA only, credit on screen ("Photo: <author> · CC BY 3.0"), crop tight on the face, grade toward the brand.
 - **Companies, products, tools:** Simple Icons (CC0 SVG marks) from `cdn.jsdelivr.net/npm/simple-icons@<version>/icons/<slug>.svg`, painted in the brand's ink. Some brands asked to be removed (Slack, OpenAI): use a plain glyph with the name instead of drawing their logo.
@@ -49,6 +58,7 @@ The user's ChatGPT desktop app is Codex (`com.openai.codex`). It generates image
   - The style hint asks for an authentic Punjabi-Delhi Indian accent, smiling, energetic and warm.
 - **Word timing:** `54D scripts/align_vo.py <take.wav> <scripts.json> <film> <out.json> [hi|en]`. It runs whisper `small` with word timestamps and the script as prompt, matches the heard words to the script (difflib) and fills the gaps.
   - If it matches 0 words, whisper wrote Devanagari: rerun with `en` to get Latin script.
+  - If one whole line comes back with a single repeated time (whisper skipped it), spread that line's words evenly between the audio start (first loud frame of the envelope) and the next line.
   - It prints anything heard before the script starts. That is a leaked style hint: trim the take there (`ffmpeg -ss <start-0.2>`) and realign.
   - Two of five takes leaked on 17 Oct.
 - **Check every take** with `scripts/vo_check.py`: loudness, pitch spread (flat reads robotic, 4–7 semitones is natural promo), and whether whisper hears the key names.

@@ -60,5 +60,8 @@ Clone with anchored excludes: `rsync -a --exclude '/out' --exclude '/src/scenes'
 - Don't run renders while the user needs to click links: memory pressure makes Chrome drop link clicks (AppleEvent timeouts).
 - **zsh:** `for p in "a b" …; do set -- $p` does not word-split. Run such loops under `bash -c`. `ffprobe` isn't installed; read the duration from `ffmpeg -i`.
 - Pass `-nostdin` to ffmpeg inside shell loops, or it eats the loop's input.
+- **Word-cued films** (`at(line, 'word')` timing): a cue word the take doesn't contain throws when the module loads, and that breaks the whole Studio and every render of the project, not just the new film. Run `tools/check_cues.py <film.tsx> <vo.json>` before registering a new composition, and never register one while a render job is bundling the same `src/`.
+- **Project render scripts drift:** a project's own `render_batch.sh` may still call `npx remotion render` per film (re-bundles and relaunches Chrome every time). Use the kit's `render-batch.mjs`, then master loudness with ffmpeg.
+- Close every Studio (all projects) before a batch render on the 8 GB Mac; two Studios plus a render reliably time out.
 - **Drive** (rclone remote `gdrive:`): use `rclone copy` / `moveto` into the brand folder, with replaced cuts in `_replaced/`.
   - Never run `rclone link`: it makes a public share. Ask first, and send the folder URL from `rclone lsjson --dirs-only` (ID) instead.
