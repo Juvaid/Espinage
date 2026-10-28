@@ -74,3 +74,6 @@ for (const [composition, file] of jobs) {
 }
 await browser.close({silent: true});
 console.log(`total ${((Date.now() - t0) / 1000).toFixed(0)} s`);
+// Remotion leaves its compositor and serve handles open, so the process never ends on its own and the caller's
+// mastering step waits forever. Everything is written by now.
+process.exit(0);
