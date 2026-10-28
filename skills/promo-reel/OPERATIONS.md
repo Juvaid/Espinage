@@ -21,6 +21,12 @@ VPS services (`docker ps`; Caddy at `/etc/caddy/Caddyfile`, with a backup made b
 
 ## Rendering
 
+- **When the CLI can't start Chrome on the Mac** ("Timed out after 25000 ms while trying to connect to the browser"), render from Studio's Render button instead: Studio's own renderer still works.
+  - **One-click presets:** give each composition its export settings with `calculateMetadata` (`defaultCodec`, `defaultOutName`, and for overlays `defaultProResProfile: '4444'`, `defaultPixelFormat: 'yuva444p10le'`, `defaultVideoImageFormat: 'png'`). Each comp is then Render → Render, no settings to set.
+  - **Check:** confirm alpha with the bundled ffprobe (`node_modules/@remotion/compositor-darwin-arm64/ffprobe`, with `DYLD_LIBRARY_PATH` set to its folder). Overlays show `yuva444p12le`.
+  - The owner rejected CLI renders through their own Chrome (28 Oct 2026).
+- **Still studies of one frame of a timed comp:** wrap it in `<Sequence from={-frame} layout="none">`. `<Freeze>` inside a 1-frame study comp rendered frame 0.
+
 **On the Mac:** always set `TMPDIR="/Volumes/disk 2/tmp/render"`, use `--concurrency=2`, run one Studio at a time, and render stills in batches of 3–4.
 
 **Render with `render-batch.mjs`, not one `npx remotion render` per file** (23 Oct 2026). Each CLI call re-bundles webpack (35–45 s) and launches a new Chrome, and that launch is what times out. The kit's `scripts/render-batch.mjs` bundles once, opens one browser and renders every composition through it, with the same h264/CRF/pixel format as the CLI. Measured on the Mac: Tech Lords carousel slides (150 frames, 1080×1350) went from 1–2 min each, with 3 Chrome timeouts in 6 slides, to 3–6 s each after one 35–45 s bundle. A slide rendered both ways matched at PSNR 52.9 dB / SSIM 0.9988, which is visually identical, with the same codec, profile, colour space, fps and bitrate.

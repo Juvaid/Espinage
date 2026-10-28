@@ -31,6 +31,15 @@ Captions are part of the design, not a subtitle layer. The kit has the engine (`
 - **Strokes** use `paint-order: stroke fill`. Gradient-filled words take `drop-shadow`, never `text-shadow`, and no stroke.
 - **Check at phone size, on the real background,** mid-page. A preset that reads on navy can vanish on a bright facade; use a pill or panel there.
 
+## Word-by-word captions over designed scenes (WordLord colour reel, 28 Oct 2026)
+
+`wordlord-social/src/winter/colour/v2/Captions.tsx` is the reference build.
+- **Script:** a hand-written page list with `*hero*` marks. Each page is one line of at most 6 words, and each word lands on its measured VO start. The pages must spell `vo.json` word for word; the component throws on drift, so a re-voice can never desync silently.
+- **One reading target:** the captions take the scene's lesson-line slot, and the lesson lines go while the voice speaks. The closing tagline returns after the last word.
+- **Type is one family:** words in Manrope 400 at 56 px, the hero in 800 cobalt, same size and case. The owner rejected Manrope words with an uppercase condensed-display hero at 1.65× ("did not feel good"): two unrelated faces, and a shouted word mid-sentence. Before choosing, show the options on the same frame (a crop sheet of four looks) and let the owner pick.
+- **Spoken colour names take their colour:** charcoal, forest, amber and the like are set in their hex. A colour under 3:1 on the ground (lemon, champagne, lavender, coral on white) sits on a chip of its palette's dark partner. Punctuation stays in the ink colour.
+- **Grounds that wipe:** switch the caption between its light and dark versions at the wipe's midpoint, not its start, or it goes white on white while the old ground leaves.
+
 ## Editing presets
 
 1. Open the `Caption-Editor` composition (`npm run studio` in the kit).

@@ -29,6 +29,12 @@ The user's ChatGPT desktop app is Codex (`com.openai.codex`). It generates image
   - **Claude in Chrome** (the user's real Chrome): uploads and downloads work. Best when it's connected; check `list_connected_browsers` first.
   - **ChatGPT desktop app** (`com.openai.codex`, now ChatGPT + Codex with a mode switch top-left): only redraws in front, so it needs full-screen control. Attach references with **+ → Add photos & files → cmd+shift+G** and type the path. Save a result with the image's share button → **Download** (a Save dialog follows); never the public-link buttons.
   - **Built-in browser pane:** often a different ChatGPT account from the desktop app. Uploads, paste and clipboard reads are blocked, and so are downloads; get images out with tiled 1:1 screenshots (memory: chatgpt-pane-image-export).
+    - **References:** type the prompt into the message box, reveal the reference files in Finder (`reveal_path`), and ask the owner to attach them with **+**. Pushing image bytes through page JavaScript costs ~60k tokens for a 28 KB JPEG, and the page's CSP blocks localhost.
+    - **New poses:** ask in the same chat that already holds the references (no re-attaching).
+    - **Codex CLI route:** fails with "gpt-6.1-sol is not supported when using Codex with a ChatGPT account" (28 Oct 2026).
+- **Re-posing a mascot to match old art:** attach the old image as the POSE reference beside the character references, and name the pose exactly (expression, hands, sit or stand).
+  - For a mascot that sits on something (a logo letter, a card edge), ask for an invisible ledge with legs hanging and nothing drawn under it.
+  - Then measure the seat line on a gridded cutout (`seatX`/`seatY` as fractions) and place it by that line.
 - **Use the owner's finished art when it fits:** if they send a finished composite (art with type baked in), lift the type off and keep the art as a clean plate instead of regenerating (`wordlord-social/scripts/clean_elephant_cover.py`: type found against a max-filter wall estimate; small boxes inpainted, big type areas rebuilt as a fitted wall surface).
 - **Cutouts:** ask for flat #00FF00 and key with `wordlord-social/scripts/key_green.py` (it un-mixes green from edge pixels, so fur and knit stay clean).
 

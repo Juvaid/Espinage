@@ -11,6 +11,11 @@ Private skills for Claude Code.
   - motion (60 fps, motion blur, depth of field, GSAP);
   - sourcing (ChatGPT/Codex stills, Gemini voices);
   - delivery and naming.
+- **instagram-brand-kit**: build a brand's Instagram identity set and brand kit in Remotion. It covers:
+  - profile picture, 1:1 highlight covers, and post covers that work at 9:16 and in the 3:4 grid;
+  - safe-zone overlays (`tools/safe_zones.py`) and the sizes table;
+  - an editor motion pack: intro, outro/CTA, letterform transitions, loops, stickers and lower thirds, with alpha;
+  - packing the kit folder and uploading it to Drive.
 
 ## Kit
 

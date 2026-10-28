@@ -124,6 +124,15 @@ All from `54D src/investor/GCards.tsx`, on one shared `Card` face:
 - `ExtrudeGeometry` UVs on caps are raw shape units; scale texture `repeat` to match.
 - Negative scale (mirrors) is handled by three; keep materials front-sided.
 
+## Brand-letterform ground pattern
+
+When a white or cobalt ground reads "uninteresting", build the pattern from the brand's own letterform rather than a shader or texture. Reference: `wordlord-social/src/winter/colour/DLattice.tsx`, the logo's tall D.
+- **Pattern:** the letter's exact path as thin outlines in a staggered lattice, drifting slowly. At 196 px tall it read as wallpaper; oversized (320 px, 270 × 430 cells) it read as the logo.
+- **Clear zones:** a vertical mask clears every text band, so no type sits on it.
+- **Wipes:** a wipe that reveals another scene on the same ground draws its own copy on the same frame, so the ground never jumps.
+- **Seamless loop:** drift = cell height ÷ loop frames, and the glow's breath period = the loop length.
+- **Wipe transitions from the same letterform:** take its outer contour only (the first subpath), so the counter leaves no hole, and scale it past the frame. Give the rim a fixed proportion (1.1×); a time lead on an ease-in floods the frame with the rim colour. Reveal through a growing mask hole with ease-in-out; ease-out clears the frame in 3 frames.
+
 ## Shader backdrops (GLSL in Remotion)
 
 - **Frame-driven:** time is `frame / fps`, so every render matches. Draw in `useLayoutEffect` on a WebGL2 canvas with `preserveDrawingBuffer: true`. Headless renders need ANGLE (`Config.setChromiumOpenGlRenderer('angle')`).

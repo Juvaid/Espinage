@@ -140,3 +140,11 @@ Everything below about the bull is history. Its assets are archived; don't use i
 - **Rhythm:** grounds alternate cobalt, white, ice, navy and white, cut with a 10-frame circle mask; a slow push keeps every beat moving.
 - **Fonts:** measure only after the faces load, and re-render when they do. A fallback measure made Unbounded overflow.
 - **Sound:** a fast original beat plus synced SFX (`scripts/score_fast.py`); one sound per event kind.
+
+## Grounds for white reel scenes (colour-purpose v2, 28 Oct 2026)
+
+The owner called the flat off-white ground "uninteresting". The answer is brand-derived, not a generic shader: `DLattice` (`wordlord-social/src/winter/colour/DLattice.tsx`) repeats the logo's exact tall D (path 11 of the Winter logo SVG) as thin ice-blue outlines, 320 px tall in a staggered 270 × 430 grid, drifting up ~0.55 px/frame, with a breathing ice glow behind the card. The first pass (196 px Ds) read as wallpaper; oversized Ds read as the logo. A vertical mask clears the logo + palette row band and the lesson + footer band, so no type sits on the pattern. Wipes that reveal another white scene draw their own DLattice so the ground never jumps. Owner's verdict pending.
+
+## Captions on explainer reels (colour-purpose v2, 28 Oct 2026)
+
+On type showcases (five fonts) the owner wants no caption track. On the colour-purpose explainer the owner chose full word-by-word captions over a lesson-line upgrade. Built as `wordlord-social/src/winter/colour/v2/Captions.tsx`: one line per page (≤ 6 words), each word lands on its measured VO start, one hero word per page. **Type: Manrope only** (owner's pick of four looks): words 400 at 56 px, the hero 800 in cobalt (ice on cobalt), same size and case. The first build (Manrope words + an uppercase Sofia hero at 1.65×) "did not feel good": two unrelated faces and a shouted word mid-sentence. Sofia-only and a Caveat Brush hero were the other options shown. The pages are a hand-written script with `*hero*` marks that must spell vo.json word for word (it throws on drift). The captions take the lesson slot (y 1366), so the English lesson lines are gone while the voice speaks; the tagline returns after the last word. Switch caption colours at the midpoint of a ground wipe, not its start, or they go white on white.
