@@ -1,0 +1,82 @@
+{
+  "template_version": "1.0.0",
+  "pages": 11,
+  "items": 8,
+  "catalogue": [
+    {
+      "page": 4,
+      "id": "sample-1",
+      "published_date": "2026-01-02",
+      "visuals": [
+        "visuals/reel-01.png"
+      ]
+    },
+    {
+      "page": 5,
+      "id": "sample-2",
+      "published_date": "2026-01-03",
+      "visuals": [
+        "visuals/story-01.png"
+      ]
+    },
+    {
+      "page": 5,
+      "id": "sample-3",
+      "published_date": "2026-01-04",
+      "visuals": [
+        "visuals/story-02.png"
+      ]
+    },
+    {
+      "page": 5,
+      "id": "sample-4",
+      "published_date": "2026-01-05",
+      "visuals": [
+        "visuals/story-03.png"
+      ]
+    },
+    {
+      "page": 6,
+      "id": "sample-5",
+      "published_date": "2026-01-07",
+      "visuals": [
+        "visuals/carousel-01.png",
+        "visuals/carousel-02.png",
+        "visuals/carousel-03.png"
+      ]
+    },
+    {
+      "page": 7,
+      "id": "sample-5",
+      "published_date": "2026-01-07",
+      "visuals": [
+        "visuals/carousel-04.png",
+        "visuals/carousel-05.png"
+      ]
+    },
+    {
+      "page": 8,
+      "id": "sample-6",
+      "published_date": "2026-01-09",
+      "visuals": [
+        "visuals/post-01.png"
+      ]
+    },
+    {
+      "page": 9,
+      "id": "sample-7",
+      "published_date": "2026-01-10",
+      "visuals": [
+        "visuals/story-04.png"
+      ]
+    },
+    {
+      "page": 10,
+      "id": "sample-8",
+      "published_date": "2026-01-12",
+      "visuals": [
+        "visuals/reel-02.png"
+      ]
+    }
+  ]
+}

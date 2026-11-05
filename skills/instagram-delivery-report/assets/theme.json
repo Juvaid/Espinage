@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "page_size": [595.28, 841.89],
+  "margin": 44,
+  "font_regular": "Helvetica",
+  "font_bold": "Helvetica-Bold",
+  "colors": {
+    "ink": "#202026",
+    "muted": "#686872",
+    "line": "#E8E6ED",
+    "background": "#FAF9FC",
+    "pink": "#DD2A7B",
+    "purple": "#8134AF",
+    "orange": "#F58529",
+    "blue": "#515BD4"
+  }
+}
