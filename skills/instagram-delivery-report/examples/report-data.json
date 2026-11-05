@@ -1,0 +1,413 @@
+{
+  "account": "sample_account",
+  "client_name": "Sample Account",
+  "agency_name": "WordLord Media",
+  "demo": true,
+  "window": {
+    "start": "2026-01-01",
+    "end": "2026-01-31",
+    "timezone": "Asia/Kolkata"
+  },
+  "captured_at": "2026-02-05T12:00:00+05:30",
+  "coverage": {
+    "status": "complete",
+    "feed_boundary_verified": true,
+    "story_boundary_verified": true,
+    "notes": []
+  },
+  "report_notes": [
+    "This is a neutral reusable design preview. All sample account details, visuals and metrics are fictional."
+  ],
+  "items": [
+    {
+      "id": "sample-1",
+      "type": "reel",
+      "title": "Sample reel | Published cover",
+      "published_date": "2026-01-02",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/reel-01.png",
+          "role": "cover"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 1200,
+        "Interactions": 42,
+        "Likes": 30,
+        "Comments": 2,
+        "Saves": 3,
+        "Shares": 7,
+        "Follows": 4,
+        "Viewers": 900,
+        "Accounts engaged": 37,
+        "Profile activity": 4,
+        "Profile visits": null,
+        "views_followers_pct": 20,
+        "views_non_followers_pct": 80
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Comments": "cumulative-native",
+        "Saves": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile activity": "cumulative-native",
+        "views_followers_pct": "cumulative-native",
+        "views_non_followers_pct": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-2",
+      "type": "story",
+      "title": "Sample story",
+      "published_date": "2026-01-03",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/story-01.png",
+          "role": "story"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 50,
+        "Viewers": 40,
+        "Interactions": 4,
+        "Likes": 2,
+        "Shares": 1,
+        "Replies": 1,
+        "Accounts engaged": 4,
+        "Profile visits": 1,
+        "Follows": 0,
+        "Forwards": 12,
+        "Exited": 8,
+        "Back": 1,
+        "Next story": 2,
+        "views_followers_pct": 60,
+        "views_non_followers_pct": 40
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Replies": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile visits": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Forwards": "cumulative-native",
+        "Exited": "cumulative-native",
+        "Back": "cumulative-native",
+        "Next story": "cumulative-native",
+        "views_followers_pct": "cumulative-native",
+        "views_non_followers_pct": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-3",
+      "type": "story",
+      "title": "Sample story",
+      "published_date": "2026-01-04",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/story-02.png",
+          "role": "story"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 60,
+        "Viewers": 45,
+        "Interactions": 5,
+        "Likes": 2,
+        "Shares": 1,
+        "Replies": 2,
+        "Accounts engaged": 5,
+        "Profile visits": 1,
+        "Follows": 0,
+        "Forwards": 12,
+        "Exited": 8,
+        "Back": 1,
+        "Next story": 2,
+        "views_followers_pct": 60,
+        "views_non_followers_pct": 40
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Replies": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile visits": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Forwards": "cumulative-native",
+        "Exited": "cumulative-native",
+        "Back": "cumulative-native",
+        "Next story": "cumulative-native",
+        "views_followers_pct": "cumulative-native",
+        "views_non_followers_pct": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-4",
+      "type": "story",
+      "title": "Sample story",
+      "published_date": "2026-01-05",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/story-03.png",
+          "role": "story"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 70,
+        "Viewers": 50,
+        "Interactions": 6,
+        "Likes": 2,
+        "Shares": 1,
+        "Replies": 3,
+        "Accounts engaged": 6,
+        "Profile visits": 1,
+        "Follows": 0,
+        "Forwards": 12,
+        "Exited": 8,
+        "Back": 1,
+        "Next story": 2,
+        "views_followers_pct": 60,
+        "views_non_followers_pct": 40
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Replies": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile visits": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Forwards": "cumulative-native",
+        "Exited": "cumulative-native",
+        "Back": "cumulative-native",
+        "Next story": "cumulative-native",
+        "views_followers_pct": "cumulative-native",
+        "views_non_followers_pct": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-5",
+      "type": "carousel",
+      "title": "Sample carousel | Five slides in sequence",
+      "published_date": "2026-01-07",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/carousel-01.png",
+          "role": "slide"
+        },
+        {
+          "path": "visuals/carousel-02.png",
+          "role": "slide"
+        },
+        {
+          "path": "visuals/carousel-03.png",
+          "role": "slide"
+        },
+        {
+          "path": "visuals/carousel-04.png",
+          "role": "slide"
+        },
+        {
+          "path": "visuals/carousel-05.png",
+          "role": "slide"
+        }
+      ],
+      "expected_visual_count": 5,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 400,
+        "Interactions": 20,
+        "Likes": 10,
+        "Comments": 2,
+        "Saves": 5,
+        "Shares": 3,
+        "Follows": 1,
+        "Viewers": 200,
+        "Accounts engaged": 17,
+        "Profile activity": 3,
+        "Profile visits": 2,
+        "External link taps": 0,
+        "Business address taps": 0,
+        "From Home": 150,
+        "From profile": 250
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Comments": "cumulative-native",
+        "Saves": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile activity": "cumulative-native",
+        "Profile visits": "cumulative-native",
+        "External link taps": "cumulative-native",
+        "Business address taps": "cumulative-native",
+        "From Home": "cumulative-native",
+        "From profile": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-6",
+      "type": "post",
+      "title": "Sample image post",
+      "published_date": "2026-01-09",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/post-01.png",
+          "role": "post"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 250,
+        "Interactions": 10,
+        "Likes": 7,
+        "Comments": 1,
+        "Saves": 1,
+        "Shares": 1,
+        "Follows": 0,
+        "Viewers": 150,
+        "Accounts engaged": 9,
+        "Profile visits": 2
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Comments": "cumulative-native",
+        "Saves": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile visits": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-7",
+      "type": "story",
+      "title": "Sample single story",
+      "published_date": "2026-01-10",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/story-04.png",
+          "role": "story"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "not_observed",
+      "metrics": {
+        "Views": 65,
+        "Viewers": 51,
+        "Interactions": 6,
+        "Likes": 3,
+        "Shares": 2,
+        "Replies": 1,
+        "Accounts engaged": 5,
+        "Profile visits": 2,
+        "Follows": 0,
+        "Forwards": 15,
+        "Exited": 7,
+        "Back": 0,
+        "Next story": 2,
+        "views_followers_pct": 55,
+        "views_non_followers_pct": 45
+      },
+      "metric_basis": {
+        "Views": "cumulative-native",
+        "Viewers": "cumulative-native",
+        "Interactions": "cumulative-native",
+        "Likes": "cumulative-native",
+        "Shares": "cumulative-native",
+        "Replies": "cumulative-native",
+        "Accounts engaged": "cumulative-native",
+        "Profile visits": "cumulative-native",
+        "Follows": "cumulative-native",
+        "Forwards": "cumulative-native",
+        "Exited": "cumulative-native",
+        "Back": "cumulative-native",
+        "Next story": "cumulative-native",
+        "views_followers_pct": "cumulative-native",
+        "views_non_followers_pct": "cumulative-native"
+      },
+      "native_notes": []
+    },
+    {
+      "id": "sample-8",
+      "type": "reel",
+      "title": "Sample promoted reel | Native metric definitions retained",
+      "published_date": "2026-01-12",
+      "source_url": "https://www.instagram.com/",
+      "visuals": [
+        {
+          "path": "visuals/reel-02.png",
+          "role": "cover"
+        }
+      ],
+      "expected_visual_count": 1,
+      "promotion": "present",
+      "metrics": {
+        "Views": 3200,
+        "Interactions": 80,
+        "Likes": 60,
+        "Comments": 4,
+        "Saves": 6,
+        "Shares": 10,
+        "Follows": 12,
+        "Reach": 2400
+      },
+      "metric_basis": {
+        "Views": "cumulative-includes-ads",
+        "Interactions": "cumulative-includes-ads",
+        "Likes": "cumulative-includes-ads",
+        "Comments": "cumulative-includes-ads",
+        "Saves": "cumulative-includes-ads",
+        "Shares": "cumulative-includes-ads",
+        "Follows": "cumulative-includes-ads",
+        "Reach": "cumulative-includes-ads"
+      },
+      "native_notes": [
+        "Demo promotion flag; figures are illustrative. Native screen includes reel and ad data."
+      ]
+    }
+  ],
+  "allow_mixed_native_totals": true
+}

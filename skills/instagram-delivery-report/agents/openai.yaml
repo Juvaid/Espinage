@@ -1,0 +1,4 @@
+interface:
+  display_name: "Instagram Delivery Report"
+  short_description: "Chronological Instagram delivery reports with visuals"
+  default_prompt: "Use $instagram-delivery-report to create a professional PDF delivery report for this Instagram account and date range, with every content visual and collective and individual insights."
