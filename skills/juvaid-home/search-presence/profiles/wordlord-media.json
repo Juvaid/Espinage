@@ -1,0 +1,43 @@
+{
+  "id": "wordlord-media",
+  "name": "WordLord Media",
+  "site": "https://wordlordmedia.com",
+  "summary": "Own agency site. Check on-page SEO, the public business profile signals, whether the domain shows up for its own queries, and whether AI crawlers are allowed to read the site.",
+  "nap": {
+    "name": "WordLord Media",
+    "phone_digits": "917973575656",
+    "email": "support@wordlordmedia.com",
+    "street": "180 J Block, Sarabha Nagar",
+    "locality": "Ludhiana",
+    "region": "Punjab",
+    "postal": "141001",
+    "country": "IN"
+  },
+  "maps_url_contains": "Sarabha",
+  "same_as": [
+    "https://instagram.com/wordlordmedia",
+    "https://linkedin.com/company/wordlordmedia",
+    "https://facebook.com/wordlordmedia"
+  ],
+  "pages": [
+    "/",
+    "/contact",
+    "/services/seo",
+    "/digital-marketing-agency-ludhiana",
+    "/digital-marketing-agency-sarabha-nagar"
+  ],
+  "sitemap_must_include": [
+    "/",
+    "/contact",
+    "/services/seo",
+    "/digital-marketing-agency-ludhiana"
+  ],
+  "ai_files": ["/llms.txt", "/llms-full.txt"],
+  "ai_bots": ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Google-Extended"],
+  "queries": [
+    "WordLord Media",
+    "WordLord Media Ludhiana",
+    "digital marketing agency Ludhiana",
+    "SEO company Ludhiana"
+  ]
+}
