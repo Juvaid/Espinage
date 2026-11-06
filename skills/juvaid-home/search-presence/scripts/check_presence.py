@@ -437,7 +437,12 @@ def summarize(report: dict) -> str:
     lines.append("## Search observations")
     lines.append("These are DuckDuckGo and Bing results from this run. They are not a Google rank.")
     for row in report["search"]:
-        place = str(row["position"]) if row["position"] else "not in top 10"
+        if row["position"]:
+            place = str(row["position"])
+        elif "no rank recorded" in row["note"]:
+            place = "no position"
+        else:
+            place = "not in the first 10"
         lines.append(f"- {row['engine']} / {row['query']}: {place}. {row['note']}")
     lines.append("")
     lines.append("## Pages")
