@@ -4,6 +4,7 @@ Private skills for Claude Code.
 
 ## Skills
 
+- **juvaid-home**: Juvaid's own tool skills. `reel-intelligence` is the Instagram Saved control plane. See `skills/juvaid-home/README.md`.
 - **promo-reel**: art-direct and build 9:16 promo reels and ads in Remotion (Dhunna Infra, Crown Crest). It covers:
   - taste rules from client feedback;
   - 3D type and chrome, depth-photo moves and text behind subjects;

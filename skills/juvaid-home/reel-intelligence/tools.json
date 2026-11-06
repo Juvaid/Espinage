@@ -1,0 +1,212 @@
+{
+  "name": "reel_intelligence",
+  "description": "Allowlisted control plane for Instagram Saved index, living Excel catalog, selective download, post packs, and projects on the host Mac.",
+  "base_url_env": "REEL_API_BASE",
+  "default_base_url": "http://127.0.0.1:3333",
+  "auth": {
+    "type": "bearer",
+    "token_env": "REEL_API_TOKEN",
+    "header": "Authorization"
+  },
+  "endpoint": "/api/remote/command",
+  "method": "POST",
+  "commands": [
+    {
+      "cmd": "health",
+      "description": "Check control plane liveness"
+    },
+    {
+      "cmd": "status",
+      "description": "Sync status, autosync, index stats, excel path, reel/project counts"
+    },
+    {
+      "cmd": "rebuild_index",
+      "description": "Rebuild master index from disk and refresh Excel. Set from_instagram=true for metadata-only IG Saved crawl (no media).",
+      "args": {
+        "from_instagram": "bool optional",
+        "browser": "optional chrome|firefox|safari",
+        "max_posts": "optional int"
+      }
+    },
+    {
+      "cmd": "index_saved",
+      "description": "Metadata-only Instagram Saved crawl \u2192 SQLite index + Excel (no media download)"
+    },
+    {
+      "cmd": "export_index",
+      "description": "Rewrite living Excel from current SQLite index",
+      "args": {
+        "path": "optional excel path",
+        "include_removed": "bool optional"
+      }
+    },
+    {
+      "cmd": "search_index",
+      "description": "Search master Saved index",
+      "args": {
+        "query": "string",
+        "still_saved": "optional bool",
+        "download_status": "optional not_downloaded|partial|downloaded|removed",
+        "limit": "int default 20"
+      }
+    },
+    {
+      "cmd": "set_sync_mode",
+      "description": "index (default, metadata only) or full (bulk media download)",
+      "args": {
+        "mode": "index|full required"
+      }
+    },
+    {
+      "cmd": "sync_now",
+      "description": "Run Saved sync. Default mode=index (metadata). Pass mode=full only when user wants bulk media download.",
+      "args": {
+        "browser": "optional chrome|firefox|safari|brave|edge",
+        "account_id": "optional int",
+        "mode": "optional index|full"
+      }
+    },
+    {
+      "cmd": "autosync_set",
+      "description": "Enable/disable autosync or set interval_minutes (respects sync_mode)",
+      "args": {
+        "enabled": "bool",
+        "interval_minutes": "int >= 5",
+        "browser": "string"
+      }
+    },
+    {
+      "cmd": "normalize_packs",
+      "description": "Organize folders, write meta.json packs, refresh index/Excel"
+    },
+    {
+      "cmd": "search_reels",
+      "description": "Search local downloaded library",
+      "args": {
+        "query": "string required",
+        "limit": "int default 10"
+      }
+    },
+    {
+      "cmd": "download_url",
+      "description": "Download a single Instagram URL on purpose",
+      "args": {
+        "url": "string required",
+        "browser": "optional"
+      }
+    },
+    {
+      "cmd": "list_projects",
+      "description": "List managed projects",
+      "args": {
+        "status": "optional idea|cloned|active|paused|archived"
+      }
+    },
+    {
+      "cmd": "project_create",
+      "description": "Create project folder + optional git clone",
+      "args": {
+        "name": "string required",
+        "github_url": "optional",
+        "instructions": "optional",
+        "notes": "optional",
+        "source_reel_id": "optional int",
+        "clone": "bool default true"
+      }
+    },
+    {
+      "cmd": "project_note",
+      "description": "Append or replace notes; optional write INSTRUCTIONS.md",
+      "args": {
+        "project_id": "int required",
+        "text": "string",
+        "mode": "append|replace",
+        "as_instructions": "bool"
+      }
+    },
+    {
+      "cmd": "project_open",
+      "description": "Open project path in Antigravity on host",
+      "args": {
+        "project_id": "int",
+        "slug": "string"
+      }
+    },
+    {
+      "cmd": "install_repo",
+      "description": "git clone github repo into Projects dir",
+      "args": {
+        "repo_url": "string required"
+      }
+    },
+    {
+      "cmd": "analyze_prepare",
+      "description": "Extract frames+meta locally for on-demand Hermes vision. No LLM.",
+      "args": {
+        "latest": "bool",
+        "reel_id": "int",
+        "shortcode": "string",
+        "folder": "string",
+        "max_frames": "int default 8"
+      }
+    },
+    {
+      "cmd": "save_analysis",
+      "description": "Save structured reel intelligence pack for GUI",
+      "args": {
+        "reel_id": "int",
+        "folder": "string",
+        "shortcode": "string",
+        "analysis": "object required"
+      }
+    },
+    {
+      "cmd": "get_analysis",
+      "description": "Load saved analysis pack",
+      "args": {
+        "reel_id": "int",
+        "folder": "string"
+      }
+    },
+    {
+      "cmd": "list_analyses",
+      "description": "List recent analysis packs",
+      "args": {
+        "limit": "int default 50"
+      }
+    },
+    {
+      "cmd": "analyze_url",
+      "description": "Synchronously download Instagram Reel or YouTube video, extract frames, and prepare for immediate vision analysis",
+      "args": {
+        "url": "string required",
+        "prompt": "optional string prompt for analysis context",
+        "max_frames": "int default 8"
+      }
+    },
+    {
+      "cmd": "generate_image",
+      "description": "Generate an image based on user prompt and save locally to device",
+      "args": {
+        "prompt": "string required",
+        "provider": "optional replicate|openai"
+      }
+    },
+    {
+      "cmd": "generate_video",
+      "description": "Generate a short video clip based on user prompt or reference image and save locally to device",
+      "args": {
+        "prompt": "string",
+        "image_url": "optional string",
+        "provider": "optional replicate|luma|runway"
+      }
+    },
+    {
+      "cmd": "zero_token_exec",
+      "description": "Execute deterministic local command (/status, /download, /search, /export, /ocr, /menu) with zero LLM tokens",
+      "args": {
+        "command": "string required slash command or keyword"
+      }
+    }
+  ]
+}
